@@ -6,14 +6,14 @@
     margin: 0px;
 }
 
-navbar {
+nav {
     background: #66398a;
     display: flex;
     flex-flow: nowrap row;
     justify-content: space-between;
 }
 
-navbar>* {
+nav>* {
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
