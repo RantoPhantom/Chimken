@@ -34,4 +34,7 @@ def create_app(test_config=None):
 
     from . import index
     app.register_blueprint(index.bp)
+    from . import wallet
+    app.register_blueprint(wallet.bp)
     return app
+    
