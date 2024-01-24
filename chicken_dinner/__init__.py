@@ -31,4 +31,7 @@ def create_app(test_config=None):
 
     from . import trades
     app.register_blueprint(trades.bp)
+
+    from . import index
+    app.register_blueprint(index.bp)
     return app
