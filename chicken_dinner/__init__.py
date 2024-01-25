@@ -27,15 +27,14 @@ def create_app(test_config=None):
 
     @app.route('/')
     def hello():
-        return render_template('wallet/wallet.html')
+        return render_template('base.html')
 
     from . import trades
     app.register_blueprint(trades.bp)
 
     from . import index
     app.register_blueprint(index.bp)
-
     from . import wallet
     app.register_blueprint(wallet.bp)
-
     return app
+    
