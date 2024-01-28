@@ -37,8 +37,7 @@ nav {
 .nav-list {
     display: flex;
     justify-content: stretch;
-    margin: auto 16px;
-    
+    margin: auto 16px; 
 }
 
 .nav-list a {
