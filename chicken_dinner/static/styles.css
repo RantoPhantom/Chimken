@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;800&display=swap');
 
 :root {
-    --dark-1: #121212;
+    --dark-1: #1a1625;
     --dark-2: #282828;
     --header-height: 9vh;
     --main-font-color: #e9f8f9;
@@ -119,7 +119,13 @@ nav {
     margin-top: 3vw;
     border-radius: 30px;
     background: linear-gradient(149deg, rgba(253,253,255,1) 0%, rgba(1,203,240,1) 75%, rgba(229,239,242,1) 100%);
+    border: none;
     
+}
+
+.banner-intro button:focus {
+    border: none;
+    outline: none;
 }
 
 #intro-text h1 {
@@ -157,6 +163,7 @@ nav {
     margin-right: 10px;
     flex: 1.5;
     display: flex;
+    min-height: 618px;
 }
 
 .banner-img .img-items{
@@ -212,36 +219,3 @@ nav {
     margin-bottom: 0;
     border-radius: var(--border-top);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
