@@ -29,8 +29,8 @@ def create_app(test_config=None):
     def hello():
         return render_template('index/index.html')
 
-    from . import trades
-    app.register_blueprint(trades.bp)
+    from . import buy
+    app.register_blueprint(buy.bp)
 
     from . import index
     app.register_blueprint(index.bp)
