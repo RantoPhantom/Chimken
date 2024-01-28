@@ -1,43 +1,87 @@
-*{
-    padding: 0px;
-    margin: 0px;
+/* Le Nguyen Quoc An - 104187156 */
+/* Header - CSS */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap');
+
+:root {
+    --dark-1: #121212;
+    --dark-2: #282828;
 }
 
-navbar {
-    background: #66398a;
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    background-color: var(--dark-1);
+}
+
+nav {
     display: flex;
-    flex-flow: nowrap row;
     justify-content: space-between;
-}
-
-navbar>* {
-    display: flex;
     flex-flow: row nowrap;
-    align-items: center;
+    height: 9vh;
+    width: 100vw;
+    background-color: var(--dark-2);
+    position: fixed;
 }
 
-#nav-right>*, #nav-left>* {
-    display: block;
-    text-align: center;
-    padding-left: 10px;
-    padding-right: 10px;
+.nav-list {
+    display: flex;
+    justify-content: stretch;
+    margin: auto 16px;
+
 }
 
-#nav-right, #nav-right>* {
-    padding-left: 20px;
-    padding-right: 20px;
+.nav-list a {
     text-decoration: none;
 }
 
-
-.navicon, .navicon>* {
-    width: 5vw;
+.nav-items {
+    display: inline-block;
+    list-style: none;
+    font-size: 1.2em;
+    font-family: 'Rubik', sans-serif;
+    margin: auto 16px;  
+    color: #e9f8f9;
 }
 
-#trade-content>* {
-    height: 100%;
-    border: 2px solid black;
+.nav-items:first-child {
+    padding-right: 16px;
+    margin-right: 0;
+    border-right: 1.5px solid #e9f8f9;
 }
+
+.nav-left .nav-items:nth-child(2) {
+    margin-left: 32px;
+}
+
+.nav-right .nav-items:nth-child(2) {
+    margin-right: 0;
+}
+
+.text-link::after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background-color: #e9f8f9;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.text-link:hover::after {
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
 
 
 
