@@ -27,7 +27,7 @@ def create_app(test_config=None):
 
     @app.route('/')
     def hello():
-        return render_template('wallet/wallet.html')
+        return render_template('index/index.html')
 
     from . import trades
     app.register_blueprint(trades.bp)
