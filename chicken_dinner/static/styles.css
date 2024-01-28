@@ -112,18 +112,18 @@ nav {
 
 .banner-intro button {
     font-weight: 500;
-    font-size: 25px;
+    font-size: 1.5vw;
     width: 10vw;
     padding: 10px;
     color: var(--dark-1);
-    margin-top: 80px ;
+    margin-top: 3vw;
     border-radius: 30px;
     background: linear-gradient(149deg, rgba(253,253,255,1) 0%, rgba(1,203,240,1) 75%, rgba(229,239,242,1) 100%);
     
 }
 
 #intro-text h1 {
-    font-size: 64px; 
+    font-size: 4.5vw; 
     font-weight: 800;
     background: 
     -webkit-linear-gradient(149deg, rgba(253,253,255,1) 0%, rgba(1,203,240,1) 75%, rgba(229,239,242,1) 100%);
@@ -134,8 +134,7 @@ nav {
 #text-p1 {
     font-family: 'Rubik', sans-serif;
     font-weight: 500;
-    font-size: 33px;
-    
+    font-size: 2.15vw;  
 }
 
 #text-p1::after {
@@ -144,13 +143,13 @@ nav {
     height: 4px;
     background: linear-gradient(149deg, rgba(253,253,255,1) 0%, rgba(1,203,240,1) 75%, rgba(229,239,242,1) 100%);
     display: block;
-    margin-top: 50px;
+    margin-top: 1vw;
     border-radius: 1px;
 }
 
 #text-p2 {
-    margin-top: 50px;
-    font-size: 22px;
+    margin-top: 3vw;
+    font-size: 1.4vw;
 }
 
 /* Banner Image */
