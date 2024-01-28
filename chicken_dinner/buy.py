@@ -11,7 +11,7 @@ def buy(item_id):
         'name': 'LMAO',
         'price': 69.420,
         'currency': 'VND',
-        'author': 'MEEEEE'
+        'author': 'lol'
     }
 
     return render_template('buy/buy.html', item=item)
