@@ -1,7 +1,10 @@
 {% extends 'base.html' %}
+{% block title %}
+    Buying: {{item.name}}
+{% endblock %}
 {% block content %}
-
-    <div class="item-large">
+    <div class="buy-main">
+        <div class="item-large">
         <div class="item-main">
             <h1 id="item-title">{{item.name}}</h1>
 
@@ -34,5 +37,6 @@
 
         </div>
     </div>
+</div>
 
     {% endblock %}

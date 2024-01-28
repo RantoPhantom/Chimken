@@ -3,13 +3,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap');
 
 :root {
-    --dark-1: #121212;
+    --dark-1: #1a1826;
     --dark-2: #282828;
+    --header-height: 9vh;
+    --main-font-color: #e9f8f9;
+    --border-top: 10px 10px 0 0;
+    --border-bottom: 0 0 10px 10px;
 }
 
 * {
     padding: 0;
     margin: 0;
+}
+/* change all font colors except buttons to the main font color*/
+
+*:not(button){
+    color: var(--main-font-color);
 }
 
 html {
@@ -30,7 +39,7 @@ nav {
     display: flex;
     justify-content: stretch;
     margin: auto 16px;
-    
+
 }
 
 .nav-list a {
@@ -72,4 +81,18 @@ nav {
 
 .text-link:hover::after {
     width: 100%;
+}
+
+/* end Header*/
+
+
+/* Le Phan - 104212469 */
+/* buy page */
+
+.buy-main{
+    padding-top: var(--header-height);
+}
+
+.item-large .item-large>*>* {
+    border: 2px solid red;
 }
