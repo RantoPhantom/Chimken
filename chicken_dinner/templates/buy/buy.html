@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <div class="item-large">
+        <div class="item-main">
+            <h1 id="item-title">{{item.name}}</h1>
+
+            <div id="pricing">
+                <div id="price">
+                    <p>Current Price</p>
+                    <div id="price-amount">
+                        {{item.price}} <br>
+                            {{item.currency}}
+                    </div>
+
+                    <div id="author">
+                        <span>Listed By:</span> {{item.author}}
+                    </div>
+
+                    <button> Buy Now </button>
+
+                </div>
+            </div>
+
+            <div id="price-history"> 
+
+            </div>
+
+            <div id="listings"></div>
+            <div id="offers"></div>
+        </div>
+
+        <div class="item-summary">
+
+        </div>
+    </div>
+
+    {% endblock %}

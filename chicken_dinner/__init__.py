@@ -29,12 +29,13 @@ def create_app(test_config=None):
     def hello():
         return render_template('base.html')
 
-    from . import trades
-    app.register_blueprint(trades.bp)
+    from . import buy
+    app.register_blueprint(buy.bp)
 
     from . import index
     app.register_blueprint(index.bp)
+
     from . import wallet
     app.register_blueprint(wallet.bp)
+
     return app
-    
