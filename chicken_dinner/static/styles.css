@@ -1,6 +1,6 @@
 /* Le Nguyen Quoc An - 104187156 */
 /* Header - CSS */
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;800&display=swap');
 
 :root {
     --dark-1: #1a1826;
@@ -21,6 +21,10 @@
     color: var(--main-font-color);
 }
 
+*:not(button) {
+    color: var(--main-font-color);
+}
+
 html {
     background-color: var(--dark-1);
 }
@@ -29,7 +33,7 @@ nav {
     display: flex;
     justify-content: space-between;
     flex-flow: row nowrap;
-    height: 9vh;
+    height: var(--header-height);
     width: 100vw;
     background-color: var(--dark-2);
     position: fixed;
@@ -51,14 +55,15 @@ nav {
     list-style: none;
     font-size: 1.2em;
     font-family: 'Rubik', sans-serif;
+    font-weight: 500;
     margin: auto 16px;  
-    color: #e9f8f9;
+    color: var(--main-font-color);
 }
 
 .nav-items:first-child {
     padding-right: 16px;
     margin-right: 0;
-    border-right: 1.5px solid #e9f8f9;
+    border-right: 1.5px solid var(--main-font-color);
 }
 
 .nav-left .nav-items:nth-child(2) {
@@ -73,7 +78,7 @@ nav {
     content: '';
     width: 0%;
     height: 2px;
-    background-color: #e9f8f9;
+    background-color: var(--main-font-color);
     display: block;
     margin: auto;
     transition: 0.5s;
@@ -95,4 +100,135 @@ nav {
 
 .item-large .item-large>*>* {
     border: 2px solid red;
+}
+/* Index - CSS */
+.index {
+    padding-top: var(--header-height);
+}
+
+/* Welcome Banner */
+.index-banner {
+    display: flex;
+    height: 618px;
+    background-color: var(--dark-1);
+}
+
+.banner-items>* {
+    color: var(--main-font-color)
+}
+
+/* Welcome Message */
+.banner-intro {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    padding: 5% 5%;
+}
+
+.banner-intro >* {
+    font-family: 'Rubik', sans-serif;
+}
+
+.banner-intro button {
+    font-weight: 500;
+    font-size: 25px;
+    width: 10vw;
+    padding: 10px;
+    color: var(--dark-1);
+    margin-top: 80px ;
+    border-radius: 30px;
+    background: linear-gradient(149deg, rgba(253,253,255,1) 0%, rgba(1,203,240,1) 75%, rgba(229,239,242,1) 100%);
+    
+}
+
+#intro-text h1 {
+    font-size: 64px; 
+    font-weight: 800;
+    background: 
+    -webkit-linear-gradient(149deg, rgba(253,253,255,1) 0%, rgba(1,203,240,1) 75%, rgba(229,239,242,1) 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#text-p1 {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
+    font-size: 33px;
+    
+}
+
+#text-p1::after {
+    content: '';
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(149deg, rgba(253,253,255,1) 0%, rgba(1,203,240,1) 75%, rgba(229,239,242,1) 100%);
+    display: block;
+    margin-top: 50px;
+    border-radius: 1px;
+}
+
+#text-p2 {
+    margin-top: 50px;
+    font-size: 22px;
+}
+
+/* Banner Image */
+.banner-img {
+    margin-right: 10px;
+    flex: 1.5;
+    display: flex;
+}
+
+.banner-img .img-items{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.img-items > div {
+    margin: 10px 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px 1px #01D9FF;
+}
+
+.img-items div img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+#img-item-1 {
+    flex: 1;
+    margin-top: 0;
+    border-radius: var(--border-bottom);
+}
+
+#img-item-2 {
+    flex: 2;
+    margin-bottom: 0;
+    border-radius: var(--border-top);
+}
+
+#img-item-3 {
+    flex: 2;
+    margin-top: 0;
+    border-radius: var(--border-bottom);
+}
+
+#img-item-4 {
+    flex: 1;
+    margin-bottom: 0;
+    border-radius: var(--border-top);
+}
+
+#img-item-5 {
+    flex: 0.5;
+    margin-top: 0;
+    border-radius: var(--border-bottom);
+}
+
+#img-item-6 {
+    flex: 2;
+    margin-bottom: 0;
+    border-radius: var(--border-top);
 }

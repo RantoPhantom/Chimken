@@ -27,7 +27,7 @@ def create_app(test_config=None):
 
     @app.route('/')
     def hello():
-        return render_template('base.html')
+        return render_template('index/index.html')
 
     from . import buy
     app.register_blueprint(buy.bp)
