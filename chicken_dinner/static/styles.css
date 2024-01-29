@@ -278,11 +278,31 @@ nav {
 
 /* Le Phan - 104212469 */
 /* buy page */
+#buy-main>*, #buy-main>*>*{
+    border: 2px solid red;
+}
 
-.buy-main{
+#buy-main{
+    --header-height: 11vh;
+    padding-left: 3%;
+    padding-right: 3%;
     padding-top: var(--header-height);
 }
 
-.item-large .item-large>*>* {
-    border: 2px solid red;
+#buy-top{
+    display: flex;
+    justify-content: space-between;
+}
+#buy-bottom {
+    margin-top: 10px;
+    border: 2px solid blue;
+}
+
+#summary-image {
+    width: 35vw;
+}
+
+#summary-image>*{
+    width: 100%;
+    margin-bottom: -3.84px;
 }
