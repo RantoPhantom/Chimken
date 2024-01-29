@@ -1,6 +1,6 @@
-from flask import (Blueprint, render_template, Response)
-import matplotlib.pyplot as plt
-from io import BytesIO
+from flask import (Blueprint, render_template)
+import plotly.graph_objs as go
+
 bp = Blueprint('buy', __name__, url_prefix='/buy')
 
 
@@ -19,31 +19,26 @@ def buy(item_id):
 
 @bp.route('/lol')
 def lol():
-    return "hey"
+    return "<p>hey</p>"
 
 
-@bp.route('/pricing_history')
-def pricing_history():
-    # Retrieve pricing data (replace with your actual data retrieval logic)
-    # For example, you might fetch data from a database
-    dates = ['2023-01-01', '2023-01-02', '2023-01-03', '2023-01-04', '2023-01-05']
-    prices = [100, 110, 105, 115, 120]
+@bp.route('/chart')
+def index():
+    item = {
+        'name': 'LMAO',
+        'price': 69.420,
+        'currency': 'VND',
+        'author': 'lol'
+    }
+    # Sample data
+    x_data = [1, 2, 3, 4, 5]
+    y_data = [10, 15, 13, 17, 18]
 
-    # Create the chart
-    plt.plot(dates, prices)
-    plt.xlabel('Date')
-    plt.ylabel('Price')
-    plt.title('Pricing History')
-    plt.xticks(rotation=45)  # Rotate x-axis labels for better readability
-    plt.tight_layout()
+    # Create Plotly figure
+    fig = go.Figure()
+    fig.add_trace(go.Scatter(x=x_data, y=y_data, mode='lines+markers', name='line'))
 
-    # Convert the plot to a binary image in memory
-    buffer = BytesIO()
-    plt.savefig(buffer, format='png')
-    buffer.seek(0)
+    # Convert Plotly figure to JSON
+    plot_json = fig.to_json()
 
-    # Clear the plot to avoid memory leaks
-    plt.clf()
-
-    # Return the binary image as a Flask response
-    return Response(buffer.getvalue(), mimetype='image/png')
+    return render_template('buy/buy.html', plot_json=plot_json, item=item)

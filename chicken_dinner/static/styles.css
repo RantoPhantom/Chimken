@@ -89,17 +89,6 @@ nav {
 
 /* end Header*/
 
-
-/* Le Phan - 104212469 */
-/* buy page */
-
-.buy-main{
-    padding-top: var(--header-height);
-}
-
-.item-large .item-large>*>* {
-    border: 2px solid red;
-}
 /* Index - CSS */
 .index {
     padding-top: var(--header-height);
@@ -286,3 +275,14 @@ nav {
     margin-top: 3%; 
 }
 
+
+/* Le Phan - 104212469 */
+/* buy page */
+
+.buy-main{
+    padding-top: var(--header-height);
+}
+
+.item-large .item-large>*>* {
+    border: 2px solid red;
+}
