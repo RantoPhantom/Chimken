@@ -30,14 +30,26 @@ def index():
         'currency': 'VND',
         'author': 'lol'
     }
+    config = {'modebar': None}
     # Sample data
     x_data = [1, 2, 3, 4, 5]
     y_data = [10, 15, 13, 17, 18]
 
     # Create Plotly figure
     fig = go.Figure()
-    fig.add_trace(go.Scatter(x=x_data, y=y_data, mode='lines+markers', name='line'))
+    fig.add_trace(go.Scatter(
+        x=x_data,
+        y=y_data,
+        mode='lines',
+        name='line'
+    )
+                  )
 
+    fig.update_layout(
+        margin=dict(l=0, r=0, t=0, b=0),
+    )
+
+    fig.update_layout(config)
     # Convert Plotly figure to JSON
     plot_json = fig.to_json()
 

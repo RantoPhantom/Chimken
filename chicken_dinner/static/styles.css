@@ -15,6 +15,11 @@
     padding: 0;
     margin: 0;
 }
+/* change all font colors except buttons to the main font color*/
+
+*:not(button){
+    color: var(--main-font-color);
+}
 
 *:not(button) {
     color: var(--main-font-color);
@@ -37,7 +42,7 @@ nav {
 .nav-list {
     display: flex;
     justify-content: stretch;
-    margin: auto 16px; 
+    margin: auto 16px;
 }
 
 .nav-list a {
@@ -82,11 +87,8 @@ nav {
     width: 100%;
 }
 
-<<<<<<< Updated upstream
-=======
 /* end Header*/
 
->>>>>>> Stashed changes
 /* Index - CSS */
 .index {
     padding-top: var(--header-height);
@@ -225,7 +227,6 @@ nav {
     border-radius: var(--border-top);
 }
 
-<<<<<<< Updated upstream
 /*Profile CSS */
 .wallet {
     padding-top: var(--header-height);
@@ -274,16 +275,33 @@ nav {
     margin-top: 3%; 
 }
 
-=======
-
 /* Le Phan - 104212469 */
 /* buy page */
+#buy-main>*, #buy-main>*>*{
+    border: 2px solid red;
+}
 
-.buy-main{
+#buy-main{
+    --header-height: 11vh;
+    padding-left: 3%;
+    padding-right: 3%;
     padding-top: var(--header-height);
 }
 
-.item-large .item-large>*>* {
-    border: 2px solid red;
+#buy-top{
+    display: flex;
+    justify-content: space-between;
 }
->>>>>>> Stashed changes
+#buy-bottom {
+    margin-top: 10px;
+    border: 2px solid blue;
+}
+
+#summary-image {
+    width: 35vw;
+}
+
+#summary-image>*{
+    width: 100%;
+    margin-bottom: -3.84px;
+}

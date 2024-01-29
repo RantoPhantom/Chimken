@@ -1,5 +1,6 @@
 <!doctype html>
 <head>
+<<<<<<< HEAD
 <<<<<<< Updated upstream
     {% include 'header.html' %}
     <title>{% block title %}Yay{% endblock %}</title>
@@ -15,7 +16,17 @@
     {% endblock %}
     <title>{% block title %}{% endblock %}</title>
 >>>>>>> Stashed changes
+=======
+    {% block includes %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="{{ url_for( 'static', filename='styles.css' ) }}">
+    {% endblock %}
+    <title>{% block title %}{% endblock %}</title>
+>>>>>>> c1b7905dd5fdec128fcc0b2c2b3c5745b5ddd43f
 </head>
 <body>
+    {% include 'header.html' %}
     {% block content %}{% endblock %}
 </body>
