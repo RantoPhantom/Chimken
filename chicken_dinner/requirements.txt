@@ -1,0 +1,4 @@
+flask
+werkzeug==2.2.0
+plotly
+
