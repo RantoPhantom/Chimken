@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask, render_template
+from flask import Flask
 
 
 def create_app(test_config=None):
@@ -23,15 +23,14 @@ def create_app(test_config=None):
         os.makedirs(app.instance_path)
     except OSError:
         pass
-    # INIT BLUEPRINTS AND DB HERE
+# INIT BLUEPRINTS AND DB
 
-    from . import buy
-    app.register_blueprint(buy.bp)
+    # init db
+    from . import db
+    db.init_app(app)
 
-    from . import index
-    app.register_blueprint(index.bp)
-
-    from . import wallet
-    app.register_blueprint(wallet.bp)
+# init auth.py (auth page blueprint)
+    from . import auth
+    app.register_blueprint(auth.bp)
 
     return app
