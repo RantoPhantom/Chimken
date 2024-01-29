@@ -237,3 +237,52 @@ nav {
     margin-bottom: 0;
     border-radius: var(--border-top);
 }
+
+/*Profile CSS */
+.wallet {
+    padding-top: var(--header-height);
+}
+
+.banner-cover {
+    background: no-repeat center;
+    background-image: linear-gradient(rgba(24, 24, 35,0.7),rgba(24, 24, 35,0.7)), url(../static/img/cover.jpeg);
+    background-size: cover;
+    height: 500px;
+    display: flex;
+}
+
+.usersocial{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.avatar img{
+    border-radius: 8px;
+    position: relative;
+    left: 10%;
+    margin-top: 130%;
+    display: flex;
+}
+
+#username {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
+    font-size: 2.15vw;  
+    text-align: left;
+    margin-left: 10%;
+    margin-top: 3%;
+}
+
+#twitter{
+    margin-left: 3%;
+    margin-bottom: -2%;
+}
+
+#user_id{
+    font-size: 1.4vw;
+    font-family: 'Rubik', sans-serif;
+    margin-left: 10%;
+    margin-top: 3%; 
+}
+
