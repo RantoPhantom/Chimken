@@ -232,49 +232,66 @@ nav {
     padding-top: var(--header-height);
 }
 
+.banner{
+    display: flex;
+    flex-direction: column;
+    padding-top: var(--header-height);
+}
+
 .banner-cover {
     background: no-repeat center;
     background-image: linear-gradient(rgba(24, 24, 35,0.7),rgba(24, 24, 35,0.7)), url(../static/img/cover.jpeg);
     background-size: cover;
-    height: 500px;
-    display: flex;
+    height: 300px;
+    padding-top: var(--header-height);
 }
 
-.usersocial{
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
+.banner-infor{
+    flex-direction: column;
+    align-items: left;
 }
 
 .avatar img{
-    border-radius: 8px;
-    position: relative;
-    left: 10%;
-    margin-top: 130%;
-    display: flex;
+    border-radius: 25px;
+    flex-direction: column;
+    margin-left: 50px;
 }
 
 #username {
     font-family: 'Rubik', sans-serif;
     font-weight: 500;
-    font-size: 2.15vw;  
-    text-align: left;
-    margin-left: 10%;
-    margin-top: 3%;
+    font-size: 2vw;  
+    flex: 0.5;
+    padding: 3px;
+    padding-left: 50px;
 }
 
 #twitter{
-    margin-left: 3%;
-    margin-bottom: -2%;
+
+    padding: 3px;
 }
 
 #user_id{
-    font-size: 1.4vw;
+    font-size: 1vw;
     font-family: 'Rubik', sans-serif;
-    margin-left: 10%;
-    margin-top: 3%; 
+    padding: 3px;
+    padding-left: 50px;
+
 }
 
+.overlay{
+    flex:1;
+}
+
+.usersocial{
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+}
+
+.ay{
+    flex: 2;
+}
 
 /* Le Phan - 104212469 */
 /* buy page */
