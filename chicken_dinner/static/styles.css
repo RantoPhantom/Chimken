@@ -5,15 +5,22 @@
 :root {
     --dark-1: #1a1625;
     --dark-2: #282828;
+    --mix-2: #363945;
     --header-height: 9vh;
     --main-font-color: #e9f8f9;
     --border-top: 10px 10px 0 0;
     --border-bottom: 0 0 10px 10px;
+    --main-font: 'Rubik', sans-serif;
 }
 
 * {
     padding: 0;
     margin: 0;
+}
+/* change all font colors except buttons to the main font color*/
+
+*:not(button){
+    color: var(--main-font-color);
 }
 
 *:not(button) {
@@ -32,12 +39,14 @@ nav {
     width: 100vw;
     background-color: var(--dark-2);
     position: fixed;
+    z-index: 10;
+    box-shadow: 0 3px 15px 0 #121212;
 }
 
 .nav-list {
     display: flex;
     justify-content: stretch;
-    margin: auto 16px; 
+    margin: auto 16px;
 }
 
 .nav-list a {
@@ -48,7 +57,7 @@ nav {
     display: inline-block;
     list-style: none;
     font-size: 1.2em;
-    font-family: 'Rubik', sans-serif;
+    font-family: var(--main-font);
     font-weight: 500;
     margin: auto 16px;  
     color: var(--main-font-color);
@@ -82,6 +91,8 @@ nav {
     width: 100%;
 }
 
+/* end Header*/
+
 /* Index - CSS */
 .index {
     padding-top: var(--header-height);
@@ -91,7 +102,7 @@ nav {
 .index-banner {
     display: flex;
     height: 618px;
-    background-color: var(--dark-1);
+    background-color: #142546;
 }
 
 .banner-items>* {
@@ -107,7 +118,7 @@ nav {
 }
 
 .banner-intro >* {
-    font-family: 'Rubik', sans-serif;
+    font-family: var(--main-font);
 }
 
 .banner-intro button {
@@ -119,8 +130,7 @@ nav {
     margin-top: 3vw;
     border-radius: 30px;
     background: linear-gradient(149deg, rgba(253,253,255,1) 0%, rgba(1,203,240,1) 75%, rgba(229,239,242,1) 100%);
-    border: none;
-    
+    border: none;   
 }
 
 .banner-intro button:focus {
@@ -138,7 +148,7 @@ nav {
 }
 
 #text-p1 {
-    font-family: 'Rubik', sans-serif;
+    font-family: var(--main-font);
     font-weight: 500;
     font-size: 2.15vw;  
 }
@@ -220,6 +230,128 @@ nav {
     border-radius: var(--border-top);
 }
 
+.index-featured-NFTs {
+    height: 50vw;
+    background-color: #0B1426;
+    position: relative;
+    box-shadow: 1px 0 15px 0 #121212;
+    text-align: center;
+}
+
+.index-featured-NFTs h1 {
+    display: inline-block;
+    font-family: var(--main-font);
+    font-weight: 500;
+    font-size: 3.5vw;
+    margin-top: 100px;
+}
+
+.index-featured-NFTs h1::after {
+    content: '';
+    width: 50%;
+    height: 4px;
+    background: linear-gradient(149deg, rgba(253,253,255,1) 0%, rgba(1,203,240,1) 75%, rgba(229,239,242,1) 100%);
+    display: block;
+    margin-top: 0.5vw;
+    margin-left: 50%;
+    border-radius: 1px;
+}
+
+.featured-NFTs {
+    margin-top: 70px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.featured-items {
+    display: flex;
+    flex-direction: column;
+    width: 15vw;
+    height: 27vw;
+    background-color: var(--mix-2);
+    border-radius: 20px;
+}
+
+.featured-img {
+    flex: 2;
+    border-radius: 20px;
+    margin: 7%;
+    overflow: hidden;
+    box-shadow: 0 0 15px 1px #ffffff;
+}
+
+.featured-img img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+} 
+
+.featured-info {
+    flex: 1.5;
+    text-align: left;
+}
+
+.featured-info > *{
+    font-family: var(--main-font);
+    font-weight: 500;
+    align-items: left;
+    box-sizing: border-box;
+    padding: 0 7%;
+}
+
+.featured-info h2 {
+    font-size: 1.3vw;
+}
+
+.featured-info a {
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 1.05vw;
+}
+
+.featured-price {
+    margin-top: 10%;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 400;
+}
+
+.featured-button {
+    display: flex;
+    justify-content: center;
+    height: 25%;
+    margin-top: 7%;
+}
+
+.featured-button button {
+    flex: 1;
+    border-radius: 10px;
+    border: none;
+    background-color: #2E8DEE;
+    color: 	white;
+    font-family: var(--main-font);
+    font-size: 110%;
+    font-weight: 500;
+}
+
+.featured-button button:focus {
+    border: none;
+    outline: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*Profile CSS */
 .wallet {
     padding-top: var(--header-height);
@@ -267,4 +399,17 @@ nav {
     margin-left: 10%;
     margin-top: 3%; 
 }
+
+
+/* Le Phan - 104212469 */
+/* buy page */
+
+.buy-main{
+    padding-top: var(--header-height);
+}
+
+.item-large .item-large>*>* {
+    border: 2px solid red;
+}
+
 
