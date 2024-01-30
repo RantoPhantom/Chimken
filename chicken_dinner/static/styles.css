@@ -279,6 +279,11 @@ nav {
 
 }
 
+.banner-cover {
+    display: flex;
+    flex-direction: column;
+}
+
 .overlay{
     flex:1;
 }
