@@ -30,7 +30,6 @@ def get_listing_data():
         'expiration': '29 years',
         'from': 'me'
     }
-
     listing_data.append(lol)
 
     html_response = ""
