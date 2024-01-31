@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;800&display=swap');
 
 :root {
-    --dark-1: #1a1625;
+    --dark-1: #0B1426;
     --dark-2: #282828;
     --header-height: 9vh;
     --main-font-color: #e9f8f9;
@@ -277,12 +277,9 @@ nav {
 
 /* Le Phan - 104212469 */
 /* buy page */
-#buy-main>*, #buy-main>*>*{
-    border: 2px solid red;
-}
 
 #buy-main{
-    --header-height: 11vh;
+    --header-height: 15vh;
     padding-left: 3%;
     padding-right: 3%;
     padding-top: var(--header-height);
@@ -292,10 +289,6 @@ nav {
     display: flex;
     justify-content: space-between;
 }
-#buy-bottom {
-    margin-top: 10px;
-    border: 2px solid blue;
-}
 
 #summary-image {
     width: 35vw;
@@ -304,4 +297,75 @@ nav {
 #summary-image>*{
     width: 100%;
     margin-bottom: -3.84px;
+}
+
+#details {
+    margin-left: 2%;
+    flex: 2 1 auto;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+}
+#details>p{
+    font-size: 2em;
+}
+
+#price {
+    padding: 2%;
+    border: 2px solid #404040;
+    border-radius: 5px;
+    background-color: #1b1b1b;
+}
+
+#price > p{
+    color: #b3b3b3;
+}
+
+#price-amount {
+    font-size: 2.5em;
+}
+
+#buy-buttons {
+    flex: 2 1 auto;
+    width: auto;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+    display: flex;
+    justify-content: space-around;
+}
+
+#buy-buttons button{
+    flex: 2 1 auto;
+    padding: 15px;
+    background-color: #0a72e3; 
+    color: #fff; 
+    font-size: 1.1em;
+    font-style: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
+
+}
+#buy-buttons button:hover{
+    background-color: #197fef 
+}
+
+#buy-buttons button:first-child{
+    margin-right: 10px;
+}
+#buy-buttons button:last-child{
+    margin-left: 10px;
+    background-color: #242424;
+}
+
+#buy-bottom>*{
+    margin-top: 10px;
+    border: 2px solid blue;
+    height: 30vw;
+}
+canvas {
+    position: inherit;
+    width:100%;
+    height: 100%;
 }

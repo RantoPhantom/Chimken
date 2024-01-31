@@ -2,6 +2,7 @@
 {% block includes %}
     {{ super() }}
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     {% endblock %}
     {% block title %}
     Buying: {{item.name}}
@@ -14,18 +15,18 @@
 
             <div id="summary">
                 <div id="summary-image">
-                    <img src="../static/nft.png" alt="">
+                    <img src="../static/pippog.png" alt="">
                 </div>
                 <div id="description"></div>
             </div>
 
             <!-- right -->
-            <div class="details">
-                <h1>{{item.name}}</h1>
+            <div id="details">
+                <p>{{item.name}} #{{item.id}}</p>
                 <div id="price">
                     <p>Current Price</p>
                     <div id="price-amount">
-                        {{item.price}} <br/>
+                        {{item.price}} 
                         {{item.currency}}
                     </div>
 
@@ -33,7 +34,12 @@
                         <span>Listed By:</span> {{item.author}}
                     </div>
 
-                    <button> Buy Now </button>
+                    <div id="buy-buttons">
+
+                        <button> Buy Now </button>
+                        <button> Make Offer </button>
+
+                    </div>
                 </div>
             </div>
 
@@ -41,9 +47,39 @@
 
         <!-- bottom -->
         <div id="buy-bottom">
-            <div id="price-history"></div>
-            <div id="listings"></div>
-            <div id="offers"></div>
+
+            <div id="listings">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Unit Price</th>
+                            <th>Quantity</th>
+                            <th>Expiration</th>
+                            <th>From</th>
+                        </tr>
+                    </thead>
+                    <tbody hx-post="./get-listing-data" hx-trigger="every 2s">
+                        {% for listing in listing_data %}
+                        <tr>
+                            <td>{{ listing.unit_price }}</td>
+                            <td>{{ Quantity }}</td>
+                            <td>{{ Expiration }}</td>
+                            <td>{{ From }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="offers">
+
+            </div>
+
+            <div id="activity">
+
+            </div>
+
+
         </div>
     </div>
     {% endblock %}
