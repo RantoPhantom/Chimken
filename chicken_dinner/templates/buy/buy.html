@@ -1,10 +1,5 @@
 {% extends 'base.html' %}
-{% block includes %}
-    {{ super() }}
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    {% endblock %}
-    {% block title %}
+{% block title %}
     Buying: {{item.name}}
     {% endblock %}
 
@@ -47,7 +42,7 @@
 
         <!-- bottom -->
         <div id="buy-bottom">
-
+            <manager hx-post="./get-listing-data" hx-trigger="load" hx-swap="outerHTML" hx-target="#listing-data"></manager>
             <div id="listings">
                 <table>
                     <thead>
@@ -58,15 +53,8 @@
                             <th>From</th>
                         </tr>
                     </thead>
-                    <tbody hx-post="./get-listing-data" hx-trigger="every 2s">
-                        {% for listing in listing_data %}
-                        <tr>
-                            <td>{{ listing.unit_price }}</td>
-                            <td>{{ Quantity }}</td>
-                            <td>{{ Expiration }}</td>
-                            <td>{{ From }}</td>
-                        </tr>
-                        {% endfor %}
+                    <tbody>
+                        <tr id="listing-data"></tr>
                     </tbody>
                 </table>
             </div>
