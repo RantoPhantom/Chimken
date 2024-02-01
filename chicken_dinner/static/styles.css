@@ -21,8 +21,8 @@
     color: var(--main-font-color);
 }
 
-*:not(button) {
-    color: var(--main-font-color);
+*{
+    font-family: 'Rubik', sans-serif;
 }
 
 html {
@@ -282,12 +282,15 @@ manager {
 }
 
 #buy-main{
+    --button-color: #2E8DEE;
+    --widget-color: #363945;
     --header-height: 15vh;
     padding-left: 3%;
     padding-right: 3%;
     padding-top: var(--header-height);
+    padding-bottom: 3%;
 }
-
+/* buy top */
 #buy-top{
     display: flex;
     justify-content: space-between;
@@ -307,21 +310,31 @@ manager {
     flex: 2 1 auto;
     display: flex;
     flex-flow: column nowrap;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
-#details>p{
-    font-size: 2em;
+
+#details #name p:last-child{
+    font-size: 5vw;
+}
+
+#details #name p:first-child{
+    font-size: 1.75vw;
+}
+
+#details #name p{
+    font-weight: 500;
 }
 
 #price {
     padding: 2%;
     border: 2px solid #404040;
     border-radius: 5px;
-    background-color: #1b1b1b;
+    background-color: var(--widget-color);
 }
 
 #price > p{
     color: #b3b3b3;
+    font-weight: 500;
 }
 
 #price-amount {
@@ -329,44 +342,57 @@ manager {
 }
 
 #buy-buttons {
-    flex: 2 1 auto;
-    width: auto;
-    margin-top: 1vw;
+    margin-top: 2.5vw;
     margin-bottom: 1vw;
     display: flex;
-    justify-content: space-around;
+    gap: 20px;
 }
 
 #buy-buttons button{
-    flex: 2 1 auto;
-    padding: 15px;
-    background-color: #0a72e3; 
-    color: #fff; 
-    font-size: 1.1em;
-    font-style: bold;
     border: none;
+    font-weight: 500;
+    flex: 1 0 0;
+    padding: 15px;
+    background-color: var(--button-color); 
+    color: #fff; 
+    font-size: 1.3em;
     border-radius: 10px;
     cursor: pointer;
     transition: background-color 0.3s ease; 
-
 }
 #buy-buttons button:hover{
     background-color: #197fef 
 }
 
-#buy-buttons button:first-child{
-    margin-right: 10px;
+#buy-bottom>*:not(#item-properties), #item-properties>*{
+    padding: 2%;
+    margin-top: 3%;
+    border: 2px solid #404040;
+    border-radius: 5px;
+    background-color: var(--widget-color)
+}
+/* Item properties */
+#item-properties{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+#item-properties>*{
+    flex: 1 0 0;
 }
 
-#buy-buttons button:last-child{
-    margin-left: 10px;
-    background-color: #242424;
+#item-properties>*>.details{
+    margin-top: 2%;
+    display: flex;
+    justify-content: space-between;
 }
-
-#buy-bottom>*{
-    margin-top: 10px;
+#item-description>*>*{
+    margin-top: 2%;
 }
+/* Listings */
 #listings table {
+    margin-top: 2%;
     width: 100%;
     border-collapse: collapse;
     table-layout: fixed; 
@@ -378,3 +404,7 @@ manager {
     text-align: center; 
     border-bottom: 1px solid; 
 }
+#listings table thead tr th{
+    color: #b3b3b3;
+}
+

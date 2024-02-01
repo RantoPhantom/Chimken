@@ -17,7 +17,10 @@
 
             <!-- right -->
             <div id="details">
-                <p>{{item.name}} #{{item.id}}</p>
+                <div id="name">
+                    <p> Creator: @{{item.author}} </p>
+                    <p>{{item.name}} #{{item.id}}</p>
+                </div>
                 <div id="price">
                     <p>Current Price</p>
                     <div id="price-amount">
@@ -32,7 +35,7 @@
                     <div id="buy-buttons">
 
                         <button> Buy Now </button>
-                        <button> Make Offer </button>
+                        <button> Trade </button>
 
                     </div>
                 </div>
@@ -42,8 +45,52 @@
 
         <!-- bottom -->
         <div id="buy-bottom">
+            <div id="item-properties">
+
+                <div id="item-description">
+                    <h2>Description</h2>
+                    <hr>
+                    <div>
+                        <p>By {{item.author}}</p>
+                        <p>{{item.description | default("I'm pippa!") }}</p>
+                        <p>{{item.name}} #{{item.id}}</p>
+                    </div>
+                </div>
+
+                <div id="item-details">
+                    <h2>Details</h2>
+                    <hr>
+                    <div class="details">
+                        <p> Contact Address: </p>
+                        <span>{{item.contact_address | default("a") }}</span>
+                    </div>
+                    <div class="details">
+                        <p> Token ID</p>
+                        <span>{{item.token_id | default("69") }}</span>
+                    </div>
+                    <div class="details">
+                        <p> Token Standard </p>
+                        <span>{{item.token_standard | default("CRC-32") }}</span>
+                    </div>
+                    <div class="details">
+                        <p> Chain </p>
+                        <span>{{item.chain | default("smoker") }}</span>
+                    </div>
+                    <div class="details">
+                        <p> Last Updated </p>
+                        <span>{{item.last_update | default("never") }}</span>
+                    </div>
+                    <div class="details">
+                        <p> Creator Earnings </p>
+                        <span>{{item.earnings | default("niji") }}</span>
+                    </div>
+                </div>
+
+            </div>
             <manager hx-post="./get-listing-data" hx-trigger="load" hx-swap="outerHTML" hx-target="#listing-data"></manager>
             <div id="listings">
+                <h2>Listings</h2>
+                <hr>
                 <table>
                     <thead>
                         <tr>
@@ -59,18 +106,7 @@
                 </table>
             </div>
 
-            <div id="offers">
 
-            </div>
-
-            <div id="activity">
-
-            </div>
-
-
-            <div id="price-history"></div>
-            <div id="listings"></div>
-            <div id="offers"></div>
         </div>
     </div>
     {% endblock %}

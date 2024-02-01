@@ -14,7 +14,7 @@ item = {
 @bp.route('/<int:item_id>')
 def index(item_id):
     item['id'] = item_id
-    # Pass data to HTML template
+
     return render_template('buy/buy.html', item=item)
 
 
@@ -25,11 +25,14 @@ def get_listing_data():
     listing_data = []
 
     lol = {
-        'unit_price': 100,
+        'unit_price': '100 BALLS',
         'quantity': 12,
         'expiration': '29 years',
         'from': 'me'
     }
+
+    listing_data.append(lol)
+    listing_data.append(lol)
     listing_data.append(lol)
 
     html_response = ""
@@ -38,4 +41,4 @@ def get_listing_data():
         for key, value in listing.items():
             html_response += f"<td>{value}</td>"
         html_response += "</tr>"
-        return html_response
+    return html_response
