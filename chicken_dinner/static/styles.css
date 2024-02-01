@@ -227,6 +227,7 @@ nav {
     border-radius: var(--border-top);
 }
 
+/* Doan Mai Ngoc Anh - 104220776 */
 /*Profile CSS */
 .wallet {
     padding-top: var(--header-height);
@@ -294,10 +295,174 @@ nav {
     flex: 1;
 }
 
+.social{
+    margin-right: 50px;
+    margin-top: 10px;
+    align-items: center;
+}
+
 .ay{
     flex: 2;
 }
 
+/* creating tabs */
+
+.tabs{
+    padding: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: max-content;
+    font-family: 'Rubik', sans-serif;
+}
+
+.tabs-label{
+    padding: 10px 16px;
+    cursor: pointer;
+}
+
+.tabs-radio{
+    display: none;
+}
+
+.tabs-content{
+    order: 1;
+    width: 100%;
+    line-height: 1.5;
+    font-size: 0.9vw;
+    display: none;
+}
+
+.tabs-radio:checked + .tabs-label{
+    font-weight: bold;
+    color:#1a1625;
+    opacity: 1;
+    background:linear-gradient(149deg, rgba(253,253,255,1) 0%, rgba(1,203,240,1) 75%, rgba(229,239,242,1) 100%);
+    border-radius: 25px;
+    width:fit-content;
+}
+
+.tabs-radio:checked + .tabs-label + .tabs-content{
+    display: initial;
+}
+
+hr{
+    width: 98vw;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 0;
+    height: 1px;
+    background: #ccc;
+}
+
+/*Collected tab*/
+
+#collected_num{
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
+    font-size: 1.5vw;
+    padding: 0px 32px;
+}
+
+.collected_container{
+    padding: 0px 32px;
+    display: grid;
+    grid-template-rows: repeat(2, 281.28px);
+    grid-template-columns: repeat(auto-fit, 169.28px);
+    grid-gap: 1em;
+}
+
+.item{
+    background: #282828;
+    border-radius: 25px;
+}
+
+.item-1 img{
+    border-radius: 25px 25px 0px 0px;
+    width: 169.28px;
+    height: 149.28px;
+}
+
+#item2_img{
+    width: 102.36px;
+    height: 142.55px;
+    padding: 0px 33.46px;
+    margin-bottom: 6.73px;
+}
+
+#item2_offer{
+    color: #b3b3b3;
+    font-size: 12px;
+}
+
+.item-3 img{
+    width: 130px;
+    height: 130px;
+    padding: 0px 21.14px;
+    margin-bottom: 19.28px;
+}
+
+.item-4 img{
+    width: 169.28px;
+    height: 126.96px;
+    margin-top: 22.32px;
+}
+
+#item5_img{
+    width: 119.42px;
+    height: 149.28px;
+    padding: 0px 24.93px;
+}
+
+#item5_offer{
+    color: #b3b3b3;
+    font-size: 12px;
+}
+
+.item-6 img{
+    width: 133.4px;
+    height: 149.28px;
+    padding: 0px 17.94px;
+}
+
+#item6_offer{
+    color: #b3b3b3;
+    font-size: 12px;
+}
+
+.item-7 img{
+    width: 130px;
+    height: 130px;
+    padding: 0px 21.14px;
+    margin-bottom: 19.28px;
+}
+
+#item8_img{
+    padding: 0px 21.14px;
+    margin-bottom: 19.28px;
+}
+
+#item8_offer{
+    color: #b3b3b3;
+    font-size: 12px;
+}
+
+.item-9 img{
+    width: 169.28px;
+    height: 93.28px;
+    padding: 28px 0px;
+}
+
+#item10_img{
+    padding: 0px 21.14px;
+    margin-bottom: 19.28px;
+}
+
+.item p{
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
+    font-size: 1.25vw;
+    padding: 16px;
+}
 /* Le Phan - 104212469 */
 /* buy page */
 

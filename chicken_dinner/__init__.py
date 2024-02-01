@@ -31,7 +31,7 @@ def create_app(test_config=None):
     from . import index
     app.register_blueprint(index.bp)
 
-    from . import wallet
-    app.register_blueprint(wallet.bp)
+    from . import profile
+    app.register_blueprint(profile.bp)
 
     return app
