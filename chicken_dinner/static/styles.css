@@ -586,7 +586,6 @@ footer > * {
     align-self: flex-start;
     width: 21vw;
     height: 50vw;
-    border-right: 0.1px solid #fff;
     box-sizing: border-box;
 }
 
@@ -809,7 +808,6 @@ input[type = "radio"] {
   input[type="radio"]:checked
   ~ .opt-val {
   top: -2.3vw;
-  /* left: 1.05vw; */
 }
 
 .option-items:nth-child(1) input[type="radio"]:checked ~ .label:before {
@@ -878,12 +876,13 @@ input[type = "radio"] {
 
 /* Market List */
 .market-list {
-    padding: 0 2vw;
+    padding: 0 2vw 3vw;
     flex: 3;
     display: grid;
     justify-content: space-evenly;
     justify-items: center;
     grid-template-columns: repeat(5, 1fr);
+    border-left: 0.1px solid #fff;
     row-gap: 3vw;
 }
 
@@ -902,26 +901,6 @@ input[type = "radio"] {
     margin: 1vw 2.5vw;
     border-radius: 1px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /*Profile CSS */
 .wallet {
