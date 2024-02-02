@@ -308,7 +308,7 @@ nav {
 /* creating tabs */
 
 .tabs{
-    padding: 16px;
+    padding: 14px 16px;
     display: flex;
     flex-wrap: wrap;
     max-width: max-content;
@@ -346,8 +346,7 @@ nav {
 }
 
 hr{
-    width: 98vw;
-    margin-top: 10px;
+    width: 100%;
     margin-bottom: 10px;
     border: 0;
     height: 1px;
@@ -358,12 +357,13 @@ hr{
 
 #collected_num{
     font-family: 'Rubik', sans-serif;
-    font-weight: 500;
-    font-size: 1.5vw;
-    padding: 0px 32px;
+    color: #b3b3b3;
+    font-size: 1.25vw;
+    padding: 10px 32px;
 }
 
 .collected_container{
+    width: 93vw;
     padding: 0px 32px;
     display: grid;
     grid-template-rows: repeat(2, 281.28px);
@@ -462,6 +462,65 @@ hr{
     font-weight: 500;
     font-size: 1.25vw;
     padding: 16px;
+}
+
+/* Offers Made tab */
+
+.content_bar{
+    display: grid;
+    padding: 0px 16px;
+    grid-template-columns: 260px repeat(4, 196.46px) 130px;
+    grid-template-rows: 52px;
+    align-items: center;
+}
+
+.content_bar p{
+    font-family: 'Rubik', sans-serif;
+    color: #b3b3b3;
+    font-size: 1.25vw;
+}
+
+.offers_container{
+    display: grid;
+    padding: 0px 16px;
+    grid-template-columns: 260px repeat(4, 196.46px) 130px;
+    grid-template-rows: 52px;
+}
+
+.offer1{
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 10px 0px;
+}
+
+.name img{
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+.price p{
+    margin-top: 10px;
+}
+
+.quantity p{
+    margin-top: 10px;
+}
+
+.total p{
+    margin-top: 10px;
+}
+
+.expiration p{
+    margin-top: 10px;
+}
+
+.created p{
+    margin-top: 10px;
+}
+
+#offer_badge{
+    padding: 0px 10px;
 }
 /* Le Phan - 104212469 */
 /* buy page */
