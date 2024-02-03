@@ -17,7 +17,6 @@
     padding: 0;
     margin: 0;
 }
-/* change all font colors except buttons to the main font color*/
 
 /* change all font colors except buttons to the main font color*/
 
@@ -232,9 +231,7 @@ nav {
     border-radius: var(--border-top);
 }
 
-<<<<<<< HEAD
 /* Doan Mai Ngoc Anh - 104220776 */
-=======
 /* Featured NFTs */
 
 .index-featured-NFTs {
@@ -417,7 +414,7 @@ nav {
     position: relative;
 } 
 
-.select-item.item-1 {
+.select-item.itemxx-1 {
     margin-right: 0.5vw;
     border-radius: 80px 0 0 80px;
     cursor: pointer;
@@ -972,7 +969,6 @@ input[type = "radio"] {
 
 }
 
-<<<<<<< HEAD
 .banner-cover {
     display: flex;
     flex-direction: column;
