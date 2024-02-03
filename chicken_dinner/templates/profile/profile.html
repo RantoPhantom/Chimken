@@ -1,0 +1,370 @@
+{% extends 'base.html' %}
+{% block title %}Profile{% endblock %}
+{% block content %}
+<section class = "Profile">
+    <div class = "banner">
+        <div class = "banner-cover">
+            <!-- <img src="../static/img/cover.jpeg"> -->
+            <div class = "ay"></div>
+            <span class="overlay">
+                <div class = "banner-infor">
+                    <div class="banner-infor avatar">
+                        <img src="../static/img/avatar.jpg" width="64" height="64">
+                    </div>
+
+                </div>
+            </span>
+            <div class = " usersocial">
+                <div class = "banner-infor username">
+                    <p id = "username"> Username 
+                        <img width="19.8" height="20.65" src="https://img.icons8.com/color/48/verified-badge.png" alt="verified-badge" id = "twitter"/>
+                    </p>
+                    <p id = "user_id"> 0xdC0b8cA898DB8D46A37517d70E63985ABA1FaF0B</p>
+                </div>
+                <div class = "banner-infor social">
+                    <p><img width="30" height="30" src="../static/img/twitter.png" alt="twitter--v1"/>
+                        <img width="30" height="30" src="../static/img/share.png" alt="share--v1"/>
+                        <img width="30" height="30" src="../static/img/threedots.png" alt="threedots" id = "threedots"/></p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="tabs">
+        <input type="radio" class="tabs-radio" name="profile-tabs" id="collected" checked>
+        <label for="collected" class="tabs-label">Collected</label>
+        <div class="tabs-content">
+
+            <p id="collected_num"> 10 items </p>
+            <div class="collected_container">
+                <div class="item item-1">
+                    <img src="../static/img/cute_alien.jpeg" alt="collection_1">
+                    <p id="item1_desc">Cute Alien CA07</p>
+                </div>
+                <div class="item item-2">
+                    <img src="../static/img/img1.jpg" alt="collection_2" id="item2_img">
+                    <p id="item2_desc">GraffiGi
+                        <img width="11.55" height="12.05" src="https://img.icons8.com/color/48/verified-badge.png" alt="verified-badge"/>
+                    </p>
+                </div>
+                <div class="item item-3">
+                    <img src="../static/img/img3.jpg" alt="collection_3">
+                    <p id="item3_desc">Room No#1</p>
+                </div>
+                <div class="item item-4">
+                    <img src="../static/img/img4.jpg" alt="collection_4">
+                    <p id="item4_desc">Social Vending Machine</p>
+                </div>
+                <div class="item item-5">
+                    <img src="../static/img/img5.jpg" alt="collection_5" id="item5_img">
+                    <p id="item5_desc">Playdoh Cake
+                        <img width="11.55" height="12.05" src="https://img.icons8.com/color/48/verified-badge.png" alt="verified-badge"/>
+                    </p>
+                </div>
+                <div class="item item-6">
+                    <img src="../static/img/img6.jpg" alt="collection_6">
+                    <p id="item6_desc">Pop PC</p>
+                </div>
+                <div class="item item-7">
+                    <img src="../static/img/img7.jpg" alt="collection_7">
+                    <p id="item7_desc">Space And Time</p>
+                </div>
+                <div class="item item-8">
+                    <img src="../static/img/3d_house.jpeg" alt="collection_8" id="item8_img">
+                    <p id="item8_desc">3D House
+                        <img width="11.55" height="12.05" src="https://img.icons8.com/color/48/verified-badge.png" alt="verified-badge"/>
+                    </p>
+                </div>
+                <div class="item item-9">
+                    <img src="../static/img/lizard_soldier.jpeg" alt="collection_9">
+                    <p id="item9_desc">Lizard Soldier</p>
+                </div>
+                <div class="item item-10">
+                    <img src="../static/img/monkeyy.jpeg" alt="collection_10" id="item10_img">
+                    <p id="item10_desc">Hugs From Monkey
+                        <img width="11.55" height="12.05" src="https://img.icons8.com/color/48/verified-badge.png" alt="verified-badge"/>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <input type="radio" class="tabs-radio" name="profile-tabs" id="offers" >
+        <label for="offers" class="tabs-label">Offers Made</label>
+        <div class="tabs-content">
+            <div class="content_bar">
+                <div class="cate offers_num">
+                    <p>16 offers</p>
+                </div>
+
+                <div class="cate price">
+                    <p>Price</p>
+                </div>
+
+                <div class="cate quantity">
+                    <p>Quantity</p>
+                </div>
+
+                <div class="cate total">
+                    <p>Total</p>
+                </div>
+
+                <div class="cate expiration">
+                    <p>Expiration</p>
+                </div>
+
+                <div class="cate created">
+                    <p>Data Created</p>
+                </div>
+            </div>
+
+            <div class="offers_container">
+                <div class="offer name">
+                    <hr> 
+                    <div class="offer1">
+                        <img width="34.4px" height="34.4px" src="../static/img/pixel_dragon.jpeg" alt="offer1 img">
+                        <p>Pixel Dragons Rangers Edition</p>
+                    </div>
+                    <div class="offer2">
+                        <img width="34.4px" height="34.4px" src="../static/img/unicorn.jpeg" alt="offer2 img">
+                        <p>Unicorn: Pixel</p>
+                        <img width="16.5" height="17.21" src="https://img.icons8.com/color/48/verified-badge.png" alt="verified-badge" id="offer_badge"/>
+                    </div>
+                    <div class="offer3">
+                        <img width="34.4px" height="34.4px" src="../static/img/deer.jpeg" alt="offer1 img">
+                        <p>Deer's Diner</p>
+                    </div>
+                    <div class="offer4">
+                        <img width="34.4px" height="34.4px" src="../static/img/whale.jpeg" alt="offer2 img">
+                        <p>Whale The Game</p>
+                        <img width="16.5" height="17.21" src="https://img.icons8.com/color/48/verified-badge.png" alt="verified-badge" id="offer_badge"/>
+                    </div>
+                    <div class="offer5">
+                        <img width="34.4px" height="34.4px" src="../static/img/raccoon.jpeg" alt="offer2 img">
+                        <p>Skateboarding Raccoon</p>
+                        <img width="16.5" height="17.21" src="https://img.icons8.com/color/48/verified-badge.png" alt="verified-badge" id="offer_badge"/>
+                    </div>
+                </div>
+
+                <div class="offer price">
+                    <hr>
+                    <div class="offer1">
+                        <p>0.0608 ETH</p>
+                    </div>
+                    <div class="offer2">
+                        <p>0.0501 ETH</p>
+                    </div>
+                    <div class="offer3">
+                        <p>0.0152 ETH</p>
+                    </div>
+                    <div class="offer4">
+                        <p>0.008 ETH</p>
+                    </div>
+                    <div class="offer5">
+                        <p>0.0502 ETH</p>
+                    </div>
+                </div>
+
+                <div class="offer quantity">
+                    <hr>
+                    <div class="offer1">
+                        <p>1</p>
+                    </div>
+                    <div class="offer2">
+                        <p>3</p>
+                    </div>
+                    <div class="offer3">
+                        <p>6</p>
+                    </div>
+                    <div class="offer4">
+                        <p>5</p>
+                    </div>
+                    <div class="offer5">
+                        <p>1</p>
+                    </div>
+                </div>
+
+                <div class="offer total">
+                    <hr>
+                    <div class="offer1">
+                        <p>0.0608 ETH</p>
+                    </div>
+                    <div class="offer2">
+                        <p>0.1503 ETH</p>
+                    </div>
+                    <div class="offer3">
+                        <p>0.0912 ETH</p>
+                    </div>
+                    <div class="offer4">
+                        <p>0.004 ETH</p>
+                    </div>
+                    <div class="offer5">
+                        <p>0.0502 ETH</p>
+                    </div>
+                </div>
+
+                <div class="offer expiration">
+                    <hr>
+                    <div class="offer1">
+                        <p>in 11 minutes</p>
+                    </div>
+                    <div class="offer2">
+                        <p>in 10 minutes</p>
+                    </div>
+                    <div class="offer3">
+                        <p>in 10 minutes</p>
+                    </div>
+                    <div class="offer4">
+                        <p>in 7 minutes</p>
+                    </div>
+                    <div class="offer5">
+                        <p>in 4 minutes</p>
+                    </div>
+                </div>
+
+                <div class="offer created">
+                    <hr>
+                    <div class="offer1">
+                        <p>9 minutes ago</p>
+                    </div>
+                    <div class="offer2">
+                        <p>33 minutes ago</p>
+                    </div>
+                    <div class="offer3">
+                        <p>34 minutes ago</p>
+                    </div>
+                    <div class="offer4">
+                        <p>38 minutes ago</p>
+                    </div>
+                    <div class="offer5">
+                        <p>39 minutes ago</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <input type="radio" class="tabs-radio" name="profile-tabs" id="deals" >
+        <label for="deals" class="tabs-label">Deals</label>
+        <div class="tabs-content dealstab">
+            <div class = "deals">
+                <div class = "deals-cover">
+                    <div class = "deals-cover-left">
+                        <div class = "dcover-image">
+                            <img src="../static/img/garan.jpeg" alt="2nduser_img">
+                        </div>
+                        <div class = "dcover-name">
+                            UserXyZ
+                        </div>
+                    </div>
+                    <div class = "deals-cover-right">
+                        <div class = "dcover-status">
+                            Status: Active 
+                            <i class="ri-circle-fill" style = "color: #6EC531; font-size: 1vw;"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class = "deals-content">
+                    <div class = "deals-content-left">
+                        <div class = "dcontent-items">
+                            <div class = "dcontent-items-img">
+                                <img src = "../static/img/img23.jpg">
+                            </div>
+                            <div class = "dcontent-items-info">
+                                <h1>
+                                    Boomm Cat
+                                </h1>
+                                <p>
+                                    @NyanNyan
+                                </p>
+                            </div>
+                        </div>
+                        <div class = "dcontent-items">
+                            <div class = "dcontent-items-img">
+                                <img src = "../static/img/img35.jpg">
+                            </div>
+                            <div class = "dcontent-items-info">
+                                <h1>
+                                    Ferris Cloud
+                                </h1>
+                                <p>
+                                    @Dreamland
+                                </p>
+                            </div>
+                        </div>
+                        <div class = "dcontent-items">
+                            <div class = "dcontent-items-img">
+                                <p>+ 2.3ETH <i class="ri-eth-line" style = "color: black;"></i></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div style = "padding-top: 3%">
+                        <div class = "dcontent-icon">
+                            <i class="ri-arrow-left-right-line dcontent-items" style = "font-size: 200%; margin: auto 1vw;"></i>
+                        </div>
+                        
+                    </div>
+                        
+                    <div class = "deals-content-right">
+                        <div class = "dcontent-items">
+                            <div class = "dcontent-items-img">
+                                <img src = "../static/img/img1.jpg">
+                            </div>
+                            <div class = "dcontent-items-info">
+                                <h1>
+                                    GraffiGi
+                                </h1>
+                                <p>
+                                    @Puppeter
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class = "deals-info">
+                    <div>
+                        <button>
+                            Decline
+                        </button>
+                        <button>
+                            Accept
+                        </button>
+                    </div>                   
+                </div>
+            </div>
+        </div>
+
+        <input type="radio" class="tabs-radio" name="profile-tabs" id="wallet" >
+        <label for="wallet" class="tabs-label">Wallet</label>
+        <div class="tabs-content">
+            <div id="wallet-main">
+                <div id="wallet-balance">
+                    <p>Estimated Balance:</p>
+                    <div>
+                        <i class="ri-eth-line"></i>
+                        <p>69 Balls</p>
+                    </div>
+                    <hr>
+                </div>
+                <div id="wallet-interact">
+                    <div id="withdraw">
+                        <p>Withdraw:</p>
+                        <div id="withdraw-amount">
+                            <i class="ri-eth-line"></i>
+                            <input type="number">
+                            <i class="ri-arrow-down-circle-line"></i>
+                        </div>
+                    </div>
+                    <div id="deposit">
+                        <p>Deposit:</p>
+                        <div id="deposit-amount">
+                            <i class="ri-eth-line"></i>
+                            <input type="number">
+                            <i class="ri-arrow-up-circle-line"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    {% endblock %}
