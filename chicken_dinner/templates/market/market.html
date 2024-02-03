@@ -1,0 +1,751 @@
+{% extends 'base.html' %}
+{% block title %}Marketplace{% endblock %}
+{% block content %}
+<section class = "market">
+    <h1 id = "market-title-1">Featured NFTs</h1>
+    <div class = "mfeatured-border-line">
+        <div class = "market-featured">
+            <div class = "mfeatured-items">
+                <img src = "../static/img/img2.jpg" style = "object-position: top;">
+                <div class = "mfeatured-info">
+                    <h1>
+                        Starry Girl
+                    </h1>
+                    <p>
+                        Price: 6.75 ETH
+                    </p>
+                </div>
+            </div>
+            <div class = "mfeatured-items" style = "object-position: top;">
+                <img src = "../static/img/img6.jpg" style = "object-position: top;">
+                <div class = "mfeatured-info">
+                    <h1>
+                        Pop PC
+                    </h1>
+                    <p>
+                        Price: 3.0 ETH
+                    </p>
+                </div>
+            </div>
+            <div class = "mfeatured-items">
+                <img src = "../static/img/img5.jpg" style = "object-position: center;">
+                <div class = "mfeatured-info">
+                    <h1>
+                        Playdoh Cake
+                    </h1>
+                    <p>
+                        Price: 0.13 ETH
+                    </p>
+                </div>
+            </div>
+            <div class = "mfeatured-items">
+                <img src = "../static/img/img9.jpg" style = "object-position: center;">
+                <div class = "mfeatured-info">
+                    <h1>
+                        Meow Meow
+                    </h1>
+                    <p>
+                        Price: 2.8 ETH
+                    </p>
+                </div>
+            </div>
+            <div class = "mfeatured-items">
+                <img src = "../static/img/img8.jpg" style = "object-position: top;">
+                <div class = "mfeatured-info">
+                    <h1>
+                        Papillon Blanc
+                    </h1>
+                    <p>
+                        Price: 7.8 ETH
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h1 id = "market-title-2">Explore</h1>
+    <div class = "market-main">
+        <div class = "market-filter">
+            <div class = "filter-items" style = "font-size: 1.4vw">
+                <i class = "ri-search-line"></i>
+                <input type = "text" placeholder = "Search...">
+            </div>
+            <div id = "special-item-1" class = "filter-items">
+                Filter
+            </div>
+            <div class = "filter-items input-price">
+                <p style = "font-size: 1.4vw;">Price</p>
+                <div style = "margin-top: 0.8vw;">
+                    <i class = "ri-eth-line"></i><input type = "text" placeholder = "Minimum">         
+                </div>
+                <div>
+                    <i class = "ri-eth-line"></i><input type = "text" placeholder = "Maximum">
+                </div>
+            </div>
+            <div class = "filter-items" style = "margin-top: 1.5vw;">
+                <p style = "font-size: 1.4vw;">Sort By:</p>
+
+                <div id = "market-select-box">
+                    <input type = "checkbox" id = "options-view-button">
+                    <div id = "select-button" class = "select-border">
+                        <div id = "selected-value">                
+                            <span>
+                                Default
+                            </span>
+                        </div>
+                        <div id = "arrow-down-button">
+                            <i class="ri-arrow-down-s-line"></i>
+                        </div>       
+                    </div>
+
+                    <div id = "option-list">
+                        <div class = "option-items">
+                            <input class = "radio-select" type = "radio" name = "platform" value = "price:lth">
+                            <span class = "label" >Price: High to Low</span>
+                            <span class = "opt-val">Price: High to Low</span>
+                        </div>
+
+                        <div class = "option-items">
+                            <input class = "radio-select" type = "radio" name = "platform" value = "price:lth">
+                            <span class = "label" >Price: Low to High</span>
+                            <span class = "opt-val">Price: Low to High</span>
+                        </div>
+
+                        <div class = "option-items">
+                            <input class = "radio-select" type = "radio" name = "platform" value = "price:lth">
+                            <span class = "label" >Date: Latest</span>
+                            <span class = "opt-val">Date: Latest</span>
+                        </div>
+                        <div id = "option-bg">
+                        
+                        </div>
+                    </div>  
+                </div>
+                
+            </div>
+        </div>
+        <div class = "market-list">
+            <!-- First Row -->
+            <div class = "featured-items market-NFT">
+                <div class = "featured-img">
+                    <img src = "../static/img/img8.jpg"/>
+                </div>
+                <div class = "featured-info">
+                    <h2>Papillon Blanc</h2>
+                    <a href = "">
+                        @Puppeter
+                    </a>
+                    <div class = "featured-price">
+                        <p style = "font-size: 92%;">Price:</p>
+                        <p style = "font-size: 84.6%">7.8ETH</p>
+                    </div>
+                    <div class = "featured-button">
+                        <button style = "margin-right: 1.5%;">
+                            Buy
+                        </button>
+                        <button style = "margin-left: 1.5%;">
+                            Trade
+                        </button>
+                    </div>           
+                </div>
+            </div>
+            <div class = "featured-items market-NFT" >
+                <div class = "featured-img">
+                    <img src = "../static/img/img20.jpg"/>
+                </div>
+                <div class = "featured-info">
+                    <h2>Sharky</h2>
+                    <a href = "">
+                        @Puppeter
+                    </a>
+                    <div class = "featured-price">
+                        <p style = "font-size: 92%;">Price:</p>
+                        <p style = "font-size: 84.6%">3.1ETH</p>
+                    </div>
+                    <div class = "featured-button">
+                        <button style = "margin-right: 1.5%;">
+                            Buy
+                        </button>
+                        <button style = "margin-left: 1.5%;">
+                            Trade
+                        </button>
+                    </div> 
+                </div>
+            </div>
+            <div class = "featured-items market-NFT">
+                <div class = "featured-img">
+                    <img src = "../static/img/img1.jpg"/>
+                </div>
+                <div class = "featured-info">
+                    <h2>GraffiGi</h2>
+                    <a href = "">
+                        @Puppeter
+                    </a>
+                    <div class = "featured-price">
+                        <p style = "font-size: 92%;">Price:</p>
+                        <p style = "font-size: 84.6%">5.0ETH</p>
+                    </div>
+                    <div class = "featured-button">
+                        <button style = "margin-right: 1.5%;">
+                            Buy
+                        </button>
+                        <button style = "margin-left: 1.5%;">
+                            Trade
+                        </button>
+                    </div> 
+                </div>
+            </div>
+            <div class = "featured-items market-NFT">
+                <div class = "featured-img">
+                    <img src = "../static/img/img2.jpg" style = "object-position: top"/>
+                </div>
+                <div class = "featured-info">
+                    <h2>Starry Girl</h2>
+                    <a href = "">
+                        @Puppeter
+                    </a>
+                    <div class = "featured-price">
+                        <p style = "font-size: 92%;">Price:</p>
+                        <p style = "font-size: 84.6%">6.75ETH</p>
+                    </div>
+                    <div class = "featured-button">
+                        <button style = "margin-right: 1.5%;">
+                            Buy
+                        </button>
+                        <button style = "margin-left: 1.5%;">
+                            Trade
+                        </button>
+                    </div> 
+                </div>
+            </div>
+            <div class = "featured-items market-NFT">
+                <div class = "featured-img">
+                    <img src = "../static/img/img21.jpg"/>
+                </div>
+                <div class = "featured-info">
+                    <h2>Neko</h2>
+                    <a href = "">
+                        @Puppeter
+                    </a>
+                    <div class = "featured-price">
+                        <p style = "font-size: 92%;">Price:</p>
+                        <p style = "font-size: 84.6%">1.3ETH</p>
+                    </div>
+                    <div class = "featured-button">
+                        <button style = "margin-right: 1.5%;">
+                            Buy
+                        </button>
+                        <button style = "margin-left: 1.5%;">
+                            Trade
+                        </button>
+                    </div> 
+                </div>
+            </div>
+
+            <!-- Second Row -->
+            <div class = "featured-items market-NFT">
+                <div class = "featured-img">
+                    <img src = "../static/img/img22.jpg"/>
+                </div>
+                <div class = "featured-info">
+                    <h2>Cigarette Cat</h2>
+                    <a href = "">
+                        @NyanNyan
+                    </a>
+                    <div class = "featured-price">
+                        <p style = "font-size: 92%;">Price:</p>
+                        <p style = "font-size: 84.6%">7.8ETH</p>
+                    </div>
+                    <div class = "featured-button">
+                        <button style = "margin-right: 1.5%;">
+                            Buy
+                        </button>
+                        <button style = "margin-left: 1.5%;">
+                            Trade
+                        </button>
+                    </div>           
+                </div>
+            </div>
+            <div class = "featured-items market-NFT" >
+                <div class = "featured-img">
+                    <img src = "../static/img/img23.jpg"/>
+                </div>
+                <div class = "featured-info">
+                    <h2>Boomm Cat</h2>
+                    <a href = "">
+                        @NyanNyan
+                    </a>
+                    <div class = "featured-price">
+                        <p style = "font-size: 92%;">Price:</p>
+                        <p style = "font-size: 84.6%">3.1ETH</p>
+                    </div>
+                    <div class = "featured-button">
+                        <button style = "margin-right: 1.5%;">
+                            Buy
+                        </button>
+                        <button style = "margin-left: 1.5%;">
+                            Trade
+                        </button>
+                    </div> 
+                </div>
+            </div>
+            <div class = "featured-items market-NFT">
+                <div class = "featured-img">
+                    <img src = "../static/img/img24.jpg"/>
+                </div>
+                <div class = "featured-info">
+                    <h2>Space Cat</h2>
+                    <a href = "">
+                        @NyanNyan
+                    </a>
+                    <div class = "featured-price">
+                        <p style = "font-size: 92%;">Price:</p>
+                        <p style = "font-size: 84.6%">5.0ETH</p>
+                    </div>
+                    <div class = "featured-button">
+                        <button style = "margin-right: 1.5%;">
+                            Buy
+                        </button>
+                        <button style = "margin-left: 1.5%;">
+                            Trade
+                        </button>
+                    </div> 
+                </div>
+            </div>
+            <div class = "featured-items market-NFT">
+                <div class = "featured-img">
+                    <img src = "../static/img/img9.jpg"/>
+                </div>
+                <div class = "featured-info">
+                    <h2>Duo Space Cat</h2>
+                    <a href = "">
+                        @NyanNyan
+                    </a>
+                    <div class = "featured-price">
+                        <p style = "font-size: 92%;">Price:</p>
+                        <p style = "font-size: 84.6%">2.8ETH</p>
+                    </div>
+                    <div class = "featured-button">
+                        <button style = "margin-right: 1.5%;">
+                            Buy
+                        </button>
+                        <button style = "margin-left: 1.5%;">
+                            Trade
+                        </button>
+                    </div> 
+                </div>
+            </div>
+            <div class = "featured-items market-NFT">
+                <div class = "featured-img">
+                    <img src = "../static/img/img25.jpg"/>
+                </div>
+                <div class = "featured-info">
+                    <h2>Piano Cat</h2>
+                    <a href = "">
+                        @NyanNyan
+                    </a>
+                    <div class = "featured-price">
+                        <p style = "font-size: 92%;">Price:</p>
+                        <p style = "font-size: 84.6%">1.3ETH</p>
+                    </div>
+                    <div class = "featured-button">
+                        <button style = "margin-right: 1.5%;">
+                            Buy
+                        </button>
+                        <button style = "margin-left: 1.5%;">
+                            Trade
+                        </button>
+                    </div> 
+                </div>
+            </div>
+
+            <!-- Third Row -->
+            <div class = "featured-items market-NFT">
+                <div class = "featured-img">
+                    <img src = "../static/img/img3.jpg"/>
+                </div>
+                <div class = "featured-info">
+                    <h2>Room No#1</h2>
+                    <a href = "">
+                        @Roomz
+                    </a>
+                    <div class = "featured-price">
+                        <p style = "font-size: 92%;">Price:</p>
+                        <p style = "font-size: 84.6%">7.8ETH</p>
+                    </div>
+                    <div class = "featured-button">
+                        <button style = "margin-right: 1.5%;">
+                            Buy
+                        </button>
+                        <button style = "margin-left: 1.5%;">
+                            Trade
+                        </button>
+                    </div>           
+                </div>
+            </div>
+            <div class = "featured-items market-NFT" >
+                <div class = "featured-img">
+                    <img src = "../static/img/img26.jpg"/>
+                </div>
+                <div class = "featured-info">
+                    <h2>Room No#2</h2>
+                    <a href = "">
+                        @Roomz
+                    </a>
+                    <div class = "featured-price">
+                        <p style = "font-size: 92%;">Price:</p>
+                        <p style = "font-size: 84.6%">3.1ETH</p>
+                    </div>
+                    <div class = "featured-button">
+                        <button style = "margin-right: 1.5%;">
+                            Buy
+                        </button>
+                        <button style = "margin-left: 1.5%;">
+                            Trade
+                        </button>
+                    </div> 
+                </div>
+            </div>
+            <div class = "featured-items market-NFT">
+                <div class = "featured-img">
+                    <img src = "../static/img/img10.jpg"/>
+                </div>
+                <div class = "featured-info">
+                    <h2>Room No#3</h2>
+                    <a href = "">
+                        @Roomz
+                    </a>
+                    <div class = "featured-price">
+                        <p style = "font-size: 92%;">Price:</p>
+                        <p style = "font-size: 84.6%">5.7ETH</p>
+                    </div>
+                    <div class = "featured-button">
+                        <button style = "margin-right: 1.5%;">
+                            Buy
+                        </button>
+                        <button style = "margin-left: 1.5%;">
+                            Trade
+                        </button>
+                    </div> 
+                </div>
+            </div>
+            <div class = "featured-items market-NFT">
+                <div class = "featured-img">
+                    <img src = "../static/img/img27.jpg" style = "object-position: top"/>
+                </div>
+                <div class = "featured-info">
+                    <h2>Room No#4</h2>
+                    <a href = "">
+                        @Roomz
+                    </a>
+                    <div class = "featured-price">
+                        <p style = "font-size: 92%;">Price:</p>
+                        <p style = "font-size: 84.6%">6.75ETH</p>
+                    </div>
+                    <div class = "featured-button">
+                        <button style = "margin-right: 1.5%;">
+                            Buy
+                        </button>
+                        <button style = "margin-left: 1.5%;">
+                            Trade
+                        </button>
+                    </div> 
+                </div>
+            </div>
+            <div class = "featured-items market-NFT">
+                <div class = "featured-img">
+                    <img src = "../static/img/img28.jpg"/>
+                </div>
+                <div class = "featured-info">
+                    <h2>Room No#5</h2>
+                    <a href = "">
+                        @Roomz
+                    </a>
+                    <div class = "featured-price">
+                        <p style = "font-size: 92%;">Price:</p>
+                        <p style = "font-size: 84.6%">1.3ETH</p>
+                    </div>
+                    <div class = "featured-button">
+                        <button style = "margin-right: 1.5%;">
+                            Buy
+                        </button>
+                        <button style = "margin-left: 1.5%;">
+                            Trade
+                        </button>
+                    </div> 
+                </div>
+            </div>
+
+            <!-- Fourth Row -->
+            <div class = "featured-items market-NFT">
+                <div class = "featured-img">
+                    <img src = "../static/img/img29.jpg"/>
+                </div>
+                <div class = "featured-info">
+                    <h2>Pippa Smilin'</h2>
+                    <a href = "">
+                        @PipkinPippa
+                    </a>
+                    <div class = "featured-price">
+                        <p style = "font-size: 92%;">Price:</p>
+                        <p style = "font-size: 84.6%">7.8ETH</p>
+                    </div>
+                    <div class = "featured-button">
+                        <button style = "margin-right: 1.5%;">
+                            Buy
+                        </button>
+                        <button style = "margin-left: 1.5%;">
+                            Trade
+                        </button>
+                    </div>           
+                </div>
+            </div>
+            <div class = "featured-items market-NFT" >
+                <div class = "featured-img">
+                    <img src = "../static/img/img30.jpg"/>
+                </div>
+                <div class = "featured-info">
+                    <h2>Pippa Smol 1</h2>
+                    <a href = "">
+                        @PipkinPippa
+                    </a>
+                    <div class = "featured-price">
+                        <p style = "font-size: 92%;">Price:</p>
+                        <p style = "font-size: 84.6%">3.1ETH</p>
+                    </div>
+                    <div class = "featured-button">
+                        <button style = "margin-right: 1.5%;">
+                            Buy
+                        </button>
+                        <button style = "margin-left: 1.5%;">
+                            Trade
+                        </button>
+                    </div> 
+                </div>
+            </div>
+            <div class = "featured-items market-NFT">
+                <div class = "featured-img">
+                    <img src = "../static/img/img31.jpg"/>
+                </div>
+                <div class = "featured-info">
+                    <h2>Pippa Smol 2</h2>
+                    <a href = "">
+                        @PipkinPippa
+                    </a>
+                    <div class = "featured-price">
+                        <p style = "font-size: 92%;">Price:</p>
+                        <p style = "font-size: 84.6%">5.0ETH</p>
+                    </div>
+                    <div class = "featured-button">
+                        <button style = "margin-right: 1.5%;">
+                            Buy
+                        </button>
+                        <button style = "margin-left: 1.5%;">
+                            Trade
+                        </button>
+                    </div> 
+                </div>
+            </div>
+            <div class = "featured-items market-NFT">
+                <div class = "featured-img">
+                    <img src = "../static/img/img32.jpg" style = "object-position: top"/>
+                </div>
+                <div class = "featured-info">
+                    <h2>Pippa Smug</h2>
+                    <a href = "">
+                        @PipkinPippa
+                    </a>
+                    <div class = "featured-price">
+                        <p style = "font-size: 92%;">Price:</p>
+                        <p style = "font-size: 84.6%">6.75ETH</p>
+                    </div>
+                    <div class = "featured-button">
+                        <button style = "margin-right: 1.5%;">
+                            Buy
+                        </button>
+                        <button style = "margin-left: 1.5%;">
+                            Trade
+                        </button>
+                    </div> 
+                </div>
+            </div>
+            <div class = "featured-items market-NFT">
+                <div class = "featured-img">
+                    <img src = "../static/img/img33.jpg"/>
+                </div>
+                <div class = "featured-info">
+                    <h2>Pippa ?</h2>
+                    <a href = "">
+                        @PipkinPippa
+                    </a>
+                    <div class = "featured-price">
+                        <p style = "font-size: 92%;">Price:</p>
+                        <p style = "font-size: 84.6%">1.3ETH</p>
+                    </div>
+                    <div class = "featured-button">
+                        <button style = "margin-right: 1.5%;">
+                            Buy
+                        </button>
+                        <button style = "margin-left: 1.5%;">
+                            Trade
+                        </button>
+                    </div> 
+                </div>
+            </div>
+
+            <!-- Fifth Row -->
+            <div class = "featured-items market-NFT">
+                <div class = "featured-img">
+                    <img src = "../static/img/img34.jpg"/>
+                </div>
+                <div class = "featured-info">
+                    <h2>CarSink</h2>
+                    <a href = "">
+                        @Dreamland
+                    </a>
+                    <div class = "featured-price">
+                        <p style = "font-size: 92%;">Price:</p>
+                        <p style = "font-size: 84.6%">7.8ETH</p>
+                    </div>
+                    <div class = "featured-button">
+                        <button style = "margin-right: 1.5%;">
+                            Buy
+                        </button>
+                        <button style = "margin-left: 1.5%;">
+                            Trade
+                        </button>
+                    </div>           
+                </div>
+            </div>
+            <div class = "featured-items market-NFT" >
+                <div class = "featured-img">
+                    <img src = "../static/img/img35.jpg"/>
+                </div>
+                <div class = "featured-info">
+                    <h2>Ferris Cloud</h2>
+                    <a href = "">
+                        @Dreamland
+                    </a>
+                    <div class = "featured-price">
+                        <p style = "font-size: 92%;">Price:</p>
+                        <p style = "font-size: 84.6%">3.1ETH</p>
+                    </div>
+                    <div class = "featured-button">
+                        <button style = "margin-right: 1.5%;">
+                            Buy
+                        </button>
+                        <button style = "margin-left: 1.5%;">
+                            Trade
+                        </button>
+                    </div> 
+                </div>
+            </div>
+            <div class = "featured-items market-NFT">
+                <div class = "featured-img">
+                    <img src = "../static/img/img12.jpg"/>
+                </div>
+                <div class = "featured-info">
+                    <h2>Spring Station</h2>
+                    <a href = "">
+                        @Dreamland
+                    </a>
+                    <div class = "featured-price">
+                        <p style = "font-size: 92%;">Price:</p>
+                        <p style = "font-size: 84.6%">1.3ETH</p>
+                    </div>
+                    <div class = "featured-button">
+                        <button style = "margin-right: 1.5%;">
+                            Buy
+                        </button>
+                        <button style = "margin-left: 1.5%;">
+                            Trade
+                        </button>
+                    </div> 
+                </div>
+            </div>
+            <div class = "featured-items market-NFT">
+                <div class = "featured-img">
+                    <img src = "../static/img/img37.jpg" style = "object-position: top"/>
+                </div>
+                <div class = "featured-info">
+                    <h2>Cloud Garden</h2>
+                    <a href = "">
+                        @Dreamland
+                    </a>
+                    <div class = "featured-price">
+                        <p style = "font-size: 92%;">Price:</p>
+                        <p style = "font-size: 84.6%">6.75ETH</p>
+                    </div>
+                    <div class = "featured-button">
+                        <button style = "margin-right: 1.5%;">
+                            Buy
+                        </button>
+                        <button style = "margin-left: 1.5%;">
+                            Trade
+                        </button>
+                    </div> 
+                </div>
+            </div>
+            <div class = "featured-items market-NFT">
+                <div class = "featured-img">
+                    <img src = "../static/img/img36.jpg"/>
+                </div>
+                <div class = "featured-info">
+                    <h2>Train</h2>
+                    <a href = "">
+                        @Dreamland
+                    </a>
+                    <div class = "featured-price">
+                        <p style = "font-size: 92%;">Price:</p>
+                        <p style = "font-size: 84.6%">1.3ETH</p>
+                    </div>
+                    <div class = "featured-button">
+                        <button style = "margin-right: 1.5%;">
+                            Buy
+                        </button>
+                        <button style = "margin-left: 1.5%;">
+                            Trade
+                        </button>
+                    </div> 
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <footer>
+        <div class = "footer-list footer-left">
+            <div class = "footer-left left-1">
+                <a href = "" class = "footer-items" style = "font-size: 1.7vw">
+                    <i class="ri-bluesky-line"></i> ChimkenDinner
+                </a>
+                <a href= "" class = "footer-icon">
+                    <i class="ri-facebook-circle-line"></i>
+                </a>
+                <a href= "" class = "footer-icon">
+                    <i class="ri-twitter-line"></i>
+                </a>
+                <a href= "" class = "footer-icon">
+                    <i class="ri-discord-line"></i>
+                </a>
+                <a href= "" class = "footer-icon">
+                    <i class="ri-telegram-line"></i>
+                </a>
+                
+            </div>
+            <div class = "footer-left left-2">               
+                <p>Copyright <i class="ri-copyright-line"></i> 2024 ChimkenDinner.com. All rights reserved.</p>
+            </div>
+        </div>
+        <div class = "footer-list footer-right">
+            <a href = "">
+                About Us
+            </a>
+            <a href = "">
+                Help Center
+            </a>
+            <a href = "">
+                Policy
+            </a>
+        </div>
+    </footer>
+</section>
+{% endblock %}

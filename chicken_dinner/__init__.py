@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask, render_template
+from flask import Flask
 
 
 def create_app(test_config=None):
@@ -27,6 +27,9 @@ def create_app(test_config=None):
 
     from . import buy
     app.register_blueprint(buy.bp)
+
+    from . import market
+    app.register_blueprint(market.bp)
 
     from . import index
     app.register_blueprint(index.bp)
