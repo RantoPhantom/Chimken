@@ -5,6 +5,7 @@
 :root {
     --dark-1: #1a1625;
     --dark-2: #282828;
+    --mix-2: #363945;
     --header-height: 9vh;
     --main-font-color: #e9f8f9;
     --border-top: 10px 10px 0 0;
@@ -311,7 +312,6 @@ nav {
     padding: 14px 16px;
     display: flex;
     flex-wrap: wrap;
-    max-width: max-content;
     font-family: 'Rubik', sans-serif;
 }
 
@@ -328,7 +328,6 @@ nav {
     order: 1;
     width: 100%;
     line-height: 1.5;
-    font-size: 0.9vw;
     display: none;
 }
 
@@ -494,6 +493,34 @@ hr{
     padding: 10px 0px;
 }
 
+.offer2{
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 10px 0px;
+}
+
+.offer3{
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 10px 0px;
+}
+
+.offer4{
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 10px 0px;
+}
+
+.offer5{
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 10px 0px;
+}
+
 .name img{
     border-radius: 10px;
     margin-right: 10px;
@@ -522,6 +549,114 @@ hr{
 #offer_badge{
     padding: 0px 10px;
 }
+
+/* Deals tab */
+
+.tabs-content.dealstab{
+    padding: 2vw;
+}
+
+.deals {
+    width: 100%;
+    height: 50vw;
+    background-color: #272829;
+    border-radius: 20px;
+}
+
+
+
+/* .deals{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: #272829;
+    border-radius: 20px;
+}
+
+.deals_cover{
+    width: 100%;
+    padding: 1vw;
+    text-align: center;
+}
+
+.deals_cover > *{
+    margin: 0.75vw 0;
+}
+
+.deals_cover button{
+    padding: 1vw;
+    border-radius: 25px;
+    font-size: 1vw;
+    font-weight: 500;
+    font-family: 'Rubik', sans-serif;
+    color: #282828;
+}
+
+.deals_cover p{
+    font-family: 'Rubik', sans-serif;
+}
+
+.deals_cover div{
+    max-width: 5%;
+    max-height: 5%;
+    overflow: hidden;
+    margin: 1vw auto;
+}
+
+.deals_cover div img{
+    border-radius: 100px;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.deals_contain{
+    display: flex;
+}
+
+.deals_left{
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    background-color: #61677A;
+    width: 100%;
+    padding: 1vw;
+}
+
+.left_avatar{
+    flex: 1;
+
+    background-color: green;
+    overflow: hidden;
+    margin: 1vw auto;
+}
+
+.left-avatar div {
+    flex: 1;
+}
+
+.left-avatar div {
+
+}
+
+.left_avatar img{
+    flex: 3;
+    border-radius: 100px;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.deals_contain i{
+    flex: 0;
+}
+
+.deals_right{
+    flex: 2;
+    background-color: #61677A;
+} */
+
+
 /* Le Phan - 104212469 */
 /* buy page */
 
