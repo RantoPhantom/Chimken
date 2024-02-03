@@ -356,6 +356,7 @@ nav {
 .featured-items.creator {
     height: 20vw;
     box-shadow: 0 0 15px 1px #ffffff;
+    cursor: pointer;
 }
 
 .featured-img.creator {
@@ -411,12 +412,14 @@ nav {
 .select-item.item-1 {
     margin-right: 0.5vw;
     border-radius: 80px 0 0 80px;
+    cursor: pointer;
 }
 
 .select-item.item-2 {
     background-color: green;
     margin-left: 0.5vw;
     border-radius: 0 80px 80px 0;
+    cursor: pointer;
 }
 
 .select-item img {
