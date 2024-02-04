@@ -6,7 +6,7 @@ item = {
     'id': 0,
     'name': 'PipPog',
     'price': '69.420',
-    'currency': 'Balls',
+    'currency': 'ETH',
     'author': 'Pippa'
 }
 
@@ -25,10 +25,10 @@ def get_listing_data():
     listing_data = []
 
     lol = {
-        'unit_price': '100 BALLS',
-        'quantity': 12,
+        'unit_price': '69.420 ETH',
+        'quantity': 1,
         'expiration': '29 years',
-        'from': 'me'
+        'from': 'Username'
     }
 
     listing_data.append(lol)
