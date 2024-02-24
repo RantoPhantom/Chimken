@@ -1,0 +1,138 @@
+/* Le Nguyen Quoc An - 104187156 */
+/* Index - CSS */
+.index {
+    padding-top: var(--header-height);
+}
+
+/* Welcome Banner */
+.index-banner {
+    display: flex;
+    height: 40vw;
+    background-color: #142546;
+}
+
+.banner-items>* {
+    color: var(--main-font-color)
+}
+
+/* Welcome Message */
+.banner-intro {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    padding: 5% 5%;
+}
+
+.banner-intro >* {
+    font-family: var(--main-font);
+}
+
+.banner-intro button {
+    font-weight: 500;
+    font-size: 1.5vw;
+    width: 10vw;
+    padding: 10px;
+    color: var(--dark-1);
+    margin-top: 3vw;
+    border-radius: 30px;
+    background: linear-gradient(149deg, rgba(253,253,255,1) 0%, rgba(1,203,240,1) 75%, rgba(229,239,242,1) 100%);
+    border: none;   
+}
+
+.banner-intro button:focus {
+    border: none;
+    outline: none;
+}
+
+#intro-text h1 {
+    font-size: 4.5vw; 
+    font-weight: 800;
+    background: 
+    -webkit-linear-gradient(149deg, rgba(253,253,255,1) 0%, rgba(1,203,240,1) 75%, rgba(229,239,242,1) 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#text-p1 {
+    font-family: var(--main-font);
+    font-weight: 500;
+    font-size: 2.15vw;  
+}
+
+#text-p1::after {
+    content: '';
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(149deg, rgba(253,253,255,1) 0%, rgba(1,203,240,1) 75%, rgba(229,239,242,1) 100%);
+    display: block;
+    margin-top: 1vw;
+    border-radius: 1px;
+}
+
+#text-p2 {
+    margin-top: 3vw;
+    font-size: 1.4vw;
+}
+
+/* Banner Image */
+.banner-img {
+    margin-right: 10px;
+    flex: 1.5;
+    display: flex;
+    min-height: 618px;
+}
+
+.banner-img .img-items{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.img-items > div {
+    margin: 10px 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px 1px #01D9FF;
+}
+
+.img-items div img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+#img-item-1 {
+    flex: 1;
+    margin-top: 0;
+    border-radius: var(--border-bottom);
+}
+
+#img-item-2 {
+    flex: 2;
+    margin-bottom: 0;
+    border-radius: var(--border-top);
+}
+
+#img-item-3 {
+    flex: 2;
+    margin-top: 0;
+    border-radius: var(--border-bottom);
+}
+
+#img-item-4 {
+    flex: 1;
+    margin-bottom: 0;
+    border-radius: var(--border-top);
+}
+
+#img-item-5 {
+    flex: 0.5;
+    margin-top: 0;
+    border-radius: var(--border-bottom);
+}
+
+#img-item-6 {
+    flex: 2;
+    margin-bottom: 0;
+    border-radius: var(--border-top);
+}
+
