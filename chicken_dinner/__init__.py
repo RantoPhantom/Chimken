@@ -37,4 +37,7 @@ def create_app(test_config=None):
     from . import profile
     app.register_blueprint(profile.bp)
 
+    from . import create
+    app.register_blueprint(create.bp)
+
     return app
