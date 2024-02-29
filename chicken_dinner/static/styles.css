@@ -1,0 +1,1745 @@
+/* Le Nguyen Quoc An - 104187156 */
+/* Header - CSS */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;800&display=swap');
+
+:root {
+    --dark-1: #0B1426;
+    --dark-2: #282828;
+    --mix-2: #363945;
+    --header-height: 4.5vw;
+    --main-font-color: #e9f8f9;
+    --border-top: 10px 10px 0 0;
+    --border-bottom: 0 0 10px 10px;
+    --main-font: 'Rubik', sans-serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+/* change all font colors except buttons to the main font color*/
+
+*:not(button) {
+    color: var(--main-font-color);
+}
+
+*{
+    font-family: 'Rubik', sans-serif;
+}
+
+html {
+    background-color: var(--dark-1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row nowrap;
+    height: var(--header-height);
+    width: 100vw;
+    background-color: var(--dark-2);
+    position: fixed;
+    z-index: 10;
+    box-shadow: 0 3px 15px 0 #121212;
+}
+
+.nav-list {
+    display: flex;
+    justify-content: stretch;
+    margin: auto 0.9vw;
+}
+
+.nav-list a {
+    text-decoration: none;
+}
+
+.nav-items {
+    display: inline-block;
+    list-style: none;
+    font-size: 1.2vw;
+    font-family: var(--main-font);
+    font-weight: 500;
+    margin: auto 1vw;;  
+    color: var(--main-font-color);
+}
+
+.nav-items:first-child {
+    padding-right: 16px;
+    margin-right: 0;
+    border-right: 1.5px solid var(--main-font-color);
+}
+
+.nav-left .nav-items:nth-child(2) {
+    margin-left: 1.7vw;
+}
+
+.nav-right .nav-items:nth-child(2) {
+    margin-right: 0;
+}
+
+.text-link::after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background-color: var(--main-font-color);
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.text-link:hover::after {
+    width: 100%;
+}
+
+/* end Header*/
+
+/* Index - CSS */
+.index {
+    padding-top: var(--header-height);
+}
+
+/* Welcome Banner */
+.index-banner {
+    display: flex;
+    height: 40vw;
+    background-color: #142546;
+}
+
+.banner-items>* {
+    color: var(--main-font-color)
+}
+
+/* Welcome Message */
+.banner-intro {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    padding: 5% 5%;
+}
+
+.banner-intro >* {
+    font-family: var(--main-font);
+}
+
+.banner-intro button {
+    font-weight: 500;
+    font-size: 1.5vw;
+    width: 10vw;
+    padding: 10px;
+    color: var(--dark-1);
+    margin-top: 3vw;
+    border-radius: 30px;
+    background: linear-gradient(149deg, rgba(253,253,255,1) 0%, rgba(1,203,240,1) 75%, rgba(229,239,242,1) 100%);
+    border: none;   
+}
+
+.banner-intro button:focus {
+    border: none;
+    outline: none;
+}
+
+#intro-text h1 {
+    font-size: 4.5vw; 
+    font-weight: 800;
+    background: 
+    -webkit-linear-gradient(149deg, rgba(253,253,255,1) 0%, rgba(1,203,240,1) 75%, rgba(229,239,242,1) 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#text-p1 {
+    font-family: var(--main-font);
+    font-weight: 500;
+    font-size: 2.15vw;  
+}
+
+#text-p1::after {
+    content: '';
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(149deg, rgba(253,253,255,1) 0%, rgba(1,203,240,1) 75%, rgba(229,239,242,1) 100%);
+    display: block;
+    margin-top: 1vw;
+    border-radius: 1px;
+}
+
+#text-p2 {
+    margin-top: 3vw;
+    font-size: 1.4vw;
+}
+
+/* Banner Image */
+.banner-img {
+    margin-right: 10px;
+    flex: 1.5;
+    display: flex;
+    min-height: 618px;
+}
+
+.banner-img .img-items{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.img-items > div {
+    margin: 10px 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px 1px #01D9FF;
+}
+
+.img-items div img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+#img-item-1 {
+    flex: 1;
+    margin-top: 0;
+    border-radius: var(--border-bottom);
+}
+
+#img-item-2 {
+    flex: 2;
+    margin-bottom: 0;
+    border-radius: var(--border-top);
+}
+
+#img-item-3 {
+    flex: 2;
+    margin-top: 0;
+    border-radius: var(--border-bottom);
+}
+
+#img-item-4 {
+    flex: 1;
+    margin-bottom: 0;
+    border-radius: var(--border-top);
+}
+
+#img-item-5 {
+    flex: 0.5;
+    margin-top: 0;
+    border-radius: var(--border-bottom);
+}
+
+#img-item-6 {
+    flex: 2;
+    margin-bottom: 0;
+    border-radius: var(--border-top);
+}
+
+/* Doan Mai Ngoc Anh - 104220776 */
+/* Featured NFTs */
+
+.index-featured-NFTs {
+    height: 122vw;
+    background-color: #0B1426;
+    position: relative;
+    box-shadow: 1px 0 15px 0 #121212;
+    text-align: center;
+}
+
+.index-featured-NFTs h1 {
+    display: inline-block;
+    font-family: var(--main-font);
+    font-weight: 500;
+    font-size: 3.5vw;
+    margin-top: 6vw;
+}
+
+.index-featured-NFTs h1::after {
+    content: '';
+    width: 50%;
+    height: 4px;
+    background: linear-gradient(149deg, rgba(253,253,255,1) 0%, rgba(1,203,240,1) 75%, rgba(229,239,242,1) 100%);
+    display: block;
+    margin-top: 0.5vw;
+    margin-left: 50%;
+    border-radius: 1px;
+}
+
+.featured-NFTs {
+    margin-top: 4vw;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.featured-items {
+    display: flex;
+    flex-direction: column;
+    width: 15vw;
+    height: 27vw;
+    background-color: var(--mix-2);
+    border-radius: 20px;
+    font-size: 1.3vw;
+}
+
+.featured-img {
+    flex: 2;
+    border-radius: 20px;
+    margin: 7%;
+    overflow: hidden;
+    box-shadow: 0 0 15px 1px #ffffff;
+}
+
+.featured-img img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+} 
+
+.featured-info {
+    flex: 1.5;
+    text-align: left;
+}
+
+.featured-info > *{
+    font-family: var(--main-font);
+    font-weight: 500;
+    align-items: left;
+    box-sizing: border-box;
+    padding: 0 7%;
+}
+
+.featured-info h2 {
+    font-size: 100%;
+}
+
+.featured-info a {
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 80.7%;
+}
+
+.featured-price {
+    margin-top: 10%;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 400;
+}
+
+.featured-button {
+    display: flex;
+    justify-content: center;
+    height: 25%;
+    margin-top: 7%;
+}
+
+.featured-button button {
+    flex: 1;
+    border-radius: 10px;
+    border: none;
+    background-color: #2E8DEE;
+    color: 	white;
+    font-family: var(--main-font);
+    font-size: 100%;
+    font-weight: 500;
+    cursor: pointer;
+    
+}
+
+.featured-button button:hover {
+    background-color: #106ac5; 
+    transition: .3s ease all;
+}
+
+.featured-button button:focus {
+    border: none;
+    outline: none;
+}
+
+/* Featured Creators */
+
+.index-featured-NFTs #featured-title-2::after {
+    margin-left: 0;;
+    width: 30%;
+}
+
+.featured-items.creator {
+    height: 20vw;
+    box-shadow: 0 0 15px 1px #ffffff;
+    cursor: pointer;
+}
+
+.featured-img.creator {
+    flex: 2.5;
+    margin: 0;
+    box-shadow: none;
+    border-radius: 20px 20px 0 0;
+}
+
+.featured-info.creator {
+    flex: 0.85;
+    margin-top: 5%;    
+}
+
+.featured-info.creator h2 {
+    display: flex;
+    justify-content: stretch;
+    align-items: center;
+    font-size: 1.4vw;
+}
+
+.featured-info.creator h2 img {
+    height: 2vw;
+    width: 2vw;
+    margin-right: 0.5vw;
+}
+
+.featured-info.creator p {
+    font-weight: 400; 
+    margin-top: 0.5vw; 
+    font-size: 1.1vw;
+}
+
+/* New Here */
+
+.index-featured-NFTs #featured-title-3::after {
+    margin: 0;
+    width: 100%;
+}
+
+.index-select {
+    height: 15vw;
+    margin: 4vw 5vw;
+    display: flex;
+}
+
+.index-select .select-item {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+} 
+
+.select-item.itemxx-1 {
+    margin-right: 0.5vw;
+    border-radius: 80px 0 0 80px;
+    cursor: pointer;
+}
+
+.select-item.item-2 {
+    background-color: green;
+    margin-left: 0.5vw;
+    border-radius: 0 80px 80px 0;
+    cursor: pointer;
+}
+
+.select-item img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    filter: brightness(70%)
+}
+
+.select-item img:hover {
+    filter: brightness(100%);
+    transition: .3s ease;
+}
+
+.select-item p {
+    pointer-events: none;
+    text-decoration: none;
+    position: absolute;
+    top: 38%;
+    color: var(--main-font-color);
+    font-family: var(--main-font);
+    font-weight: 500;
+    font-size: 3vw;
+}
+
+/* End Index */
+
+/* Footer */
+
+footer {
+    padding: 1.5vw 1.2vw;
+    height: 3vw;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    background-color: var(--dark-2);
+    position: relative;
+}
+
+footer > * {
+    font-family: var(--main-font);
+    font-weight: 500;
+}
+
+.footer-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-left.left-1 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.footer-icon {
+    font-size: 1.8vw;
+    margin-left: 1vw;
+    margin-top: -0.1vw;
+}
+
+.footer-left.left-2 p {
+    margin-top: 0.5vw;
+    font-weight: 400;
+    font-size: 0.8vw;
+}
+
+.footer-left a { 
+    text-decoration: none;
+}
+
+.footer-right a {
+    text-decoration: none;
+}
+
+.footer-right {
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.footer-right a {
+    font-weight: 400;
+    font-size: 1.2vw;
+    margin: 0 1vw;
+}
+
+/* End Footer */
+
+
+/* Market */
+
+/* Featured NFTs - Market */
+
+.market {
+    padding-top: var(--header-height);
+}
+
+.market > * {
+    font-family: var(--main-font);
+    color: var(--main-font-color)
+}
+
+#market-title-1 {
+    margin: 2.5vw 2.5vw 0;
+    font-weight: 500;  
+    font-size: 1.6vw;
+}
+
+.market-featured {
+    height: 20vw;
+    margin: 1.5vw 2.5vw;
+    display: flex;
+    justify-content: space-between; 
+}
+
+.mfeatured-items {
+    position: relative;
+    background-color: red;
+    width: 17vw;
+    height: 17vw;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 5px 0px #ffffff;
+}
+
+.mfeatured-items:hover {
+    box-shadow: 0 0 20px 1px #ffffff;
+}
+.mfeatured-items img {
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.mfeatured-info {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 35%;
+    background: linear-gradient(180deg, rgba(250,250,250,0) 0%, rgba(0,0,0,1) 80%);
+}
+
+.mfeatured-info h1 {
+    font-weight: 500;
+    font-size: 1.35vw;
+    margin: 2vw 1.1vw 0;
+    pointer-events: none;
+}
+
+.mfeatured-info p {
+    font-weight: 400;
+    font-size: 1vw;
+    margin: 0.3vw 1vw 0;
+    pointer-events: none;
+}
+
+#market-title-2 {
+    margin: 2.5vw 2.5vw 0;
+    font-weight: 500;  
+    font-size: 1.6vw;
+}
+
+.market-main {
+    margin-top: 2vw;
+    display: flex;
+}
+
+.market-filter {
+    padding: 2vw 0 0 2.5vw;
+    position: sticky;
+    top: var(--header-height);
+    align-self: flex-start;
+    width: 21vw;
+    height: 50vw;
+    box-sizing: border-box;
+}
+
+.filter-items {
+    margin-right: 1.5vw;
+}
+
+.filter-items > *{
+    font-weight: 400;
+}
+
+.filter-items input {
+    margin-left: 0.3vw;
+    font-size: 1.2vw;
+    padding: 0.5vw;
+    border-radius: 10px;
+    width: 75%;
+    background-color: var(--mix-2);
+    color: var(--main-font-color);
+}
+
+.filter-items::after {
+    content: '';
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(149deg, rgba(253,253,255,1) 0%, rgba(1,203,240,1) 75%, rgba(229,239,242,1) 100%);
+    display: block;
+    margin-top: 1.7vw;
+    border-radius: 1px;
+}
+
+#special-item-1 {
+    width: 92%;
+    font-weight: 500;
+    font-size: 1.6vw;
+    margin: 1vw 0;
+}
+
+#special-item-1::after {
+    margin-top: 1vw;
+}
+
+.filter-items.input-price {
+    margin-top: 1.5vw;
+    font-size: 1.2vw;
+}
+
+.filter-items.input-price div {
+    padding: 0.5vw;
+    font-size: 1.2vw;   
+}
+
+.filter-items.input-price div input {
+    padding: 0.5vw;
+    font-size: 1.2vw;   
+    width: 78%;
+}
+
+/* Filter Box */
+
+#market-select-box {
+    margin-top: 1.5vw;
+    position: relative;
+}
+
+#market-select-box > * {
+    user-select: none;
+}
+
+#market-select-box > *:focus {
+    outline: none;
+}
+
+.select-border {
+    border-bottom: 1px solid #656961;
+    border-right: 1px solid #656961;
+    box-sizing: border-box;
+}
+
+#market-select-box {
+    position: relative;
+    width: 100%;
+    height: 2.8vw;
+    z-index: 1;
+}
+
+#options-view-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 3;
+}
+
+#select-button {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    padding: 0.7vw 1vw;
+    background-color: var(--mix-2);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#selected-value {
+    font-size: 1.2vw;
+    line-height: 1;
+    margin-right: 4vw;
+}
+
+#arrow-down-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 3vw;
+}
+
+#arrow-down-button i {
+    display: block;
+    height: 50%;
+    color: var(--main-font-color);
+    font-size: 1.9vw;
+    text-align: center;
+    margin: calc(0.2vw + 1px) 0.6vw 0 0;
+}
+
+#options-view-button:checked + #select-button #arrow-down-button i {
+    color: var(--dark-1);
+}
+
+#option-list {
+    position: relative;
+    width: 100%;
+    /* height: 100%; */
+    margin: 0.2vw auto;
+    background-color: var(--mix-2);
+    border-radius: 4px;
+}
+
+.option-items, .label {
+    color: var(--main-font-color);
+    font-size: 1.2vw;
+}
+
+#options-view-button:checked ~ #option-list {
+    border-bottom: 1px solid #656961;
+    border-right: 1px solid #656961;
+    box-sizing: border-box;
+}
+
+.option-items {
+    position: relative;
+    line-height: 1;
+    transition: 0.3 ease all;
+    z-index: 2;
+}
+
+.label {
+    display: none;
+    padding: 0;
+    margin-left: 1vw;
+    transition: 0.3s ease all;
+}
+
+#options-view-button:checked ~ #option-list .label {
+    display: block;
+    padding: 0.8vw 0;
+}
+
+input[type = "radio"] {
+    position: absolute;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.opt-val {
+    position: absolute;
+    left: 1vw;
+    width: 70%;
+    align-items: center;
+    opacity: 0;
+    background-color: var(--mix-2);
+    transform: scale(0);
+}
+
+.option-items input[type="radio"]:checked ~ .opt-val {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.option-items input[type = "radio"]:checked ~ .label {
+    color: var(--dark-1);
+}
+
+.option-items input[type="radio"]:checked ~ .label:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+#options-view-button:not(:checked)
+  ~ #option-list
+  .option-items
+  input[type="radio"]:checked
+  ~ .opt-val {
+  top: -2.3vw;
+}
+
+.option-items:nth-child(1) input[type="radio"]:checked ~ .label:before {
+    background: linear-gradient(149deg, rgba(253,253,255,1) 0%, rgba(1,203,240,1) 75%, rgba(229,239,242,1) 100%);
+    border-radius: 4px 4px 0 0;
+}
+
+.option-items:nth-child(1) input[type="radio"]:checked ~ .opt-val {
+    top: -2.3vw;
+}
+
+.option-items:nth-child(2) input[type="radio"]:checked ~ .label:before {
+    background: linear-gradient(149deg, rgba(253,253,255,1) 0%, rgba(1,203,240,1) 75%, rgba(229,239,242,1) 100%);
+}
+  
+.option-items:nth-child(2) input[type="radio"]:checked ~ .opt-val {
+    top: -5.1vw;
+}
+  
+.option-items:nth-child(3) input[type="radio"]:checked ~ .label:before {
+    background: linear-gradient(149deg, rgba(253,253,255,1) 0%, rgba(1,203,240,1) 75%, rgba(229,239,242,1) 100%);
+    border-radius: 0 0 4px 4px;
+}
+  
+.option-items:nth-child(3) input[type="radio"]:checked ~ .opt-val {
+    top: -7.9vw;
+}
+
+#option-bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 2.8vw;
+    transition: 0.3s ease all;
+    z-index: 1;
+    display: none;
+}
+
+#options-view-button:checked ~ #option-list #option-bg {
+    display: block;
+}
+
+.option-items:hover .label {
+    color: var(--dark-1);
+}
+
+.option-items:nth-child(1):hover ~ #option-bg {
+    top: 0;
+    background: linear-gradient(149deg, rgba(253,253,255,1) 0%, rgba(1,203,240,1) 75%, rgba(229,239,242,1) 100%);
+    border-radius: 4px 4px 0 0;
+} 
+
+.option-items:nth-child(2):hover ~ #option-bg {
+    top: 2.8vw;
+    background: linear-gradient(149deg, rgba(253,253,255,1) 0%, rgba(1,203,240,1) 75%, rgba(229,239,242,1) 100%);
+}
+  
+.option-items:nth-child(3):hover ~ #option-bg {
+    top: 5.6vw;
+    background: linear-gradient(149deg, rgba(253,253,255,1) 0%, rgba(1,203,240,1) 75%, rgba(229,239,242,1) 100%);
+    border-radius: 0 0 4px 4px;
+}
+
+
+
+/* Market List */
+.market-list {
+    padding: 0 2vw 3vw;
+    flex: 3;
+    display: grid;
+    justify-content: space-evenly;
+    justify-items: center;
+    grid-template-columns: repeat(5, 1fr);
+    border-left: 0.1px solid #fff;
+    row-gap: 3vw;
+}
+
+.featured-items.market-NFT {
+    width: 13vw;
+    height: 25vw;
+    font-size: 1.1vw;
+}
+
+.mfeatured-border-line::after {
+    content: '';
+    width: 95%;
+    height: 4px;
+    background: linear-gradient(149deg, rgba(253,253,255,1) 0%, rgba(1,203,240,1) 75%, rgba(229,239,242,1) 100%);
+    display: block;
+    margin: 1vw 2.5vw;
+    border-radius: 1px;
+}
+
+/* Doan Mai Ngoc Anh - 104220776 */
+/*Profile CSS */
+.wallet {
+    padding-top: var(--header-height);
+}
+
+.banner{
+    display: flex;
+    flex-direction: column;
+    padding-top: var(--header-height);
+}
+
+.banner-cover {
+    background: no-repeat center;
+    background-image: linear-gradient(rgba(24, 24, 35,0.7),rgba(24, 24, 35,0.7)), url(../static/img/cover.jpeg);
+    background-size: cover;
+    height: 300px;
+    padding-top: var(--header-height);
+}
+
+.banner-infor{
+    flex-direction: column;
+    align-items: left;
+}
+
+.avatar img{
+    border-radius: 25px;
+    flex-direction: column;
+    margin-left: 50px;
+}
+
+#username {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
+    font-size: 2vw;  
+    flex: 0.5;
+    padding: 3px;
+    padding-left: 50px;
+}
+
+#twitter{
+
+    padding: 3px;
+}
+
+#user_id{
+    font-size: 1vw;
+    font-family: 'Rubik', sans-serif;
+    padding: 3px;
+    padding-left: 50px;
+
+}
+
+.banner-cover {
+    display: flex;
+    flex-direction: column;
+}
+
+.overlay{
+    flex:1;
+}
+
+.usersocial{
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+}
+
+.social{
+    margin-right: 50px;
+    margin-top: 10px;
+    align-items: center;
+}
+
+.ay{
+    flex: 2;
+}
+
+/* creating tabs */
+
+.tabs{
+    padding: 14px 16px;
+    display: flex;
+    flex-wrap: wrap;
+    font-family: 'Rubik', sans-serif;
+}
+
+.tabs-label{
+    padding: 10px 16px;
+    cursor: pointer;
+}
+
+.tabs-radio{
+    display: none;
+}
+
+.tabs-content{
+    order: 1;
+    width: 100%;
+    line-height: 1.5;
+    display: none;
+}
+
+.tabs-radio:checked + .tabs-label{
+    font-weight: bold;
+    color:#1a1625;
+    opacity: 1;
+    background:linear-gradient(149deg, rgba(253,253,255,1) 0%, rgba(1,203,240,1) 75%, rgba(229,239,242,1) 100%);
+    border-radius: 25px;
+    width:fit-content;
+}
+
+.tabs-radio:checked + .tabs-label + .tabs-content{
+    display: initial;
+}
+
+hr{
+    width: 100%;
+    margin-bottom: 10px;
+    border: 0;
+    height: 1px;
+    background: #ccc;
+}
+
+/*Collected tab*/
+
+#collected_num{
+    font-family: 'Rubik', sans-serif;
+    color: #b3b3b3;
+    font-size: 1.25vw;
+    padding: 10px 32px;
+}
+
+.collected_container{
+    width: 93vw;
+    padding: 0px 32px;
+    display: grid;
+    grid-template-rows: repeat(2, 281.28px);
+    grid-template-columns: repeat(auto-fit, 169.28px);
+    grid-gap: 1em;
+}
+
+.item{
+    background: #282828;
+    border-radius: 25px;
+}
+
+.item-1 img{
+    border-radius: 25px 25px 0px 0px;
+    width: 169.28px;
+    height: 149.28px;
+}
+
+#item2_img{
+    width: 102.36px;
+    height: 142.55px;
+    padding: 0px 33.46px;
+    margin-bottom: 6.73px;
+}
+
+#item2_offer{
+    color: #b3b3b3;
+    font-size: 12px;
+}
+
+.item-3 img{
+    width: 130px;
+    height: 130px;
+    padding: 0px 21.14px;
+    margin-bottom: 19.28px;
+}
+
+.item-4 img{
+    width: 169.28px;
+    height: 126.96px;
+    margin-top: 22.32px;
+}
+
+#item5_img{
+    width: 119.42px;
+    height: 149.28px;
+    padding: 0px 24.93px;
+}
+
+#item5_offer{
+    color: #b3b3b3;
+    font-size: 12px;
+}
+
+.item-6 img{
+    width: 133.4px;
+    height: 149.28px;
+    padding: 0px 17.94px;
+}
+
+#item6_offer{
+    color: #b3b3b3;
+    font-size: 12px;
+}
+
+.item-7 img{
+    width: 130px;
+    height: 130px;
+    padding: 0px 21.14px;
+    margin-bottom: 19.28px;
+}
+
+#item8_img{
+    padding: 0px 21.14px;
+    margin-bottom: 19.28px;
+}
+
+#item8_offer{
+    color: #b3b3b3;
+    font-size: 12px;
+}
+
+.item-9 img{
+    width: 169.28px;
+    height: 93.28px;
+    padding: 28px 0px;
+}
+
+#item10_img{
+    padding: 0px 21.14px;
+    margin-bottom: 19.28px;
+}
+
+.item p{
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
+    font-size: 1.25vw;
+    padding: 16px;
+}
+
+/* Offers Made tab */
+
+.offerstab {
+    height: 40vw;
+}
+.content_bar{
+    display: grid;
+    padding: 0px 16px;
+    grid-template-columns: 260px repeat(4, 196.46px) 130px;
+    grid-template-rows: 52px;
+    align-items: center;
+}
+
+.content_bar p{
+    font-family: 'Rubik', sans-serif;
+    color: #b3b3b3;
+    font-size: 1.25vw;
+}
+
+.offers_container{
+    display: grid;
+    padding: 0px 16px;
+    grid-template-columns: 260px repeat(4, 196.46px) 130px;
+    grid-template-rows: 52px;
+}
+
+.offer1{
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 10px 0px;
+}
+
+.offer2{
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 10px 0px;
+}
+
+.offer3{
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 10px 0px;
+}
+
+.offer4{
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 10px 0px;
+}
+
+.offer5{
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 10px 0px;
+}
+
+.name img{
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+.price p{
+    margin-top: 10px;
+}
+
+.quantity p{
+    margin-top: 10px;
+}
+
+.total p{
+    margin-top: 10px;
+}
+
+.expiration p{
+    margin-top: 10px;
+}
+
+.created p{
+    margin-top: 10px;
+}
+
+#offer_badge{
+    padding: 0px 10px;
+}
+
+/* Deals tab */
+
+.tabs-content.dealstab{
+    padding: 2vw;
+}
+
+.deals {
+    width: 100%;
+    height: 30vw;
+    background-color: var(--mix-2);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2vw;
+}
+
+.deals-cover {
+    height: 15%;
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.deals-cover-left {
+    display: flex;
+}
+
+.dcover-image {
+    width: 65%;
+    height: 65%;
+    background-color: green;
+    border-radius: 100px;
+    margin: auto 1.4vw;
+    overflow: hidden;
+}
+
+.dcover-image img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.dcover-name {
+    font-weight: 500;
+    font-size: 100%;
+    margin: auto;
+}
+
+.deals-cover-right {
+    margin: auto 1.7vw;
+}
+
+.dcover-status {
+    font-size: 90%;
+    margin: auto 0;
+}
+
+.deals-content {
+    flex: 1;
+    width: 100%;
+    height: 50%;
+    background-color: #4e5364;
+    display: flex;
+    
+}
+
+.deals-content-left {
+    flex: 1;
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 3%;
+}
+
+.deals-content-right {
+    flex: 1;
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 3%;
+
+}
+
+.dcontent-items {
+    width: 30%;
+}
+.dcontent-items-img {
+    height: 70%;
+    width: 100%;
+    border-radius: 10px;  
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+}
+
+.dcontent-items-img p {
+    white-space: nowrap;
+    border-radius: 10px;
+    margin: auto 0;
+    font-size: 120%;
+    color: #0B1426;
+    padding: 5%;
+}
+
+.dcontent-items-img img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.dcontent-items-info {
+    margin-top: 2%;
+}
+
+.dcontent-items-info h1 {
+    font-weight: 500;
+    font-size: 100%;
+}
+
+.dcontent-items-info p {
+    font-weight: 400;
+    font-size: 90%;
+}
+
+.dcontent-icon {
+    height: 70%;
+    display: flex;
+    justify-content: center
+}
+
+.deals-info {
+    height: 15%;
+    display: flex;
+
+    flex-direction: row-reverse;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+.deals-info div {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 15vw;
+    margin: 2vw;
+}
+
+.deals-info div button {
+    font-family: 'Rubik', sans-serif;
+    padding: 0.7vw 1vw;
+    margin: 0 1vw;
+    background-color: #2E8DEE;
+    color: var(--main-font-color);
+    font-weight: 500;
+    border-radius: 20px;
+    border: none;
+}
+
+.deals-info div button:hover {
+    background-color: #106ac5;
+    transition: .3s ease;
+}
+
+/* Wallet tab*/
+#wallet-main{
+    display: flex;
+    flex-flow: column nowrap;
+    border: 2px solid #404040 ;
+    border-radius: 10px;
+    background-color: #363945;
+    padding: 2%;
+    box-sizing: border-box;
+}
+#wallet-balance>*{
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+#wallet-balance>*>*{
+    font-size: 3vw;
+    margin: 1% 0;
+
+}
+#withdraw>*,#deposit>*{
+    font-size: 2vw;
+}
+#wallet-interact{
+    margin-top: 1%;
+}
+#withdraw-amount, #deposit-amount{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: baseline;
+    gap: 1%;
+}
+
+#withdraw-amount>input, #deposit-amount>input{
+    background-color: black;
+    padding: 0.5%;
+    border-radius: 10px;
+    border: none;
+}
+#wallet-interact>*>*{
+    margin-bottom: 1%;
+}
+#wallet-interact>*{
+    margin-bottom: 2%;
+}
+/* Le Phan - 104212469 */
+/* buy page */
+manager {
+    display: none;
+}
+
+#buy-main{
+    --button-color: #2E8DEE;
+    --widget-color: #363945;
+    --header-height: 15vh;
+    padding: var(--header-height) 3% 3%;
+}
+#buy-main, #buy-bottom{
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 2vw;
+}
+/* buy top */
+#buy-top{
+    display: flex;
+    justify-content: space-between;
+}
+
+#summary-image {
+    width: 35vw;
+}
+
+#summary-image>*{
+    width: 100%;
+    margin-bottom: -3.84px;
+}
+
+#details {
+    margin-left: 2%;
+    flex: 2 1 auto;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+}
+
+#details #name p:last-child{
+    font-size: 5vw;
+}
+
+#details #name p:first-child{
+    font-size: 1.75vw;
+}
+
+#details #name p{
+    font-weight: 500;
+}
+
+#price {
+    padding: 2%;
+    border: 2px solid #404040;
+    border-radius: 5px;
+    background-color: var(--widget-color);
+}
+
+#price > p{
+    color: #b3b3b3;
+    font-weight: 500;
+}
+
+#price-amount {
+    font-size: 2.5em;
+}
+
+#buy-buttons {
+    margin-top: 2.5vw;
+    margin-bottom: 1vw;
+    display: flex;
+    gap: 20px;
+}
+
+#buy-buttons button{
+    border: none;
+    font-weight: 500;
+    flex: 1 0 0;
+    padding: 15px;
+    background-color: var(--button-color); 
+    color: #fff; 
+    font-size: 1.3em;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
+}
+#buy-buttons button:hover{
+    background-color: #197fef 
+}
+
+#buy-bottom>*:not(#item-properties), #item-properties>*{
+    padding: 2%;
+    border: 2px solid #404040;
+    border-radius: 5px;
+    background-color: var(--widget-color)
+}
+/* Item properties */
+#item-properties{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+#item-properties>*{
+    flex: 1 0 0;
+}
+
+#item-properties>*>.details{
+    margin-top: 2%;
+    display: flex;
+    justify-content: space-between;
+}
+#item-description>*>*{
+    margin-top: 2%;
+}
+/* Listings */
+#listings table {
+    margin-top: 2%;
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed; 
+}
+#listings table thead tr th,
+#listings table tbody tr td {
+    width: auto; 
+    padding: 8px; 
+    text-align: center; 
+    border-bottom: 1px solid; 
+}
+#listings table thead tr th{
+    color: #b3b3b3;
+}
+/* Deals tab */
+
+.tabs-content.dealstab{
+    padding: 2vw;
+}
+
+.deals {
+    width: 100%;
+    height: 30vw;
+    background-color: var(--mix-2);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2vw;
+}
+
+.deals-cover {
+    height: 15%;
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.deals-cover-left {
+    display: flex;
+}
+
+.dcover-image {
+    width: 65%;
+    height: 65%;
+    background-color: green;
+    border-radius: 100px;
+    margin: auto 1.4vw;
+    overflow: hidden;
+}
+
+.dcover-image img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.dcover-name {
+    font-weight: 500;
+    font-size: 100%;
+    margin: auto;
+}
+
+.deals-cover-right {
+    margin: auto 1.7vw;
+}
+
+.dcover-status {
+    font-size: 90%;
+    margin: auto 0;
+}
+
+.deals-content {
+    flex: 1;
+    width: 100%;
+    height: 50%;
+    background-color: #4e5364;
+    display: flex;
+    
+}
+
+.deals-content-left {
+    flex: 1;
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 3%;
+}
+
+.deals-content-right {
+    flex: 1;
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 3%;
+
+}
+
+.dcontent-items {
+    width: 30%;
+}
+.dcontent-items-img {
+    height: 70%;
+    width: 100%;
+    border-radius: 10px;  
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+}
+
+.dcontent-items-img p {
+    white-space: nowrap;
+    border-radius: 10px;
+    margin: auto 0;
+    font-size: 120%;
+    color: #0B1426;
+    padding: 5%;
+}
+
+.dcontent-items-img img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.dcontent-items-info {
+    margin-top: 2%;
+}
+
+.dcontent-items-info h1 {
+    font-weight: 500;
+    font-size: 100%;
+}
+
+.dcontent-items-info p {
+    font-weight: 400;
+    font-size: 90%;
+}
+
+.dcontent-icon {
+    height: 70%;
+    display: flex;
+    justify-content: center
+}
+
+.deals-info {
+    height: 15%;
+    display: flex;
+
+    flex-direction: row-reverse;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+.deals-info div {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 15vw;
+    margin: 2vw;
+}
+
+.deals-info div button {
+    font-family: 'Rubik', sans-serif;
+    padding: 0.7vw 1vw;
+    margin: 0 1vw;
+    background-color: #2E8DEE;
+    color: var(--main-font-color);
+    font-weight: 500;
+    border-radius: 20px;
+    border: none;
+}
+
+.deals-info div button:hover {
+    background-color: #106ac5;
+    transition: .3s ease;
+}
