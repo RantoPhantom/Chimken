@@ -1,0 +1,403 @@
+/* Le Nguyen Quoc An - 104187156 */
+/* Market */
+
+/* Featured NFTs - Market */
+
+.market {
+    padding-top: var(--header-height);
+}
+
+.market > * {
+    font-family: var(--main-font);
+    color: var(--main-font-color)
+}
+
+#market-title-1 {
+    margin: 2.5vw 2.5vw 0;
+    font-weight: 500;  
+    font-size: 1.6vw;
+}
+
+.market-featured {
+    height: 20vw;
+    margin: 1.5vw 2.5vw;
+    display: flex;
+    justify-content: space-between; 
+}
+
+.mfeatured-items {
+    position: relative;
+    background-color: red;
+    width: 17vw;
+    height: 17vw;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 5px 0px #ffffff;
+}
+
+.mfeatured-items:hover {
+    box-shadow: 0 0 20px 1px #ffffff;
+}
+.mfeatured-items img {
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.mfeatured-info {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 35%;
+    background: linear-gradient(180deg, rgba(250,250,250,0) 0%, rgba(0,0,0,1) 80%);
+}
+
+.mfeatured-info h1 {
+    font-weight: 500;
+    font-size: 1.35vw;
+    margin: 2vw 1.1vw 0;
+    pointer-events: none;
+}
+
+.mfeatured-info p {
+    font-weight: 400;
+    font-size: 1vw;
+    margin: 0.3vw 1vw 0;
+    pointer-events: none;
+}
+
+#market-title-2 {
+    margin: 2.5vw 2.5vw 0;
+    font-weight: 500;  
+    font-size: 1.6vw;
+}
+
+.market-main {
+    margin-top: 2vw;
+    display: flex;
+}
+
+.market-filter {
+    padding: 2vw 0 0 2.5vw;
+    position: sticky;
+    top: var(--header-height);
+    align-self: flex-start;
+    width: 21vw;
+    height: 50vw;
+    box-sizing: border-box;
+}
+
+.filter-items {
+    margin-right: 1.5vw;
+}
+
+.filter-items > *{
+    font-weight: 400;
+}
+
+.filter-items input {
+    margin-left: 0.3vw;
+    font-size: 1.2vw;
+    padding: 0.5vw;
+    border-radius: 10px;
+    width: 75%;
+    background-color: var(--mix-2);
+    color: var(--main-font-color);
+}
+
+.filter-items::after {
+    content: '';
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(149deg, rgba(253,253,255,1) 0%, rgba(1,203,240,1) 75%, rgba(229,239,242,1) 100%);
+    display: block;
+    margin-top: 1.7vw;
+    border-radius: 1px;
+}
+
+#special-item-1 {
+    width: 92%;
+    font-weight: 500;
+    font-size: 1.6vw;
+    margin: 1vw 0;
+}
+
+#special-item-1::after {
+    margin-top: 1vw;
+}
+
+.filter-items.input-price {
+    margin-top: 1.5vw;
+    font-size: 1.2vw;
+}
+
+.filter-items.input-price div {
+    padding: 0.5vw;
+    font-size: 1.2vw;   
+}
+
+.filter-items.input-price div input {
+    padding: 0.5vw;
+    font-size: 1.2vw;   
+    width: 78%;
+}
+
+/* Filter Box */
+
+#market-select-box {
+    margin-top: 1.5vw;
+    position: relative;
+}
+
+#market-select-box > * {
+    user-select: none;
+}
+
+#market-select-box > *:focus {
+    outline: none;
+}
+
+.select-border {
+    border-bottom: 1px solid #656961;
+    border-right: 1px solid #656961;
+    box-sizing: border-box;
+}
+
+#market-select-box {
+    position: relative;
+    width: 100%;
+    height: 2.8vw;
+    z-index: 1;
+}
+
+#options-view-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 3;
+}
+
+#select-button {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    padding: 0.7vw 1vw;
+    background-color: var(--mix-2);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#selected-value {
+    font-size: 1.2vw;
+    line-height: 1;
+    margin-right: 4vw;
+}
+
+#arrow-down-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 3vw;
+}
+
+#arrow-down-button i {
+    display: block;
+    height: 50%;
+    color: var(--main-font-color);
+    font-size: 1.9vw;
+    text-align: center;
+    margin: calc(0.2vw + 1px) 0.6vw 0 0;
+}
+
+#options-view-button:checked + #select-button #arrow-down-button i {
+    color: var(--dark-1);
+}
+
+#option-list {
+    position: relative;
+    width: 100%;
+    /* height: 100%; */
+    margin: 0.2vw auto;
+    background-color: var(--mix-2);
+    border-radius: 4px;
+}
+
+.option-items, .label {
+    color: var(--main-font-color);
+    font-size: 1.2vw;
+}
+
+#options-view-button:checked ~ #option-list {
+    border-bottom: 1px solid #656961;
+    border-right: 1px solid #656961;
+    box-sizing: border-box;
+}
+
+.option-items {
+    position: relative;
+    line-height: 1;
+    transition: 0.3 ease all;
+    z-index: 2;
+}
+
+.label {
+    display: none;
+    padding: 0;
+    margin-left: 1vw;
+    transition: 0.3s ease all;
+}
+
+#options-view-button:checked ~ #option-list .label {
+    display: block;
+    padding: 0.8vw 0;
+}
+
+input[type = "radio"] {
+    position: absolute;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.opt-val {
+    position: absolute;
+    left: 1vw;
+    width: 70%;
+    align-items: center;
+    opacity: 0;
+    background-color: var(--mix-2);
+    transform: scale(0);
+}
+
+.option-items input[type="radio"]:checked ~ .opt-val {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.option-items input[type = "radio"]:checked ~ .label {
+    color: var(--dark-1);
+}
+
+.option-items input[type="radio"]:checked ~ .label:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+#options-view-button:not(:checked)
+  ~ #option-list
+  .option-items
+  input[type="radio"]:checked
+  ~ .opt-val {
+  top: -2.3vw;
+}
+
+.option-items:nth-child(1) input[type="radio"]:checked ~ .label:before {
+    background: linear-gradient(149deg, rgba(253,253,255,1) 0%, rgba(1,203,240,1) 75%, rgba(229,239,242,1) 100%);
+    border-radius: 4px 4px 0 0;
+}
+
+.option-items:nth-child(1) input[type="radio"]:checked ~ .opt-val {
+    top: -2.3vw;
+}
+
+.option-items:nth-child(2) input[type="radio"]:checked ~ .label:before {
+    background: linear-gradient(149deg, rgba(253,253,255,1) 0%, rgba(1,203,240,1) 75%, rgba(229,239,242,1) 100%);
+}
+  
+.option-items:nth-child(2) input[type="radio"]:checked ~ .opt-val {
+    top: -5.1vw;
+}
+  
+.option-items:nth-child(3) input[type="radio"]:checked ~ .label:before {
+    background: linear-gradient(149deg, rgba(253,253,255,1) 0%, rgba(1,203,240,1) 75%, rgba(229,239,242,1) 100%);
+    border-radius: 0 0 4px 4px;
+}
+  
+.option-items:nth-child(3) input[type="radio"]:checked ~ .opt-val {
+    top: -7.9vw;
+}
+
+#option-bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 2.8vw;
+    transition: 0.3s ease all;
+    z-index: 1;
+    display: none;
+}
+
+#options-view-button:checked ~ #option-list #option-bg {
+    display: block;
+}
+
+.option-items:hover .label {
+    color: var(--dark-1);
+}
+
+.option-items:nth-child(1):hover ~ #option-bg {
+    top: 0;
+    background: linear-gradient(149deg, rgba(253,253,255,1) 0%, rgba(1,203,240,1) 75%, rgba(229,239,242,1) 100%);
+    border-radius: 4px 4px 0 0;
+} 
+
+.option-items:nth-child(2):hover ~ #option-bg {
+    top: 2.8vw;
+    background: linear-gradient(149deg, rgba(253,253,255,1) 0%, rgba(1,203,240,1) 75%, rgba(229,239,242,1) 100%);
+}
+  
+.option-items:nth-child(3):hover ~ #option-bg {
+    top: 5.6vw;
+    background: linear-gradient(149deg, rgba(253,253,255,1) 0%, rgba(1,203,240,1) 75%, rgba(229,239,242,1) 100%);
+    border-radius: 0 0 4px 4px;
+}
+
+
+
+/* Market List */
+.market-list {
+    padding: 0 2vw 3vw;
+    flex: 3;
+    display: grid;
+    justify-content: space-evenly;
+    justify-items: center;
+    grid-template-columns: repeat(5, 1fr);
+    border-left: 0.1px solid #fff;
+    row-gap: 3vw;
+}
+
+.featured-items.market-NFT {
+    width: 13vw;
+    height: 25vw;
+    font-size: 1.1vw;
+}
+
+.mfeatured-border-line::after {
+    content: '';
+    width: 95%;
+    height: 4px;
+    background: linear-gradient(149deg, rgba(253,253,255,1) 0%, rgba(1,203,240,1) 75%, rgba(229,239,242,1) 100%);
+    display: block;
+    margin: 1vw 2.5vw;
+    border-radius: 1px;
+}
+

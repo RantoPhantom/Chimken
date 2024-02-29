@@ -1,0 +1,133 @@
+/* Le Phan - 104212469 */
+/* buy page */
+manager {
+    display: none;
+}
+
+#buy-main{
+    --button-color: #2E8DEE;
+    --widget-color: #363945;
+    --header-height: 15vh;
+    padding: var(--header-height) 3% 3%;
+}
+#buy-main, #buy-bottom{
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 2vw;
+}
+/* buy top */
+#buy-top{
+    display: flex;
+    justify-content: space-between;
+}
+
+#summary-image {
+    width: 35vw;
+}
+
+#summary-image>*{
+    width: 100%;
+    margin-bottom: -3.84px;
+}
+
+#details {
+    margin-left: 2%;
+    flex: 2 1 auto;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+}
+
+#details #name p:last-child{
+    font-size: 5vw;
+}
+
+#details #name p:first-child{
+    font-size: 1.75vw;
+}
+
+#details #name p{
+    font-weight: 500;
+}
+
+#price {
+    padding: 2%;
+    border: 2px solid #404040;
+    border-radius: 5px;
+    background-color: var(--widget-color);
+}
+
+#price > p{
+    color: #b3b3b3;
+    font-weight: 500;
+}
+
+#price-amount {
+    font-size: 2.5em;
+}
+
+#buy-buttons {
+    margin-top: 2.5vw;
+    margin-bottom: 1vw;
+    display: flex;
+    gap: 20px;
+}
+
+#buy-buttons button{
+    border: none;
+    font-weight: 500;
+    flex: 1 0 0;
+    padding: 15px;
+    background-color: var(--button-color); 
+    color: #fff; 
+    font-size: 1.3em;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
+}
+#buy-buttons button:hover{
+    background-color: #197fef 
+}
+
+#buy-bottom>*:not(#item-properties), #item-properties>*{
+    padding: 2%;
+    border: 2px solid #404040;
+    border-radius: 5px;
+    background-color: var(--widget-color)
+}
+/* Item properties */
+#item-properties{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+#item-properties>*{
+    flex: 1 0 0;
+}
+
+#item-properties>*>.details{
+    margin-top: 2%;
+    display: flex;
+    justify-content: space-between;
+}
+#item-description>*>*{
+    margin-top: 2%;
+}
+/* Listings */
+#listings table {
+    margin-top: 2%;
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed; 
+}
+#listings table thead tr th,
+#listings table tbody tr td {
+    width: auto; 
+    padding: 8px; 
+    text-align: center; 
+    border-bottom: 1px solid; 
+}
+#listings table thead tr th{
+    color: #b3b3b3;
+}

@@ -1,6 +1,7 @@
 import os
+import mysql.connector
 
-from flask import Flask, render_template
+from flask import Flask
 
 
 def create_app(test_config=None):
@@ -23,15 +24,28 @@ def create_app(test_config=None):
         os.makedirs(app.instance_path)
     except OSError:
         pass
+
     # INIT BLUEPRINTS AND DB HERE
+    mydb = mysql.connector.connect(
+        host="sql-lol.duckdns.org",
+        user="root",
+        password="lol"
+    )
+    print(mydb)
 
     from . import buy
     app.register_blueprint(buy.bp)
+
+    from . import market
+    app.register_blueprint(market.bp)
 
     from . import index
     app.register_blueprint(index.bp)
 
     from . import profile
     app.register_blueprint(profile.bp)
+
+    from . import create
+    app.register_blueprint(create.bp)
 
     return app

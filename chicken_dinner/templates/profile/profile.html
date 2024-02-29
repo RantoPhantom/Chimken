@@ -1,34 +1,36 @@
 {% extends 'base.html' %}
+{% block style %}
+profile.css
+{% endblock %}
 {% block title %}Profile{% endblock %}
 {% block content %}
 <section class = "Profile">
     <div class = "banner">
         <div class = "banner-cover">
             <!-- <img src="../static/img/cover.jpeg"> -->
-            <div class = "ay"></div>
             <span class="overlay">
                 <div class = "banner-infor">
                     <div class="banner-infor avatar">
                         <img src="../static/img/avatar.jpg" width="64" height="64">
                     </div>
-                    
+
                 </div>
             </span>
             <div class = " usersocial">
                 <div class = "banner-infor username">
                     <p id = "username"> Username 
-                    <img width="19.8" height="20.65" src="https://img.icons8.com/color/48/verified-badge.png" alt="verified-badge" id = "twitter"/>
+                        <img width="19.8" height="20.65" src="https://img.icons8.com/color/48/verified-badge.png" alt="verified-badge" id = "twitter"/>
                     </p>
                     <p id = "user_id"> 0xdC0b8cA898DB8D46A37517d70E63985ABA1FaF0B</p>
                 </div>
                 <div class = "banner-infor social">
                     <p><img width="30" height="30" src="../static/img/twitter.png" alt="twitter--v1"/>
-                    <img width="30" height="30" src="../static/img/share.png" alt="share--v1"/>
-                    <img width="30" height="30" src="../static/img/threedots.png" alt="threedots" id = "threedots"/></p>
+                        <img width="30" height="30" src="../static/img/share.png" alt="share--v1"/>
+                        <img width="30" height="30" src="../static/img/threedots.png" alt="threedots" id = "threedots"/></p>
                 </div>
             </div>
         </div>
-        
+
     </div>
 
     <div class="tabs">
@@ -38,60 +40,114 @@
 
             <p id="collected_num"> 10 items </p>
             <div class="collected_container">
-                <div class="item item-1">
-                    <img src="../static/img/cute_alien.jpeg" alt="collection_1">
-                    <p id="item1_desc">Cute Alien CA07</p>
+                <div class="collected_items">
+                    <div class="collected_img">
+                        <img src="../static/img/cute_alien.jpeg">
+                    </div>
+                    <div class="collected_info">
+                        <h2>Cute Alien CA07</h2>
+                    </div>
                 </div>
-                <div class="item item-2">
-                    <img src="../static/img/img1.jpg" alt="collection_2" id="item2_img">
-                    <p id="item2_desc">GraffiGi
-                        <img width="11.55" height="12.05" src="https://img.icons8.com/color/48/verified-badge.png" alt="verified-badge"/>
-                    </p>
+
+                <div class="collected_items">
+                    <div class="collected_img">
+                        <img src="../static/img/img1.jpg">
+                    </div>
+                    <div class="collected_info">
+                        <h2>
+                            GraffiGi
+                            <img src="https://img.icons8.com/color/48/verified-badge.png" alt="verified-badge"/>
+                        </h2>
+                    </div>
                 </div>
-                <div class="item item-3">
-                    <img src="../static/img/img3.jpg" alt="collection_3">
-                    <p id="item3_desc">Room No#1</p>
+
+                <div class="collected_items">
+                    <div class="collected_img">
+                        <img src="../static/img/img3.jpg">
+                    </div>
+                    <div class="collected_info">
+                        <h2>Room No#1</h2>
+                    </div>
                 </div>
-                <div class="item item-4">
-                    <img src="../static/img/img4.jpg" alt="collection_4">
-                    <p id="item4_desc">Social Vending Machine</p>
+
+                <div class="collected_items">
+                    <div class="collected_img">
+                        <img src="../static/img/img4.jpg">
+                    </div>  
+                    <div class="collected_info">
+                        <h2>Social Vending Machine</h2>
+                    </div>
                 </div>
-                <div class="item item-5">
-                    <img src="../static/img/img5.jpg" alt="collection_5" id="item5_img">
-                    <p id="item5_desc">Playdoh Cake
-                        <img width="11.55" height="12.05" src="https://img.icons8.com/color/48/verified-badge.png" alt="verified-badge"/>
-                    </p>
+
+                <div class="collected_items">
+                    <div class="collected_img">
+                        <img src="../static/img/img5.jpg">
+                    </div>
+                    <div class="collected_info">
+                        <h2>
+                            Playdoh Cake
+                            <img src="https://img.icons8.com/color/48/verified-badge.png" alt="verified-badge"/>
+                        </h2>
+                    </div>
                 </div>
-                <div class="item item-6">
-                    <img src="../static/img/img6.jpg" alt="collection_6">
-                    <p id="item6_desc">Pop PC</p>
+
+                <div class="collected_items">
+                    <div class="collected_img">
+                        <img src="../static/img/img6.jpg">
+                    </div>
+                    <div class="collected_info">
+                        <h2>
+                            Pop PC
+                        </h2>
+                    </div>
                 </div>
-                <div class="item item-7">
-                    <img src="../static/img/img7.jpg" alt="collection_7">
-                    <p id="item7_desc">Space And Time</p>
+
+                <div class="collected_items">
+                    <div class="collected_img">
+                        <img src="../static/img/img7.jpg">
+                    </div>
+                    <div class="collected_info">
+                        <h2>
+                            Space And Time
+                        </h2>
+                    </div>
                 </div>
-                <div class="item item-8">
-                    <img src="../static/img/3d_house.jpeg" alt="collection_8" id="item8_img">
-                    <p id="item8_desc">3D House
-                        <img width="11.55" height="12.05" src="https://img.icons8.com/color/48/verified-badge.png" alt="verified-badge"/>
-                    </p>
+
+                <div class="collected_items">
+                    <div class="collected_img">
+                    <img src="../static/img/3d_house.jpeg">
+                    <div class="collected_info">
+                        <h1>
+                            3D House
+                            <img src="https://img.icons8.com/color/48/verified-badge.png" alt="verified-badge"/>
+                        </h1>
+                    </div>
                 </div>
-                <div class="item item-9">
-                    <img src="../static/img/lizard_soldier.jpeg" alt="collection_9">
-                    <p id="item9_desc">Lizard Soldier</p>
+
+                <div class="collected_items">
+                    <img src="../static/img/img8.jpg">
+                    <div class="collected_info">
+                        <h1>
+                            Floral
+                        </h1>
+                    </div>
                 </div>
-                <div class="item item-10">
-                    <img src="../static/img/monkeyy.jpeg" alt="collection_10" id="item10_img">
-                    <p id="item10_desc">Hugs From Monkey
-                        <img width="11.55" height="12.05" src="https://img.icons8.com/color/48/verified-badge.png" alt="verified-badge"/>
-                    </p>
+
+                <div class="collected_items">
+                    <img src="../static/img/monkeyy.jpeg">
+                    <div class="collected_info">
+                        <h1>
+                            Hugs From Monkey
+                            <img src="https://img.icons8.com/color/48/verified-badge.png" alt="verified-badge"/>
+                        </h1>
+                    </div>
                 </div>
             </div>
         </div>
 
         <input type="radio" class="tabs-radio" name="profile-tabs" id="offers" >
         <label for="offers" class="tabs-label">Offers Made</label>
-        <div class="tabs-content">
+        <div class="tabs-content offerstab">
             <div class="content_bar">
                 <div class="cate offers_num">
                     <p>16 offers</p>
@@ -114,7 +170,7 @@
                 </div>
 
                 <div class="cate created">
-                    <p>Data Created</p>
+                    <p>Date Created</p>
                 </div>
             </div>
 
@@ -332,6 +388,39 @@
                 </div>
             </div>
         </div>
+
+        <input type="radio" class="tabs-radio" name="profile-tabs" id="wallet" >
+        <label for="wallet" class="tabs-label">Wallet</label>
+        <div class="tabs-content">
+            <div id="wallet-main">
+                <div id="wallet-balance">
+                    <p>Estimated Balance:</p>
+                    <div>
+                        <i class="ri-eth-line"></i>
+                        <p>10.42 ETH</p>
+                    </div>
+                    <hr>
+                </div>
+                <div id="wallet-interact">
+                    <div id="withdraw">
+                        <p>Withdraw:</p>
+                        <div id="withdraw-amount">
+                            <i class="ri-eth-line"></i>
+                            <input type="number">
+                            <i class="ri-arrow-down-circle-line"></i>
+                        </div>
+                    </div>
+                    <div id="deposit">
+                        <p>Deposit:</p>
+                        <div id="deposit-amount">
+                            <i class="ri-eth-line"></i>
+                            <input type="number">
+                            <i class="ri-arrow-up-circle-line"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
-{% endblock %}
+    {% endblock %}

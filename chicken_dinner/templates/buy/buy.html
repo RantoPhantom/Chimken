@@ -1,54 +1,115 @@
 {% extends 'base.html' %}
-{% block includes %}
-    {{ super() }}
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    {% endblock %}
-    {% block title %}
+{% block style %}
+buy.css
+{% endblock %}
+{% block title %}
     Buying: {{item.name}}
     {% endblock %}
 
     {% block content %}
-    <div class="buy-main">
-        <div class="item-large">
-            <div class="item-main">
-                <h1 id="item-title">{{item.name}}</h1>
+    <div id="buy-main">
+        <div id="buy-top">
+            <!-- left -->
 
-                <div id="pricing">
-                    <div id="price">
-                        <p>Current Price</p>
-                        <div id="price-amount">
-                            {{item.price}} <br/>
-                            {{item.currency}}
-                        </div>
+            <div id="summary">
+                <div id="summary-image">
+                    <img src="../static/pippog.png" alt="">
+                </div>
+                <div id="description"></div>
+            </div>
 
-                        <div id="author">
-                            <span>Listed By:</span> {{item.author}}
-                        </div>
+            <!-- right -->
+            <div id="details">
+                <div id="name">
+                    <p> Creator: @{{item.author}} </p>
+                    <p>{{item.name}} #{{item.id}}</p>
+                </div>
+                <div id="price">
+                    <p>Current Price</p>
+                    <div id="price-amount">
+                        {{item.price}} 
+                        {{item.currency}}
+                    </div>
 
-                        <button>  <div id="chart"></div>
-                            <script>
-                            // Get plot JSON data from Flask
-                            var plotData = {{ plot_json | safe }};
+                    <div id="author">
+                        <span>Listed By:</span> {{item.author}}
+                    </div>
 
-                            // Render Plotly chart
-                            Plotly.newPlot('chart', plotData.data, plotData.layout);
-                            </script>Buy Now </button>
+                    <div id="buy-buttons">
+
+                        <button> Buy Now </button>
+                        <button> Trade </button>
 
                     </div>
                 </div>
+            </div>
 
-                <div id="price-history"> 
+        </div>
 
+        <!-- bottom -->
+        <div id="buy-bottom">
+            <div id="item-properties">
+
+                <div id="item-description">
+                    <h2>Description</h2>
+                    <hr>
+                    <div>
+                        <p>By {{item.author}} </p>
+                        <p>{{item.description | default("I'm pippa!") }}</p>
+                        <p>{{item.name}} #{{item.id}}</p>
+                    </div>
                 </div>
 
-                <div id="listings"></div>
-                <div id="offers"></div>
+                <div id="item-details">
+                    <h2>Details</h2>
+                    <hr>
+                    <div class="details">
+                        <p> Contract Address: </p>
+                        <span>{{item.contact_address | default("pusSla123...") }}</span>
+                    </div>
+                    <div class="details">
+                        <p> Token ID: </p>
+                        <span>{{item.token_id | default("69") }}</span>
+                    </div>
+                    <div class="details">
+                        <p> Token Standard: </p>
+                        <span>{{item.token_standard | default("CRC-32") }}</span>
+                    </div>
+                    <div class="details">
+                        <p> Chain: </p>
+                        <span>{{item.chain | default("Ethereum") }}</span>
+                    </div>
+                    <div class="details">
+                        <p> Last Updated: </p>
+                        <span>{{item.last_update | default("5 days ago") }}</span>
+                    </div>
+                    <div class="details">
+                        <p> Creator Earnings: </p>
+                        <span>{{item.earnings | default("5%") }}</span>
+                    </div>
+                </div>
+
+            </div>
+            <manager hx-post="./get-listing-data" hx-trigger="load" hx-swap="outerHTML" hx-target="#listing-data"></manager>
+            <div id="listings">
+                <h2>Listings</h2>
+                <hr>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Unit Price</th>
+                            <th>Quantity</th>
+                            <th>Expiration</th>
+                            <th>From</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr id="listing-data"></tr>
+                    </tbody>
+                </table>
             </div>
 
-            <div class="item-summary">
 
-            </div>
         </div>
     </div>
-
     {% endblock %}

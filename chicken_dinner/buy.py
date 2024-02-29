@@ -1,44 +1,44 @@
 from flask import (Blueprint, render_template)
-import plotly.graph_objs as go
 
 bp = Blueprint('buy', __name__, url_prefix='/buy')
 
+item = {
+    'id': 0,
+    'name': 'PipPog',
+    'price': '69.420',
+    'currency': 'ETH',
+    'author': 'Pippa'
+}
+
 
 @bp.route('/<int:item_id>')
-def buy(item_id):
-    # temp
-    item = {
-        'name': 'LMAO',
-        'price': 69.420,
-        'currency': 'VND',
-        'author': 'lol'
-    }
+def index(item_id):
+    item['id'] = item_id
 
     return render_template('buy/buy.html', item=item)
 
 
-@bp.route('/lol')
-def lol():
-    return "<p>hey</p>"
+@bp.route('/get-listing-data', methods=['POST'])
+def get_listing_data():
+    html_response = ""
 
+    listing_data = []
 
-@bp.route('/chart')
-def index():
-    item = {
-        'name': 'LMAO',
-        'price': 69.420,
-        'currency': 'VND',
-        'author': 'lol'
+    lol = {
+        'unit_price': '69.420 ETH',
+        'quantity': 1,
+        'expiration': '29 years',
+        'from': 'Username'
     }
-    # Sample data
-    x_data = [1, 2, 3, 4, 5]
-    y_data = [10, 15, 13, 17, 18]
 
-    # Create Plotly figure
-    fig = go.Figure()
-    fig.add_trace(go.Scatter(x=x_data, y=y_data, mode='lines+markers', name='line'))
+    listing_data.append(lol)
+    listing_data.append(lol)
+    listing_data.append(lol)
 
-    # Convert Plotly figure to JSON
-    plot_json = fig.to_json()
-
-    return render_template('buy/buy.html', plot_json=plot_json, item=item)
+    html_response = ""
+    for listing in listing_data:
+        html_response += "<tr>"
+        for key, value in listing.items():
+            html_response += f"<td>{value}</td>"
+        html_response += "</tr>"
+    return html_response
