@@ -1,4 +1,7 @@
-{% extends 'base.html' %}
+{% extends 'auth.html' %}
+{% block title %}
+Log in
+{% endblock %}
 {% block style %}
 auth.css
 {% endblock %}
@@ -7,11 +10,26 @@ auth.css
 <div id="content">
 	<h1>Log In</h1>
 	<form method="post">
-		<label for="username">Username:</label>
-		<input id="username" type="text" required><br>
-		<label for="password">Password:</label>
-		<input type="password" id="password" required><br>
-		<input type="submit" value="Log In">
+		<label for="username">Username:</label><br>
+		{% with name_error = get_flashed_messages(category_filter=["name"]) %}
+			{% if name_error %}
+			<p id="errors">
+			{{ name_error }}
+			</p>
+			{% endif %}
+		{% endwith %}
+		<input name="username"id="username" type="text" required><br>
+		<label for="password">Password:</label><br>
+		{% with password_error = get_flashed_messages(category_filter=["password"]) %}
+			{% if password_error %}
+			<p id="errors">
+			{{ password_error }}
+			</p>
+			{% endif %}
+		{% endwith %}
+		<input name="password" type="password" id="password" required><br>
+		<input type="submit" value="Log In" id="submit">
+		<a href="./register">Don't have an account yet?</a>
 	</form>
 </div>
 {% endblock %}

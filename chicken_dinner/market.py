@@ -1,3 +1,4 @@
+from .auth import login_required
 from flask import (
     Blueprint,
     render_template,
@@ -33,11 +34,13 @@ item3 = {
 itemArray = [item1, item2, item3, item3, item3]
 
 @bp.route('/')
+@login_required
 def index():
     return render_template('market/market.html', itemArray = itemArray)
 
 
 @bp.route('/redirect')
+@login_required
 def buy():
     url = url_for('buy.index', item_id=193)
     response = make_response(
@@ -47,6 +50,7 @@ def buy():
     return response
 
 @bp.route('/lol/<int:item_id>')
+@login_required
 def lol(item_id):
     url = url_for('buy.index', item_id=item_id)
     response = make_response(

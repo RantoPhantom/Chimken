@@ -1,5 +1,6 @@
 import os
 from flaskext.mysql import MySQL
+from pymysql.cursors import DictCursor
 
 from flask import Flask, g
 
@@ -38,7 +39,7 @@ def create_app(test_config=None):
     @app.before_request
     def before_request():
         conn = db.connect()
-        cursor = conn.cursor()
+        cursor = conn.cursor(DictCursor)
         # Store the database connection in the application context's 'g' object
         g.conn = conn
         g.cursor = cursor

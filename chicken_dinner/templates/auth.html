@@ -1,0 +1,13 @@
+<!doctype html>
+<head>
+    {% block includes %}
+    <script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet"/>
+	<link rel="stylesheet" href="../static/global.css">
+	<link rel="stylesheet" href="../static/{% block style %}global.css{% endblock %}">
+    {% endblock %}
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    {% block content %}{% endblock %}
+</body>
