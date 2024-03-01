@@ -1,0 +1,7 @@
+#content{
+	padding-top:calc(var(--header-height) + 1vw);
+	padding-bottom: 1vw;
+}
+input{
+	color: black;
+}

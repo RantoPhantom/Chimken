@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block style %}
+auth.css
+{% endblock %}
+
+{% block content %}
+<div id="content">
+	<h1>Log In</h1>
+	<form method="post">
+		<label for="username">Username:</label>
+		<input id="username" type="text" required><br>
+		<label for="password">Password:</label>
+		<input type="password" id="password" required><br>
+		<input type="submit" value="Log In">
+	</form>
+</div>
+{% endblock %}
