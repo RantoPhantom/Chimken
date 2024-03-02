@@ -1,4 +1,6 @@
 import functools
+from werkzeug.security import check_password_hash, generate_password_hash
+
 from flask import (
         Blueprint,
         render_template,
@@ -34,7 +36,6 @@ def login():
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
-        error = None
         sql = "SELECT * FROM Users WHERE Name =%s ;"
 
         g.cursor.execute(sql, (username))
@@ -42,24 +43,39 @@ def login():
 
         if user is None:
             flash("Incorrect Username", "name")
-            error = "incorrect username"
         else:
-            if password != user["Password"]:
+            if check_password_hash(user["Password"], password):
                 flash("Incorrect Password", "password")
-                error = "incorrect password"
 
-        if error:
-            flash(error, 'others')
-        else:
-            session.clear()
-            session["user_id"] = user["UserID"]
-            return redirect(url_for("index.index"))
+        session.clear()
+        session["user_id"] = user["UserID"]
+        return redirect(url_for("index.index"))
 
     return render_template('/auth/login.html')
 
 
-@bp.route('/register')
+@bp.route('/register', methods=('GET', 'POST'))
 def register():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        wallet = request.form['wallet']
+        sql = "INSERT INTO Users (Name, Password, WalletID) "
+        sql += "VALUES (%s, %s, %s)"
+        error = None
+
+        try:
+            g.cursor.execute(sql,
+                             (username,
+                              generate_password_hash(password),
+                              wallet)
+                             )
+            g.conn.commit()
+        except g.cursor.IntegrityError:
+            error = f"User {username} is already registered"
+        else:
+            return redirect(url_for("auth.login"))
+        flash(error)
     return render_template('/auth/register.html')
 
 

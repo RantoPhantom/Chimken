@@ -40,7 +40,6 @@ def index():
 
 
 @bp.route('/redirect')
-@login_required
 def buy():
     url = url_for('buy.index', item_id=193)
     response = make_response(
@@ -50,7 +49,6 @@ def buy():
     return response
 
 @bp.route('/lol/<int:item_id>')
-@login_required
 def lol(item_id):
     url = url_for('buy.index', item_id=item_id)
     response = make_response(
