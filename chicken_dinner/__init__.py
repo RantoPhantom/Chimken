@@ -1,7 +1,5 @@
 import os
-from flaskext.mysql import MySQL
-from pymysql.cursors import DictCursor
-
+from .db import Database
 from flask import Flask, g
 
 
@@ -28,21 +26,16 @@ def create_app(test_config=None):
 
     # INIT BLUEPRINTS AND DB HERE
 
-    app.config['MYSQL_DATABASE_USER'] = 'root'
-    app.config['MYSQL_DATABASE_PASSWORD'] = 'lol'
-    app.config['MYSQL_DATABASE_DB'] = 'chimken_dinner'
-    app.config['MYSQL_DATABASE_HOST'] = 'sql-lol.duckdns.org'
-    db = MySQL()
+    db = Database()
     db.init_app(app)
 
-    # Register a function to run before each request
     @app.before_request
     def before_request():
-        conn = db.connect()
-        cursor = conn.cursor(DictCursor)
-        # Store the database connection in the application context's 'g' object
-        g.conn = conn
-        g.cursor = cursor
+        # ping to keep db alive
+        db.get_db().ping()
+
+        g.conn = db.get_db()
+        g.cursor = db.get_cursor()
 
     from . import auth
     app.register_blueprint(auth.bp)

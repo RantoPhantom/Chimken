@@ -21,6 +21,7 @@ auth.css
 		<input name="username"id="username" type="text" required><br>
 		<label for="password">Password:</label><br>
 		{% with password_error = get_flashed_messages(category_filter=["password"]) %}
+
 			{% if password_error %}
 			<p id="errors">
 			{{ password_error }}
