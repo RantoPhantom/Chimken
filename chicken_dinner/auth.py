@@ -1,5 +1,6 @@
 import functools
 from werkzeug.security import check_password_hash, generate_password_hash
+from .db import Database
 
 from flask import (
         Blueprint,
@@ -43,13 +44,12 @@ def login():
 
         if user is None:
             flash("Incorrect Username", "name")
+        elif not check_password_hash(user["Password"], password):
+            flash("Incorrect Password", "password")
         else:
-            if check_password_hash(user["Password"], password):
-                flash("Incorrect Password", "password")
-
-        session.clear()
-        session["user_id"] = user["UserID"]
-        return redirect(url_for("index.index"))
+            session.clear()
+            session["user_id"] = user["UserID"]
+            return redirect(url_for("index.index"))
 
     return render_template('/auth/login.html')
 
@@ -66,10 +66,10 @@ def register():
 
         try:
             g.cursor.execute(sql,
-                             (username,
-                              generate_password_hash(password),
-                              wallet)
-                             )
+                                    (username,
+                                     generate_password_hash(password),
+                                     wallet)
+                                    )
             g.conn.commit()
         except g.cursor.IntegrityError:
             error = f"User {username} is already registered"

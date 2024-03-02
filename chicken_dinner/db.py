@@ -10,7 +10,7 @@ class Database:
         self.app = None
 
     def init_app(self, app):
-        print("Grabbing fresh connection")
+        print("Grabbing fresh connection to Database")
         self.app = app
 
         self.app.config['MYSQL_DATABASE_USER'] = 'root'
@@ -18,8 +18,13 @@ class Database:
         self.app.config['MYSQL_DATABASE_DB'] = 'chimken_dinner'
         self.app.config['MYSQL_DATABASE_HOST'] = 'sql-lol.duckdns.org'
 
-        self.mysql = MySQL()
-        self.mysql.init_app(app)
+        try:
+            # Initialize MySQL extension
+            self.mysql = MySQL()
+            self.mysql.init_app(app)
+            print("Database initialized successfully!")
+        except Exception as e:
+            print(f"Error initializing database: {e}")
 
     def get_db(self):
         return self.mysql.connect()
