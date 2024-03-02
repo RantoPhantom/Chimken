@@ -9,17 +9,19 @@ market.css
 	<div class="mfeatured-border-line">
 		<div class="market-featured">
 			{% for item in itemArray %}
-			<div hx-get="./redirect/{{item.id}}" class="mfeatured-items">
-				<img src="../static/img/{{item.img}}" style="object-position: center;">
+				{% if loop.index <= 5 %}
+			<div hx-get="./redirect/{{item.ItemID}}" class="mfeatured-items">
+				<img src="../static/img/img{{item.ItemID}}.jpg" style="object-position: center;">
 				<div class="mfeatured-info">
 					<h1>
-						{{item.name}}
+						{{item.Name}}
 					</h1>
 					<p>
-					Price: {{item.price}} ETH
+					Price: {{item.Price}} ETH
 					</p>
 				</div>
 			</div>
+				{% endif %}
 			{% endfor %}   
 		</div>
 	</div>
@@ -30,7 +32,7 @@ market.css
 				<i class="ri-search-line"></i>
 				<input name="search" type="search" placeholder="Search..."
 					hx-post="./search" 
-					hx-trigger="input changed delay:200ms, search"
+					hx-trigger="input changed delay:100ms, search"
 					hx-target=".market-list"
 					hx-swap="innerHTML">
 			</div>
@@ -92,16 +94,16 @@ market.css
 			{% for item in itemArray %}
 			<div class="featured-items market-NFT">
 				<div class="featured-img">
-					<img src="../static/img/{{item.img}}"/>
+					<img src="../static/img/img{{item.ItemID}}.jpg"/>
 				</div>
 				<div class="featured-info">
-					<h2>{{item.name}}</h2>
+					<h2>{{item.Name}}</h2>
 					<a href="">
 						@Puppeter
 					</a>
 					<div class="featured-price">
 						<p style="font-size: 92%;">Price:</p>
-						<p style="font-size: 84.6%">{{item.price}}ETH</p>
+						<p style="font-size: 84.6%">{{item.Price}}ETH</p>
 					</div>
 					<div class="featured-button">
 						<button hx-get="./redirect" style="margin-right: 1.5%;">
