@@ -13,7 +13,7 @@ buy.css
 
             <div id="summary">
                 <div id="summary-image">
-                    <img src="../static/pippog.png" alt="">
+					<img src="../static/img/img{{item.ItemID}}.jpg" alt="">
                 </div>
                 <div id="description"></div>
             </div>
@@ -22,13 +22,13 @@ buy.css
             <div id="details">
                 <div id="name">
                     <p> Creator: @{{item.author}} </p>
-                    <p>{{item.name}} #{{item.id}}</p>
+                    <p>{{item.Name}} #{{item.ItemID}}</p>
                 </div>
                 <div id="price">
                     <p>Current Price</p>
                     <div id="price-amount">
-                        {{item.price}} 
-                        {{item.currency}}
+                        {{item.Price}} 
+						ETH
                     </div>
 
                     <div id="author">
@@ -55,8 +55,8 @@ buy.css
                     <hr>
                     <div>
                         <p>By {{item.author}} </p>
-                        <p>{{item.description | default("I'm pippa!") }}</p>
-                        <p>{{item.name}} #{{item.id}}</p>
+                        <p>{{item.Description | default("I'm pippa!") }}</p>
+                        <p>{{item.Name}} #{{item.ItemID}}</p>
                     </div>
                 </div>
 

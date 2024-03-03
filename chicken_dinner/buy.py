@@ -1,19 +1,13 @@
-from flask import (Blueprint, render_template)
+from flask import (Blueprint, render_template, g)
 
 bp = Blueprint('buy', __name__, url_prefix='/buy')
-
-item = {
-    'id': 0,
-    'name': 'PipPog',
-    'price': '69.420',
-    'currency': 'ETH',
-    'author': 'Pippa'
-}
 
 
 @bp.route('/<int:item_id>')
 def index(item_id):
-    item['id'] = item_id
+    sql = "SELECT * FROM NFT_Item WHERE ItemID = %s"
+    g.cursor.execute(sql, (item_id))
+    item = g.cursor.fetchone()
 
     return render_template('buy/buy.html', item=item)
 
