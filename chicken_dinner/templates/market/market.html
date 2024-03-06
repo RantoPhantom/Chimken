@@ -8,10 +8,10 @@ market.css
     <h1 id = "market-title-1">Featured NFTs</h1>
     <div class = "mfeatured-border-line">
         <div class = "market-featured">
-
             {% for item in itemArray %}
+                {% if loop.index < 6 %}
                 <div hx-get="./lol/{{item.id}}" class = "mfeatured-items">
-                    <img src = "../static/img/{{item.img}}" style = "object-position: center;">
+                    <img src = "../static/img/img{{item.id}}.jpg" style = "object-position: center;">
                     <div class = "mfeatured-info">
                         <h1>
                             {{item.name}}
@@ -21,6 +21,7 @@ market.css
                         </p>
                     </div>
                 </div>
+                {% endif %}
             {% endfor %}   
         </div>
     </div>
@@ -61,9 +62,9 @@ market.css
 
                     <div id = "option-list">
                         <div class = "option-items">
-                            <input class = "radio-select" type = "radio" name = "platform" value = "price:lth">
+                            <input hx-get = "./sort" hx-trigger = "click" hx-target = "#selected-value" hx-swap = "innerHTML" class = "radio-select" type = "radio" name = "platform" value = "price:lth">
                             <span class = "label" >Price: High to Low</span>
-                            <span class = "opt-val">Price: High to Low</span>
+                            <!-- <span class = "opt-val">Price: High to Low</span> -->
                         </div>
 
                         <div class = "option-items">

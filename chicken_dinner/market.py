@@ -4,38 +4,40 @@ from flask import (
     request,
     url_for,
     redirect,
-    make_response
+    make_response,
+    g
 )
 
 bp = Blueprint('market', __name__, url_prefix='/market')
 
-item1 = {
-    'id' : '01',
-    'img' : 'img2.jpg',
-    'name' : 'Pipipopo',
-    'price' : '9.75'
-}
+itemArray = []
 
-item2 = {
-    'id' : '02',
-    'img' : 'img6.jpg',
-    'name' : 'Bopeep',
-    'price' : '10.0'
-}
+def load_dtb():
+    g.cursor.execute('SELECT * from NFT_Item')
+    result = g.cursor.fetchall()
+    
+    for x in result:
+        item = {
+            'id' : x[0],
+            'name' : x[1],
+            'price' : x[3]
+        }
+        itemArray.append(item)
 
-item3 = {
-    'id' : '03',
-    'img' : 'img5.jpg',
-    'name' : 'Beepo',
-    'price' : '13.0'
-}
+    return 0
 
-itemArray = [item1, item2, item3, item3, item3]
 
 @bp.route('/')
 def index():
+    if (len(itemArray) == 0):
+        load_dtb()
+
     return render_template('market/market.html', itemArray = itemArray)
 
+@bp.route('/sort')
+def sort():
+    html_respond = "<span> Changed </span>" 
+    return html_respond 
 
 @bp.route('/redirect')
 def buy():

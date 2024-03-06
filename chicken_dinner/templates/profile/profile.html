@@ -40,7 +40,7 @@ profile.css
 
             <p id="collected_num"> 10 items </p>
             <div class="collected_container">
-                <div class="collected_items">
+                <!-- <div class="collected_items">
                     <div class="collected_img">
                         <img src="../static/img/cute_alien.jpeg">
                     </div>
@@ -141,7 +141,7 @@ profile.css
                             <img src="https://img.icons8.com/color/48/verified-badge.png" alt="verified-badge"/>
                         </h1>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
 
@@ -306,7 +306,7 @@ profile.css
                 <div class = "deals-cover">
                     <div class = "deals-cover-left">
                         <div class = "dcover-image">
-                            <img src="../static/img/garan.jpeg" alt="2nduser_img">
+                            <!-- <img src="../static/img/img2.jpg" alt="2nduser_img"> -->
                         </div>
                         <div class = "dcover-name">
                             UserXyZ
@@ -321,13 +321,13 @@ profile.css
                 </div>
                 <div class = "deals-content">
                     <div class = "deals-content-left">
-                        <div class = "dcontent-items">
+                        <!-- <div class = "dcontent-items">
                             <div class = "dcontent-items-img">
                                 <img src = "../static/img/img23.jpg">
                             </div>
                             <div class = "dcontent-items-info">
                                 <h1>
-                                    Boomm Cat
+                                    
                                 </h1>
                                 <p>
                                     @NyanNyan
@@ -340,13 +340,28 @@ profile.css
                             </div>
                             <div class = "dcontent-items-info">
                                 <h1>
-                                    Ferris Cloud
+                                    Ferris Cloudddddddddd
                                 </h1>
                                 <p>
                                     @Dreamland
                                 </p>
                             </div>
+                        </div> -->
+                        {% for item in itemArray %}
+                        <div class = "dcontent-items">
+                            <div class = "dcontent-items-img">
+                                <img src = "../static/img/img{{item.id}}.jpg">
+                            </div>
+                            <div class = "dcontent-items-info">
+                                <h1>
+                                    {{item.name}}
+                                </h1>
+                                <p>
+                                    @NyanNyan
+                                </p>
+                            </div>
                         </div>
+                        {% endfor %}
                         <div class = "dcontent-items">
                             <div class = "dcontent-items-img">
                                 <p>+ 2.3ETH <i class="ri-eth-line" style = "color: black;"></i></p>

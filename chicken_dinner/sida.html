@@ -583,3 +583,23 @@
         </div> 
     </div>
 </div>
+
+<div class = "dcontent-items">
+    {% set max_items = 2 %}
+    {% set num_items = range(1, max_items + 1)|random %}
+    {% for i in range(num_items) %}
+        {% set random_index = range(0, itemArray|length)|random %}
+        {% set item = itemArray[random_index] %}
+        <div class = "dcontent-items-img">
+            <img src = "../static/img/img{{item.id}}.jpg">
+        </div>
+        <div class = "dcontent-items-info">
+            <h1>
+                {{item.name}}
+            </h1>
+            <p>
+                {{item.desc}}
+            </p>
+        </div>
+    {% endfor %}
+</div>
