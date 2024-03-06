@@ -76,7 +76,6 @@ def index():
 
 
 @bp.route('/redirect/<int:item_id>')
-@login_required
 def lol(item_id):
     url = url_for('buy.index', item_id=item_id)
     response = make_response(
@@ -84,3 +83,8 @@ def lol(item_id):
             )
     response.headers['HX-Redirect'] = url
     return response
+
+
+@bp.route('/trade/<int:item_id>', methods=["POST"])
+def trade(item_id):
+    return render_template("/trades/trades.html")

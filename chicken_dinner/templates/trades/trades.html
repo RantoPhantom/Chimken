@@ -1,14 +1,7 @@
-{% extends 'base.html' %}
-<div id="trade-content"
-    <div id="current-trade">
-    </div>
-
-    <div id="trading-content">
-        <div class="trade-components" id="order-book"></div>
-        <div id="middle"
-            <div class="trade-components" id="graph"></div>
-            <div class="trade-components" id="buy/sell"></div>
-        </div>
-        <div class="trade-components" id="market-trades"></div>
-    </div>
-</div>
+<form method="post">
+	<h2>Trade</h2>
+	<label for="oubound-address">Address you want to trade with</label>
+	<input type="text" name="outbound-address" id="outbound-address">
+	<label for="inbound-address"></label>
+	<input type="text" name="inbound-address" id="inbound-address">
+</form>

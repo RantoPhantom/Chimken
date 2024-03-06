@@ -4,6 +4,10 @@ market.css
 {% endblock %}
 {% block title %}Marketplace{% endblock %}
 {% block content %}
+
+<div id="trade-modal">
+
+</div>
 <section class="market">
 	<h1 id="market-title-1">Featured NFTs</h1>
 	<div class="mfeatured-border-line">
@@ -106,10 +110,10 @@ market.css
 						<p style="font-size: 84.6%">{{item.Price}}ETH</p>
 					</div>
 					<div class="featured-button">
-						<button hx-get="./redirect" style="margin-right: 1.5%;">
+						<button hx-get="./redirect/{{item.ItemID}}" style="margin-right: 1.5%;">
 							Buy
 						</button>
-						<button style="margin-left: 1.5%;">
+						<button hx-target="#trade-modal" hx-post="./trade/{{item.ItemID}}" style="margin-left: 1.5%;">
 							Trade
 						</button>
 					</div>           
