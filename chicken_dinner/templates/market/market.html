@@ -15,7 +15,7 @@ market.css
 			{% for item in itemArray %}
 				{% if loop.index <= 5 %}
 			<div hx-get="./redirect/{{item.ItemID}}" class="mfeatured-items">
-				<img src="../static/img/img{{item.ItemID}}.jpg" style="object-position: center;">
+				<img src="../static/img/nft/img{{item.ItemID}}.jpg" style="object-position: center;">
 				<div class="mfeatured-info">
 					<h1>
 						{{item.Name}}
@@ -98,7 +98,7 @@ market.css
 			{% for item in itemArray %}
 			<div class="featured-items market-NFT">
 				<div class="featured-img">
-					<img src="../static/img/img{{item.ItemID}}.jpg"/>
+					<img src="../static/img/nft/img{{item.ItemID}}.jpg"/>
 				</div>
 				<div class="featured-info">
 					<h2>{{item.Name}}</h2>
