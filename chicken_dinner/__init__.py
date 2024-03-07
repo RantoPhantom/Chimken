@@ -1,7 +1,7 @@
 import os
-import mysql.connector
+from flaskext.mysql import MySQL
 
-from flask import Flask
+from flask import Flask, g
 
 
 def create_app(test_config=None):
@@ -26,12 +26,22 @@ def create_app(test_config=None):
         pass
 
     # INIT BLUEPRINTS AND DB HERE
-    mydb = mysql.connector.connect(
-        host="sql-lol.duckdns.org",
-        user="root",
-        password="lol"
-    )
-    print(mydb)
+
+    app.config['MYSQL_DATABASE_USER'] = 'root'
+    app.config['MYSQL_DATABASE_PASSWORD'] = 'lol'
+    app.config['MYSQL_DATABASE_DB'] = 'chimken_dinner'
+    app.config['MYSQL_DATABASE_HOST'] = 'sql-lol.duckdns.org'
+    db = MySQL()
+    db.init_app(app)
+
+    # Register a function to run before each request
+    @app.before_request
+    def before_request():
+        conn = db.connect()
+        cursor = conn.cursor()
+        # Store the database connection in the application context's 'g' object
+        g.conn = conn
+        g.cursor = cursor
 
     from . import buy
     app.register_blueprint(buy.bp)

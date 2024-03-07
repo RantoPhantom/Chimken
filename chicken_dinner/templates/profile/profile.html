@@ -38,264 +38,20 @@ profile.css
         <label for="collected" class="tabs-label">Collected</label>
         <div class="tabs-content">
 
-            <p id="collected_num"> 10 items </p>
+            <p id="collected_num"> {{itemArray|length}} items </p>
             <div class="collected_container">
+                {% for item in itemArray %}
                 <div class="collected_items">
                     <div class="collected_img">
-                        <img src="../static/img/cute_alien.jpeg">
-                    </div>
-                    <div class="collected_info">
-                        <h2>Cute Alien CA07</h2>
-                    </div>
-                </div>
-
-                <div class="collected_items">
-                    <div class="collected_img">
-                        <img src="../static/img/img1.jpg">
+                        <img src="../static/img/img{{item.id}}.jpg">
                     </div>
                     <div class="collected_info">
                         <h2>
-                            GraffiGi
-                            <img src="https://img.icons8.com/color/48/verified-badge.png" alt="verified-badge"/>
+                            {{item.name}}
                         </h2>
                     </div>
                 </div>
-
-                <div class="collected_items">
-                    <div class="collected_img">
-                        <img src="../static/img/img3.jpg">
-                    </div>
-                    <div class="collected_info">
-                        <h2>Room No#1</h2>
-                    </div>
-                </div>
-
-                <div class="collected_items">
-                    <div class="collected_img">
-                        <img src="../static/img/img4.jpg">
-                    </div>  
-                    <div class="collected_info">
-                        <h2>Social Vending Machine</h2>
-                    </div>
-                </div>
-
-                <div class="collected_items">
-                    <div class="collected_img">
-                        <img src="../static/img/img5.jpg">
-                    </div>
-                    <div class="collected_info">
-                        <h2>
-                            Playdoh Cake
-                            <img src="https://img.icons8.com/color/48/verified-badge.png" alt="verified-badge"/>
-                        </h2>
-                    </div>
-                </div>
-
-                <div class="collected_items">
-                    <div class="collected_img">
-                        <img src="../static/img/img6.jpg">
-                    </div>
-                    <div class="collected_info">
-                        <h2>
-                            Pop PC
-                        </h2>
-                    </div>
-                </div>
-
-                <div class="collected_items">
-                    <div class="collected_img">
-                        <img src="../static/img/img7.jpg">
-                    </div>
-                    <div class="collected_info">
-                        <h2>
-                            Space And Time
-                        </h2>
-                    </div>
-                </div>
-
-                <div class="collected_items">
-                    <div class="collected_img">
-                    <img src="../static/img/3d_house.jpeg">
-                    <div class="collected_info">
-                        <h1>
-                            3D House
-                            <img src="https://img.icons8.com/color/48/verified-badge.png" alt="verified-badge"/>
-                        </h1>
-                    </div>
-                </div>
-
-                <div class="collected_items">
-                    <img src="../static/img/img8.jpg">
-                    <div class="collected_info">
-                        <h1>
-                            Floral
-                        </h1>
-                    </div>
-                </div>
-
-                <div class="collected_items">
-                    <img src="../static/img/monkeyy.jpeg">
-                    <div class="collected_info">
-                        <h1>
-                            Hugs From Monkey
-                            <img src="https://img.icons8.com/color/48/verified-badge.png" alt="verified-badge"/>
-                        </h1>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <input type="radio" class="tabs-radio" name="profile-tabs" id="offers" >
-        <label for="offers" class="tabs-label">Offers Made</label>
-        <div class="tabs-content offerstab">
-            <div class="content_bar">
-                <div class="cate offers_num">
-                    <p>16 offers</p>
-                </div>
-
-                <div class="cate price">
-                    <p>Price</p>
-                </div>
-
-                <div class="cate quantity">
-                    <p>Quantity</p>
-                </div>
-
-                <div class="cate total">
-                    <p>Total</p>
-                </div>
-
-                <div class="cate expiration">
-                    <p>Expiration</p>
-                </div>
-
-                <div class="cate created">
-                    <p>Date Created</p>
-                </div>
-            </div>
-
-            <div class="offers_container">
-                <div class="offer name">
-                    <hr> 
-                    <div class="offer1">
-                        <img width="34.4px" height="34.4px" src="../static/img/pixel_dragon.jpeg" alt="offer1 img">
-                        <p>Pixel Dragons Rangers Edition</p>
-                    </div>
-                    <div class="offer2">
-                        <img width="34.4px" height="34.4px" src="../static/img/unicorn.jpeg" alt="offer2 img">
-                        <p>Unicorn: Pixel</p>
-                        <img width="16.5" height="17.21" src="https://img.icons8.com/color/48/verified-badge.png" alt="verified-badge" id="offer_badge"/>
-                    </div>
-                    <div class="offer3">
-                        <img width="34.4px" height="34.4px" src="../static/img/deer.jpeg" alt="offer1 img">
-                        <p>Deer's Diner</p>
-                    </div>
-                    <div class="offer4">
-                        <img width="34.4px" height="34.4px" src="../static/img/whale.jpeg" alt="offer2 img">
-                        <p>Whale The Game</p>
-                        <img width="16.5" height="17.21" src="https://img.icons8.com/color/48/verified-badge.png" alt="verified-badge" id="offer_badge"/>
-                    </div>
-                    <div class="offer5">
-                        <img width="34.4px" height="34.4px" src="../static/img/raccoon.jpeg" alt="offer2 img">
-                        <p>Skateboarding Raccoon</p>
-                        <img width="16.5" height="17.21" src="https://img.icons8.com/color/48/verified-badge.png" alt="verified-badge" id="offer_badge"/>
-                    </div>
-                </div>
-
-                <div class="offer price">
-                    <hr>
-                    <div class="offer1">
-                        <p>0.0608 ETH</p>
-                    </div>
-                    <div class="offer2">
-                        <p>0.0501 ETH</p>
-                    </div>
-                    <div class="offer3">
-                        <p>0.0152 ETH</p>
-                    </div>
-                    <div class="offer4">
-                        <p>0.008 ETH</p>
-                    </div>
-                    <div class="offer5">
-                        <p>0.0502 ETH</p>
-                    </div>
-                </div>
-
-                <div class="offer quantity">
-                    <hr>
-                    <div class="offer1">
-                        <p>1</p>
-                    </div>
-                    <div class="offer2">
-                        <p>3</p>
-                    </div>
-                    <div class="offer3">
-                        <p>6</p>
-                    </div>
-                    <div class="offer4">
-                        <p>5</p>
-                    </div>
-                    <div class="offer5">
-                        <p>1</p>
-                    </div>
-                </div>
-
-                <div class="offer total">
-                    <hr>
-                    <div class="offer1">
-                        <p>0.0608 ETH</p>
-                    </div>
-                    <div class="offer2">
-                        <p>0.1503 ETH</p>
-                    </div>
-                    <div class="offer3">
-                        <p>0.0912 ETH</p>
-                    </div>
-                    <div class="offer4">
-                        <p>0.004 ETH</p>
-                    </div>
-                    <div class="offer5">
-                        <p>0.0502 ETH</p>
-                    </div>
-                </div>
-
-                <div class="offer expiration">
-                    <hr>
-                    <div class="offer1">
-                        <p>in 11 minutes</p>
-                    </div>
-                    <div class="offer2">
-                        <p>in 10 minutes</p>
-                    </div>
-                    <div class="offer3">
-                        <p>in 10 minutes</p>
-                    </div>
-                    <div class="offer4">
-                        <p>in 7 minutes</p>
-                    </div>
-                    <div class="offer5">
-                        <p>in 4 minutes</p>
-                    </div>
-                </div>
-
-                <div class="offer created">
-                    <hr>
-                    <div class="offer1">
-                        <p>9 minutes ago</p>
-                    </div>
-                    <div class="offer2">
-                        <p>33 minutes ago</p>
-                    </div>
-                    <div class="offer3">
-                        <p>34 minutes ago</p>
-                    </div>
-                    <div class="offer4">
-                        <p>38 minutes ago</p>
-                    </div>
-                    <div class="offer5">
-                        <p>39 minutes ago</p>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
 
@@ -304,52 +60,49 @@ profile.css
         <div class="tabs-content dealstab">
             <div class = "deals">
                 <div class = "deals-cover">
+                    {% for user in userArray %}
                     <div class = "deals-cover-left">
                         <div class = "dcover-image">
                             <img src="../static/img/garan.jpeg" alt="2nduser_img">
                         </div>
                         <div class = "dcover-name">
-                            UserXyZ
+                            {{user.name}}
                         </div>
                     </div>
+                    {% endfor %}
                     <div class = "deals-cover-right">
+                        {% set selected_status = statusArray | random %}
                         <div class = "dcover-status">
-                            Status: Active 
-                            <i class="ri-circle-fill" style = "color: #6EC531; font-size: 1vw;"></i>
+                            Status: {{selected_status.name}} 
+                            <i class="ri-circle-fill" style = "color: {{selected_status.color}}; font-size: 1vw;"></i>
                         </div>
                     </div>
                 </div>
                 <div class = "deals-content">
                     <div class = "deals-content-left">
+                        {% set max_items = 2 %}
+                        {% set num_items = range(1, max_items + 1)|random %}
+                        {% for i in range(num_items) %}
+                            {% set random_index = range(0, itemArray|length)|random %}
+                            {% set item = itemArray[random_index] %}
                         <div class = "dcontent-items">
                             <div class = "dcontent-items-img">
-                                <img src = "../static/img/img23.jpg">
+                                <img src = "../static/img/img{{item.id}}.jpg">
                             </div>
                             <div class = "dcontent-items-info">
                                 <h1>
-                                    Boomm Cat
+                                    {{item.name}}
                                 </h1>
                                 <p>
-                                    @NyanNyan
+                                    {{item.desc}}
                                 </p>
                             </div>
                         </div>
+                        {% endfor %}
                         <div class = "dcontent-items">
+                            {% set selected_eth = ethArray | random %}
                             <div class = "dcontent-items-img">
-                                <img src = "../static/img/img35.jpg">
-                            </div>
-                            <div class = "dcontent-items-info">
-                                <h1>
-                                    Ferris Cloud
-                                </h1>
-                                <p>
-                                    @Dreamland
-                                </p>
-                            </div>
-                        </div>
-                        <div class = "dcontent-items">
-                            <div class = "dcontent-items-img">
-                                <p>+ 2.3ETH <i class="ri-eth-line" style = "color: black;"></i></p>
+                                <p>{{selected_eth.plus}} <i class="ri-eth-line" style = "color: black;"></i></p>
                             </div>
                         </div>
                     </div>
@@ -361,19 +114,25 @@ profile.css
                     </div>
                         
                     <div class = "deals-content-right">
+                        {% set max_items = 2 %}
+                        {% set num_items = range(1, max_items + 1)|random %}
+                        {% for i in range(num_items) %}
+                            {% set random_index = range(0, itemArray|length)|random %}
+                            {% set item = itemArray[random_index] %}
                         <div class = "dcontent-items">
                             <div class = "dcontent-items-img">
-                                <img src = "../static/img/img1.jpg">
+                                <img src = "../static/img/img{{item.id}}.jpg">
                             </div>
                             <div class = "dcontent-items-info">
                                 <h1>
-                                    GraffiGi
+                                    {{item.name}}
                                 </h1>
                                 <p>
-                                    @Puppeter
+                                    {{item.desc}}
                                 </p>
                             </div>
                         </div>
+                        {% endfor %}
                     </div>
                 </div>
                 <div class = "deals-info">

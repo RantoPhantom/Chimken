@@ -132,196 +132,41 @@ hr{
 }
 
 .collected_container{
-    width: 93vw;
-    padding: 0px 32px;
     display: grid;
     grid-template-rows: repeat(2, 281.28px);
-    grid-template-columns: repeat(auto-fit, 169.28px);
+    grid-template-columns: repeat(7, 169.28px);
     grid-gap: 1em;
+    justify-content: space-evenly;
 }
 
-.item{
+.collected_items{
     background: #282828;
     border-radius: 25px;
+    display: flex;
+    flex-direction: column;
 }
 
-.item-1 img{
+.collected_img{
+    flex: 1.5;
+    overflow: hidden;
     border-radius: 25px 25px 0px 0px;
-    width: 169.28px;
-    height: 149.28px;
 }
 
-#item2_img{
-    width: 102.36px;
-    height: 142.55px;
-    padding: 0px 33.46px;
-    margin-bottom: 6.73px;
+.collected_img img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
 }
 
-#item2_offer{
-    color: #b3b3b3;
-    font-size: 12px;
-}
-
-.item-3 img{
-    width: 130px;
-    height: 130px;
-    padding: 0px 21.14px;
-    margin-bottom: 19.28px;
-}
-
-.item-4 img{
-    width: 169.28px;
-    height: 126.96px;
-    margin-top: 22.32px;
-}
-
-#item5_img{
-    width: 119.42px;
-    height: 149.28px;
-    padding: 0px 24.93px;
-}
-
-#item5_offer{
-    color: #b3b3b3;
-    font-size: 12px;
-}
-
-.item-6 img{
-    width: 133.4px;
-    height: 149.28px;
-    padding: 0px 17.94px;
-}
-
-#item6_offer{
-    color: #b3b3b3;
-    font-size: 12px;
-}
-
-.item-7 img{
-    width: 130px;
-    height: 130px;
-    padding: 0px 21.14px;
-    margin-bottom: 19.28px;
-}
-
-#item8_img{
-    padding: 0px 21.14px;
-    margin-bottom: 19.28px;
-}
-
-#item8_offer{
-    color: #b3b3b3;
-    font-size: 12px;
-}
-
-.item-9 img{
-    width: 169.28px;
-    height: 93.28px;
-    padding: 28px 0px;
-}
-
-#item10_img{
-    padding: 0px 21.14px;
-    margin-bottom: 19.28px;
-}
-
-.item p{
+.collected_info{
     font-family: 'Rubik', sans-serif;
+    font-size: 0.7vw;
     font-weight: 500;
-    font-size: 1.25vw;
-    padding: 16px;
+    padding-top: 1.0vw;
+    padding-left: 1vw;
+    flex: 1;
 }
 
-/* Offers Made tab */
-
-.offerstab {
-    height: 40vw;
-}
-.content_bar{
-    display: grid;
-    padding: 0px 16px;
-    grid-template-columns: 260px repeat(4, 196.46px) 130px;
-    grid-template-rows: 52px;
-    align-items: center;
-}
-
-.content_bar p{
-    font-family: 'Rubik', sans-serif;
-    color: #b3b3b3;
-    font-size: 1.25vw;
-}
-
-.offers_container{
-    display: grid;
-    padding: 0px 16px;
-    grid-template-columns: 260px repeat(4, 196.46px) 130px;
-    grid-template-rows: 52px;
-}
-
-.offer1{
-    position: relative;
-    display: flex;
-    align-items: center;
-    padding: 10px 0px;
-}
-
-.offer2{
-    position: relative;
-    display: flex;
-    align-items: center;
-    padding: 10px 0px;
-}
-
-.offer3{
-    position: relative;
-    display: flex;
-    align-items: center;
-    padding: 10px 0px;
-}
-
-.offer4{
-    position: relative;
-    display: flex;
-    align-items: center;
-    padding: 10px 0px;
-}
-
-.offer5{
-    position: relative;
-    display: flex;
-    align-items: center;
-    padding: 10px 0px;
-}
-
-.name img{
-    border-radius: 10px;
-    margin-right: 10px;
-}
-
-.price p{
-    margin-top: 10px;
-}
-
-.quantity p{
-    margin-top: 10px;
-}
-
-.total p{
-    margin-top: 10px;
-}
-
-.expiration p{
-    margin-top: 10px;
-}
-
-.created p{
-    margin-top: 10px;
-}
-
-#offer_badge{
-    padding: 0px 10px;
-}
 
 /* Deals tab */
 
@@ -355,15 +200,17 @@ hr{
     width: 65%;
     height: 65%;
     background-color: green;
-    border-radius: 100px;
+    border-radius: 50%;
     margin: auto 1.4vw;
     overflow: hidden;
+    
 }
 
 .dcover-image img {
-    object-fit: cover;
+
     width: 100%;
     height: 100%;
+    
 }
 
 .dcover-name {
@@ -393,6 +240,7 @@ hr{
 .deals-content-left {
     flex: 1;
     display: flex;
+    flex-direction: row;
     justify-content: space-evenly;
     padding-top: 3%;
 }
