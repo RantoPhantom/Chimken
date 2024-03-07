@@ -8,19 +8,12 @@ bp = Blueprint('profile', __name__, url_prefix='/profile')
 itemArray = []
 
 
-def load_dtb():
-    g.cursor.execute('SELECT * from NFT_Item')
-    result = g.cursor.fetchall()
-    for x in result:
-        item = {
-                'id': x[0],
-                'name': x[1],
-                'price': x[3],
-                'desc': x[4]
-        }
-        itemArray.append(item)
-
-    return 0
+def load_items():
+    global itemArray
+    print("fetching")
+    g.cursor.execute("SELECT * FROM NFT_Item")
+    itemArray = g.cursor.fetchall()
+    return itemArray
 
 
 user1 = {
@@ -61,11 +54,18 @@ eth3 = {
 
 ethArray = [eth1, eth2, eth3]
 
+trade_info = {
+    "hash": "0xdC0b8cA898DB8D46A37517d70E63985ABA1FaF0B",
+    "block": "hong biet cai nay =))",
+}
+
+trade_infoArray = [trade_info]
+
 
 @bp.route('/')
 @login_required
 def index():
     if (len(itemArray) == 0):
-        load_dtb()
+        load_items()
     return render_template('profile/profile.html', itemArray=itemArray, userArray=userArray, statusArray=statusArray, 
-                           ethArray=ethArray)
+                           ethArray=ethArray, trade_infoArray=trade_infoArray)
