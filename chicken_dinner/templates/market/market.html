@@ -47,6 +47,7 @@ market.css
             <div class = "filter-items" style = "margin-top: 1.5vw;">
                 <p style = "font-size: 1.4vw;">Sort By:</p>
 
+<<<<<<< Updated upstream
                 <div id = "market-select-box">
                     <input type = "checkbox" id = "options-view-button">
                     <div id = "select-button" class = "select-border">
@@ -115,5 +116,119 @@ market.css
             
         </div>
     </div>
+=======
+<section class="market">
+	<h1 id="market-title-1">Featured NFTs</h1>
+	<div class="mfeatured-border-line">
+		<div class="market-featured">
+			{% for item in itemArray %}
+				{% if loop.index <= 5 %}
+			<div hx-get="./redirect/{{item.ItemID}}" class="mfeatured-items">
+				<img src="../static/img/img{{item.ItemID}}.jpg" style="object-position: center;">
+				<div class="mfeatured-info">
+					<h1>
+						{{item.Name}}
+					</h1>
+					<p>
+					Price: {{item.Price}} ETH
+					</p>
+				</div>
+			</div>
+				{% endif %}
+			{% endfor %}   
+		</div>
+	</div>
+	<h1 id="market-title-2">Explore</h1>
+	<div class="market-main">
+		<div class="market-filter">
+			<div class="filter-items" style="font-size: 1.4vw">
+				<i class="ri-search-line"></i>
+				<input name="search" type="search" placeholder="Search..."
+					hx-post="./search" 
+					hx-trigger="input changed delay:100ms, search"
+					hx-target=".market-list"
+					hx-swap="innerHTML">
+			</div>
+			<div id="special-item-1" class="filter-items">
+				Filter
+			</div>
+			<div class="filter-items input-price">
+				<p style="font-size: 1.4vw;">Price</p>
+				<div style="margin-top: 0.8vw;">
+					<i class="ri-eth-line"></i><input type="text" placeholder="Minimum">         
+				</div>
+				<div>
+					<i class="ri-eth-line"></i><input type="text" placeholder="Maximum">
+				</div>
+			</div>
+			<div class="filter-items" style="margin-top: 1.5vw;">
+				<p style="font-size: 1.4vw;">Sort By:</p>
+
+				<div id="market-select-box">
+					<input type="checkbox" id="options-view-button">
+					<div id="select-button" class="select-border">
+						<div hx-get = "./sort" id="selected-value">                
+							<span>
+								Default
+							</span>
+						</div>
+						<div id="arrow-down-button">
+							<i class="ri-arrow-down-s-line"></i>
+						</div>       
+					</div>
+
+					<div id="option-list">
+						<div class="option-items">
+							<input hx-get = "./sort-htl" hx-trigger = "click" hx-target = "#selected-value" hx-swap = "innerHTML" class = "radio-select" type = "radio" name = "sort_type" value = "Price: High to Low">
+                            <span class = "label" >Price: High to Low</span>
+						</div>
+
+						<div class="option-items">
+							<input hx-get = "./sort-lth" hx-trigger = "click" hx-target = "#selected-value" hx-swap = "innerHTML" class="radio-select" type="radio" name = "sort_type" value = "Price: Low to High">
+							<span class="label" >Price: Low to High</span>
+						</div>
+
+						<div class="option-items">
+							<input hx-get = "./sort" hx-trigger = "click" hx-target = "#selected-value" hx-swap = "innerHTML" class="radio-select" type="radio" name = "sort_type" value = "Default">
+							<span class="label" >Default</span>
+						</div>
+						<div id="option-bg">
+
+						</div>
+					</div>  
+				</div>
+
+			</div>
+		</div>
+		<div class="market-list">
+			{% for item in itemArray %}
+			<div class="featured-items market-NFT">
+				<div class="featured-img">
+					<img src="../static/img/img{{item.ItemID}}.jpg"/>
+				</div>
+				<div class="featured-info">
+					<h2>{{item.Name}}</h2>
+					<a href="">
+						@{{item["Users.Name"]}}
+					</a>
+					<div class="featured-price">
+						<p style="font-size: 92%;">Price:</p>
+						<p style="font-size: 84.6%">{{item.Price}}ETH</p>
+					</div>
+					<div class="featured-button">
+						<button hx-get="./redirect/{{item.ItemID}}" style="margin-right: 1.5%;">
+							Buy
+						</button>
+						<button hx-get="./trade/{{item.ItemID}}" style="margin-left: 1.5%;">
+							Trade
+						</button>
+					</div>           
+				</div>
+			</div>
+			{% endfor %}
+
+		</div>
+	</div>
+>>>>>>> Stashed changes
 </section>
 {% endblock %}

@@ -84,7 +84,6 @@
     top: var(--header-height);
     align-self: flex-start;
     width: 21vw;
-    height: 50vw;
     box-sizing: border-box;
 }
 
