@@ -85,6 +85,11 @@ def lol(item_id):
     return response
 
 
-@bp.route('/trade/<int:item_id>', methods=["POST"])
+@bp.route('/trade/<int:item_id>', methods=["GET"])
 def trade(item_id):
-    return render_template("/trades/trades.html")
+    url = url_for('trades.index', item_id=item_id)
+    response = make_response(
+            redirect(url, code=200)
+            )
+    response.headers['HX-Redirect'] = url
+    return response

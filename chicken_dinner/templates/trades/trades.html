@@ -1,7 +1,55 @@
-<form method="post">
-	<h2>Trade</h2>
-	<label for="oubound-address">Address you want to trade with</label>
-	<input type="text" name="outbound-address" id="outbound-address">
-	<label for="inbound-address"></label>
-	<input type="text" name="inbound-address" id="inbound-address">
-</form>
+{% extends 'base.html' %}
+{% block style %}
+trades.css
+{% endblock %}
+{% block title %}Trade{% endblock %}
+{% block content %}
+<section class = "trades">
+	<form method="post">
+		<div class = "trades-left">
+			<h1>
+				Choose your NFTs (up to two): 
+				{% with limit_error = get_flashed_messages(category_filter=["limit"]) %}
+					{% if limit_error %}
+						{{ limit_error }}
+					{% endif %}
+				{% endwith %}
+			</h1>
+			<div class = "owned-list">
+				{% for item in itemArray %}
+				<div class="featured-items owned-NFT">
+					<input type = "checkbox" name = "trades-item" value = "{{item}}" class = "trades-selectbox">
+					<div class="featured-img owned-NFT">
+						<img src="../static/img/img{{item.ItemID}}.jpg"/>
+					</div>
+					<div class="featured-info owned-NFT">
+						<h2>{{item.Name}}</h2>    
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+		<div class = "trades-right">
+			<h1>
+				Trade With:
+			</h1>
+			<div class = "traded-item">
+				<img src = "../static/img/img{{item.ItemID}}.jpg"/>
+			</div>
+			<h2>
+				{{item.Name}}
+			</h2>
+			<p>
+				@{{item["Users.Name"]}}
+			</p>
+			<p>
+				Price: {{item.Price}}ETH
+			</p>
+			<input type = "number" class = "trades-input add-eth" name = "add-eth" placeholder="Add ETH">
+			<input type = "number" class = "trades-input req-eth" name = "req-eth" placeholder="Request ETH">
+			<input type = "submit" value= "Confirm Trade" class = "trades-submit">
+			
+		</div>
+	</form>
+</section>
+{% endblock %}
