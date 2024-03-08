@@ -405,34 +405,23 @@ hr{
 
 .trading-cover-left {
     display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    text-wrap: nowrap;
 }
 
 .trading-cover-left p {
     font-weight: 500;
     font-size: 100%;
     margin: auto 1.4vw;
-    width: 50%;
-}
-
-.trcover-image {
-    width: 65%;
-    height: 65%;
-    background-color: green;
-    border-radius: 100px;
-    margin: auto 1.4vw;
-    overflow: hidden;
-}
-
-.trcover-image img {
-    object-fit: cover;
     width: 100%;
-    height: 100%;
 }
 
 .trcover-name {
     font-weight: 500;
     font-size: 100%;
     margin: auto;
+    width: 100%;
 }
 
 .trading-cover-right {

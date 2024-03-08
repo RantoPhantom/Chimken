@@ -188,10 +188,7 @@ profile.css
                 <div class = "trading-cover">
                     {% for user in userArray %}
                     <div class = "trading-cover-left">
-                        <p> Traded with:</p>
-                        <div class = "trcover-image">
-                            <img src="../static/img/garan.jpeg" alt="2nduser_img">
-                        </div>
+                        <p> Traded with: </p>
                         <div class = "trcover-name">
                             {{user.name}}
                         </div>
@@ -258,6 +255,12 @@ profile.css
                             </div>
                         </div>
                         {% endfor %}
+                        <div class = "trcontent-items">
+                            {% set selected_eth = ethArray | random %}
+                            <div class = "trcontent-items-img">
+                                <p>{{selected_eth.plus}} <i class="ri-eth-line" style = "color: black;"></i></p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class = "trading-info">
