@@ -102,8 +102,8 @@ market.css
 				</div>
 				<div class="featured-info">
 					<h2>{{item.Name}}</h2>
-					<a href="">
-						@Puppeter
+					<a href="" hx-get="./profile/{{item.UserID}}">
+						@{{item["Users.Name"]}}
 					</a>
 					<div class="featured-price">
 						<p style="font-size: 92%;">Price:</p>
@@ -113,7 +113,7 @@ market.css
 						<button hx-get="./redirect/{{item.ItemID}}" style="margin-right: 1.5%;">
 							Buy
 						</button>
-						<button hx-target="#trade-modal" hx-get="./trade/{{item.ItemID}}" style="margin-left: 1.5%;">
+						<button hx-get="./trades/{{item.ItemID}}" style="margin-left: 1.5%;">
 							Trade
 						</button>
 					</div>           

@@ -17,7 +17,8 @@ itemArray = []
 def load_items():
     global itemArray
     print("fetching")
-    g.cursor.execute("SELECT * FROM NFT_Item")
+    sql = "SELECT ItemID, NFT_Item.Name, NFT_Item.UserID, Users.Name, Price FROM NFT_Item INNER JOIN Users ON NFT_Item.UserID = Users.UserID WHERE NFT_Item.UserID != %s"
+    g.cursor.execute(sql, (g.user["UserID"]))
     itemArray = g.cursor.fetchall()
     return itemArray
 
@@ -85,7 +86,7 @@ def lol(item_id):
     return response
 
 
-@bp.route('/trade/<int:item_id>', methods=["GET"])
+@bp.route('/trades/<int:item_id>', methods=["GET"])
 def trade(item_id):
     url = url_for('trades.index', item_id=item_id)
     response = make_response(
@@ -93,3 +94,15 @@ def trade(item_id):
             )
     response.headers['HX-Redirect'] = url
     return response
+
+@bp.route('/profile/<int:user_id>', methods=["GET"])
+def profile(user_id):
+    url = url_for('profile.index', user_id = user_id)
+    response = make_response(
+            redirect(url, code=200)
+            )
+    response.headers['HX-Redirect'] = url
+    return response
+
+
+

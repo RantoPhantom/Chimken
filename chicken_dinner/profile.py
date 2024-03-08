@@ -62,9 +62,10 @@ trade_info = {
 trade_infoArray = [trade_info]
 
 
-@bp.route('/')
+@bp.route('/<int:user_id>', methods=["GET"])
 @login_required
-def index():
+def index(user_id):
+    print(user_id)
     if (len(itemArray) == 0):
         load_items()
     return render_template('profile/profile.html', itemArray=itemArray, userArray=userArray, statusArray=statusArray, 
