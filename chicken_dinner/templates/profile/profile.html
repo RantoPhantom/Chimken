@@ -8,25 +8,27 @@ profile.css
     <div class = "banner">
         <div class = "banner-cover">
             <!-- <img src="../static/img/cover.jpeg"> -->
-            <span class="overlay">
+            <div class="banner-cover-in">
                 <div class = "banner-infor">
                     <div class="banner-infor avatar">
-                        <img src="../static/img/avatar.jpg" width="64" height="64">
+                        <img src="../static/img/nft/img3.jpg" width="64" height="64">
                     </div>
-
                 </div>
-            </span>
-            <div class = " usersocial">
-                <div class = "banner-infor username">
-                    <p id = "username"> Username 
-                        <img width="19.8" height="20.65" src="https://img.icons8.com/color/48/verified-badge.png" alt="verified-badge" id = "twitter"/>
-                    </p>
-                    <p id = "user_id"> 0xdC0b8cA898DB8D46A37517d70E63985ABA1FaF0B</p>
-                </div>
-                <div class = "banner-infor social">
-                    <p><img width="30" height="30" src="../static/img/twitter.png" alt="twitter--v1"/>
-                        <img width="30" height="30" src="../static/img/share.png" alt="share--v1"/>
-                        <img width="30" height="30" src="../static/img/threedots.png" alt="threedots" id = "threedots"/></p>
+                <div class = " usersocial">
+                    {% for user in userArray %}
+                    <div class = "banner-infor username">
+                        <p id = "username"> 
+                            <a href=""> {{user["Name"]}} </a> 
+                            <img width="19.8" height="20.65" src="https://img.icons8.com/color/48/verified-badge.png" alt="verified-badge" id = "twitter"/>
+                        </p>
+                        <p id = "user_id"> 0xdC0b8cA898DB8D46A37517d70E63985ABA1FaF0B</p>
+                    </div>
+                    {%endfor%}
+                    <div class = "banner-infor social">
+                        <p><img width="30" height="30" src="../static/img/twitter.png" alt="twitter--v1"/>
+                            <img width="30" height="30" src="../static/img/share.png" alt="share--v1"/>
+                            <img width="30" height="30" src="../static/img/threedots.png" alt="threedots" id = "threedots"/></p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -55,6 +57,7 @@ profile.css
             </div>
         </div>
 
+        {% if is_own_profile %}
         <input type="radio" class="tabs-radio" name="profile-tabs" id="deals" >
         <label for="deals" class="tabs-label">Deals</label>
         <div class="tabs-content dealstab">
@@ -66,7 +69,7 @@ profile.css
                             <img src="../static/img/nft/img2.jpg" alt="2nduser_img">
                         </div>
                         <div class = "dcover-name">
-                            {{user.name}}
+                            {{user["Name"]}}
                         </div>
                     </div>
                     {% endfor %}
@@ -133,6 +136,12 @@ profile.css
                             </div>
                         </div>
                         {% endfor %}
+                        <div class = "trcontent-items">
+                            {% set selected_eth = ethArray | random %}
+                            <div class = "trcontent-items-img">
+                                <p>{{selected_eth.plus}} <i class="ri-eth-line" style = "color: black;"></i></p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class = "deals-info">
@@ -190,7 +199,7 @@ profile.css
                     <div class = "trading-cover-left">
                         <p> Traded with: </p>
                         <div class = "trcover-name">
-                            {{user.name}}
+                            {{user["Name"]}}
                         </div>
                     </div>
                     {% endfor %}
@@ -273,6 +282,7 @@ profile.css
                 </div>
             </div>
         </div>
+        {% endif %}
     </div>
 </section>
     {% endblock %}

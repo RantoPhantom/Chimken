@@ -7,21 +7,21 @@ bp = Blueprint('profile', __name__, url_prefix='/profile')
 
 itemArray = []
 
+userArray = []
 
-def load_items():
+
+def load_items(user_id):
     global itemArray
     print("fetching")
-    g.cursor.execute("SELECT * FROM NFT_Item")
-    itemArray = g.cursor.fetchall()
+    g.cursor.execute("SELECT * FROM NFT_Item WHERE UserID = %s", (user_id,))
+    itemArray = g.cursor.fetchall()     
     return itemArray
 
-
-user1 = {
-        "id": "3",
-        "name": "Chicken Dinner Winner"
-}
-
-userArray = [user1]
+def load_users(user_id):
+    global userArray
+    g.cursor.execute("SELECT * FROM Users WHERE UserID = %s", (user_id,))
+    userArray = g.cursor.fetchall()     
+    return userArray
 
 status1 = {
         "color": "#6EC531",
@@ -66,7 +66,10 @@ trade_infoArray = [trade_info]
 @login_required
 def index(user_id):
     print(user_id)
-    if (len(itemArray) == 0):
-        load_items()
+    is_own_profile = False
+    if user_id == g.user["UserID"]:
+        is_own_profile = True
+    load_items(user_id) 
+    load_users(user_id)   
     return render_template('profile/profile.html', itemArray=itemArray, userArray=userArray, statusArray=statusArray, 
-                           ethArray=ethArray, trade_infoArray=trade_infoArray)
+                           ethArray=ethArray, trade_infoArray=trade_infoArray, is_own_profile=is_own_profile)
