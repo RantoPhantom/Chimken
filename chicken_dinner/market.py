@@ -13,6 +13,7 @@ bp = Blueprint('market', __name__, url_prefix='/market')
 
 itemArray = []
 
+sortMethod = ''
 
 def load_items():
     global itemArray
@@ -42,12 +43,12 @@ def print_item(itemList):
     for item in itemList:
         html += '<div class="featured-items market-NFT">'
         html += '<div class="featured-img">'
-        html += f'<img src="../static/img/img{item["ItemID"]}.jpg"/>'
+        html += f'<img src="../static/img/nft/img{item["ItemID"]}.jpg"/>'
         html += '</div>'
 
         html += '<div class="featured-info">'
         html += f'<h2>{item["Name"]}</h2>'
-        html += '<a href=""> @Puppeter </a>'
+        html += f'<a href="" hx-get="./profile/{item["UserID"]}"> @{item["Users.Name"]} </a>'
 
         html += '<div class="featured-price">'
         html += '<p style="font-size: 92%;">Price:</p>'
@@ -94,6 +95,7 @@ def trade(item_id):
             )
     response.headers['HX-Redirect'] = url
     return response
+
 
 @bp.route('/profile/<int:user_id>', methods=["GET"])
 def profile(user_id):
