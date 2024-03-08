@@ -12,30 +12,52 @@
 
 .banner-cover {
     background: no-repeat center;
-    background-image: linear-gradient(rgba(24, 24, 35,0.7),rgba(24, 24, 35,0.7)), url(../static/img/cover.jpeg);
+    background-image: linear-gradient(rgba(24, 24, 35,0.7),rgba(24, 24, 35,0.7)), url(../static/img/cover1.jpg);
     background-size: cover;
     height: 300px;
     padding-top: var(--header-height);
 }
 
+.banner-cover-in{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
 .banner-infor{
+    display: flex;
     flex-direction: column;
     align-items: left;
 }
 
+.avatar{
+    width: 6vw;
+    height: 6vw;
+    background-color: green;
+    border-radius: 50%;
+    margin: auto 1.4vw;
+    overflow: hidden;
+}
+
 .avatar img{
-    border-radius: 25px;
-    flex-direction: column;
-    margin-left: 50px;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.username{
+    width: max-content;
+    height: max-content;
+    margin: auto 1.4vw;
 }
 
 #username {
-    font-family: 'Rubik', sans-serif;
     font-weight: 500;
-    font-size: 2vw;  
-    flex: 0.5;
-    padding: 3px;
-    padding-left: 50px;
+    font-size: 200%;  
+}
+
+.username a{
+    text-decoration: none;
 }
 
 #twitter{
@@ -46,35 +68,20 @@
 #user_id{
     font-size: 1vw;
     font-family: 'Rubik', sans-serif;
-    padding: 3px;
-    padding-left: 50px;
-
-}
-
-.banner-cover {
-    display: flex;
-    flex-direction: column;
-}
-
-.overlay{
-    flex:1;
 }
 
 .usersocial{
+    height: max-content;
     display: flex;
     justify-content: space-between;
-    flex: 1;
+    flex-direction: row;
 }
 
 .social{
-    margin-right: 50px;
-    margin-top: 10px;
+    margin: auto 1.4vw;
     align-items: center;
 }
 
-.ay{
-    flex: 2;
-}
 
 /* creating tabs */
 
