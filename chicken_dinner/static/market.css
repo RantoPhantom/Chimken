@@ -165,24 +165,14 @@
 }
 
 #market-select-box {
+    padding-left: 0.5vw;
+    box-sizing: border-box;
     position: relative;
     width: 100%;
     height: 2.8vw;
     z-index: 1;
-}
-
-#options-view-button {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    opacity: 0;
-    cursor: pointer;
-    z-index: 3;
+    background-color: var(--mix-2);
+    border-radius: 5px;
 }
 
 #select-button {
@@ -195,181 +185,14 @@
     cursor: pointer;
 }
 
-#selected-value {
+.selected-value {
+    appearance: none;
     font-size: 1.2vw;
     line-height: 1;
     margin-right: 4vw;
 }
 
-#arrow-down-button {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: 3vw;
-}
 
-#arrow-down-button i {
-    display: block;
-    height: 50%;
-    color: var(--main-font-color);
-    font-size: 1.9vw;
-    text-align: center;
-    margin: calc(0.2vw + 1px) 0.6vw 0 0;
-}
-
-#options-view-button:checked + #select-button #arrow-down-button i {
-    color: var(--dark-1);
-}
-
-#option-list {
-    position: relative;
-    width: 100%;
-    /* height: 100%; */
-    margin: 0.2vw auto;
-    background-color: var(--mix-2);
-    border-radius: 4px;
-}
-
-.option-items, .label {
-    color: var(--main-font-color);
-    font-size: 1.2vw;
-}
-
-#options-view-button:checked ~ #option-list {
-    border-bottom: 1px solid #656961;
-    border-right: 1px solid #656961;
-    box-sizing: border-box;
-}
-
-.option-items {
-    position: relative;
-    line-height: 1;
-    transition: 0.3 ease all;
-    z-index: 2;
-}
-
-.label {
-    display: none;
-    padding: 0;
-    margin-left: 1vw;
-    transition: 0.3s ease all;
-}
-
-#options-view-button:checked ~ #option-list .label {
-    display: block;
-    padding: 0.8vw 0;
-}
-
-input[type = "radio"] {
-    position: absolute;
-    right: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    opacity: 0;
-    cursor: pointer;
-}
-
-.opt-val {
-    position: absolute;
-    left: 1vw;
-    width: 70%;
-    align-items: center;
-    opacity: 0;
-    background-color: var(--mix-2);
-    transform: scale(0);
-}
-
-.option-items input[type="radio"]:checked ~ .opt-val {
-    opacity: 1;
-    transform: scale(1);
-}
-
-.option-items input[type = "radio"]:checked ~ .label {
-    color: var(--dark-1);
-}
-
-.option-items input[type="radio"]:checked ~ .label:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: -1;
-}
-
-#options-view-button:not(:checked)
-  ~ #option-list
-  .option-items
-  input[type="radio"]:checked
-  ~ .opt-val {
-  top: -2.3vw;
-}
-
-.option-items:nth-child(1) input[type="radio"]:checked ~ .label:before {
-    background: linear-gradient(149deg, rgba(253,253,255,1) 0%, rgba(1,203,240,1) 75%, rgba(229,239,242,1) 100%);
-    border-radius: 4px 4px 0 0;
-}
-
-.option-items:nth-child(1) input[type="radio"]:checked ~ .opt-val {
-    top: -2.3vw;
-}
-
-.option-items:nth-child(2) input[type="radio"]:checked ~ .label:before {
-    background: linear-gradient(149deg, rgba(253,253,255,1) 0%, rgba(1,203,240,1) 75%, rgba(229,239,242,1) 100%);
-}
-  
-.option-items:nth-child(2) input[type="radio"]:checked ~ .opt-val {
-    top: -5.1vw;
-}
-  
-.option-items:nth-child(3) input[type="radio"]:checked ~ .label:before {
-    background: linear-gradient(149deg, rgba(253,253,255,1) 0%, rgba(1,203,240,1) 75%, rgba(229,239,242,1) 100%);
-    border-radius: 0 0 4px 4px;
-}
-  
-.option-items:nth-child(3) input[type="radio"]:checked ~ .opt-val {
-    top: -7.9vw;
-}
-
-#option-bg {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    height: 2.8vw;
-    transition: 0.3s ease all;
-    z-index: 1;
-    display: none;
-}
-
-#options-view-button:checked ~ #option-list #option-bg {
-    display: block;
-}
-
-.option-items:hover .label {
-    color: var(--dark-1);
-}
-
-.option-items:nth-child(1):hover ~ #option-bg {
-    top: 0;
-    background: linear-gradient(149deg, rgba(253,253,255,1) 0%, rgba(1,203,240,1) 75%, rgba(229,239,242,1) 100%);
-    border-radius: 4px 4px 0 0;
-} 
-
-.option-items:nth-child(2):hover ~ #option-bg {
-    top: 2.8vw;
-    background: linear-gradient(149deg, rgba(253,253,255,1) 0%, rgba(1,203,240,1) 75%, rgba(229,239,242,1) 100%);
-}
-  
-.option-items:nth-child(3):hover ~ #option-bg {
-    top: 5.6vw;
-    background: linear-gradient(149deg, rgba(253,253,255,1) 0%, rgba(1,203,240,1) 75%, rgba(229,239,242,1) 100%);
-    border-radius: 0 0 4px 4px;
-}
 
 
 
