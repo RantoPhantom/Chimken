@@ -8,6 +8,7 @@ from flask import (
         g,
         make_response
         )
+import random
 
 bp = Blueprint('market', __name__, url_prefix='/market')
 
@@ -98,7 +99,10 @@ def print_item(itemList):
 def index():
     global itemArray
     itemArray = load_items()
-    return render_template('market/market.html', itemArray=itemArray)
+    
+    randomSample = random.sample(itemArray, 5)
+
+    return render_template('market/market.html', itemArray=itemArray, featuredArray=randomSample)
 
 
 @bp.route('/redirect/<int:item_id>')

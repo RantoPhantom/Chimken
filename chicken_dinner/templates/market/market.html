@@ -5,26 +5,23 @@ market.css
 {% block title %}Marketplace{% endblock %}
 {% block content %}
 
-<div id="trade-modal">
-
-</div>
 <section class="market">
 	<h1 id="market-title-1">Featured NFTs</h1>
 	<div class="mfeatured-border-line">
 		<div class="market-featured">
-			{% for item in itemArray %}
+			{% for item in featuredArray %}
 				{% if loop.index <= 5 %}
-			<div hx-get="./redirect/{{item.ItemID}}" class="mfeatured-items">
-				<img src="../static/img/nft/img{{item.ItemID}}.jpg" style="object-position: center;">
-				<div class="mfeatured-info">
-					<h1>
-						{{item.Name}}
-					</h1>
-					<p>
-					Price: {{item.Price}} ETH
-					</p>
-				</div>
-			</div>
+					<div hx-get="./redirect/{{item.ItemID}}" class="mfeatured-items">
+						<img src="../static/img/nft/img{{item.ItemID}}.jpg" style="object-position: center;">
+						<div class="mfeatured-info">
+							<h1>
+								{{item.Name}}
+							</h1>
+							<p>
+							Price: {{item.Price}} ETH
+							</p>
+						</div>
+					</div>
 				{% endif %}
 			{% endfor %}   
 		</div>
@@ -80,7 +77,7 @@ market.css
 					</div>
 					<div class="featured-button">
 						<button hx-get="./redirect/{{item.ItemID}}" style="margin-right: 1.5%;">
-							Buy
+							View
 						</button>
 						<button hx-get="./trades/{{item.ItemID}}" style="margin-left: 1.5%;">
 							Trade
