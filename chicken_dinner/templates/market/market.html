@@ -52,46 +52,16 @@ market.css
 					<i class="ri-eth-line"></i><input type="text" placeholder="Maximum">
 				</div>
 			</div>
+			
 			<div class="filter-items" style="margin-top: 1.5vw;">
 				<p style="font-size: 1.4vw;">Sort By:</p>
 
-				<div id="market-select-box">
-					<input type="checkbox" id="options-view-button">
-					<div id="select-button" class="select-border">
-						<div id="selected-value">                
-							<span>
-								Default
-							</span>
-						</div>
-						<div id="arrow-down-button">
-							<i class="ri-arrow-down-s-line"></i>
-						</div>       
-					</div>
-
-					<div id="option-list">
-						<div class="option-items">
-							<input class="radio-select" type="radio" name="platform" value="price:lth">
-							<span class="label" >Price: High to Low</span>
-							<span class="opt-val">Price: High to Low</span>
-						</div>
-
-						<div class="option-items">
-							<input class="radio-select" type="radio" name="platform" value="price:lth">
-							<span class="label" >Price: Low to High</span>
-							<span class="opt-val">Price: Low to High</span>
-						</div>
-
-						<div class="option-items">
-							<input class="radio-select" type="radio" name="platform" value="price:lth">
-							<span class="label" >Date: Latest</span>
-							<span class="opt-val">Date: Latest</span>
-						</div>
-						<div id="option-bg">
-
-						</div>
-					</div>  
-				</div>
-
+				<select name="sort" id="market-select-box" hx-trigger="change" hx-get="/aadsfsafdasdf">
+					<option id="select-button" class="selected-value" value="latest">Default</option>
+					<option id="select-button" class="selected-value" value="latest">Price: Highest to Lowest</option>
+					<option id="select-button" class="selected-value" value="latest">Price: Lowest to Highest</option>
+					<option id="select-button" class="selected-value" value="latest">Latest</option>
+				</select>
 			</div>
 		</div>
 		<div class="market-list">

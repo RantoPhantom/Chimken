@@ -15,6 +15,7 @@ itemArray = []
 
 sortMethod = ''
 
+
 def load_items():
     global itemArray
     print("fetching")
@@ -22,6 +23,8 @@ def load_items():
     g.cursor.execute(sql, (g.user["UserID"]))
     itemArray = g.cursor.fetchall()
     return itemArray
+
+
 
 
 @bp.route('/search', methods=["POST"])
@@ -37,6 +40,13 @@ def search():
     html = print_item(item_to_print)
     return html
 
+count = 0
+
+@bp.route('/asdf', methods=["GET"])
+def adfasfdasdf():
+    global count
+    count += 1
+    return str(count)
 
 def print_item(itemList):
     html = ''

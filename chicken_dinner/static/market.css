@@ -158,7 +158,7 @@
     outline: none;
 }
 
-.select-border {
+.select-border,select {
     border-bottom: 1px solid #656961;
     border-right: 1px solid #656961;
     box-sizing: border-box;
@@ -185,7 +185,11 @@
     z-index: 3;
 }
 
-#select-button {
+select{
+	font-size: 1.2vw;
+}
+
+#select-button,select {
     position: relative;
     height: 100%;
     width: 100%;
@@ -218,8 +222,8 @@
     margin: calc(0.2vw + 1px) 0.6vw 0 0;
 }
 
-#options-view-button:checked + #select-button #arrow-down-button i {
-    color: var(--dark-1);
+#options-view-button:checked + #select-button #arrow-down-button i, select {
+    background-color: var(--mix-2);
 }
 
 #option-list {
