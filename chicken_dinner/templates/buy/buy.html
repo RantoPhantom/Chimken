@@ -34,11 +34,13 @@ buy.css
                     <div id="author">
                         <span>Listed By:</span> {{item["Users.Name"]}}
                     </div>
-
+                    
+                    {% if item.UserID != g.user["UserID"] %}
                     <div id="buy-buttons">
                         <button> Trade </button>
 
                     </div>
+                    {% endif %}
                 </div>
             </div>
 

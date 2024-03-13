@@ -12,7 +12,7 @@ web3.eth.default_account = web3.eth.accounts[0]
 
 # getting compiled contract
 compiled_contract_path = 'build/contracts/EthExchange.json'
-contract_address = '0x7eF5B70AFB8dB7138fb6082727C89fAD5C19eA7B'
+contract_address = '0x929fb1240CBB2FF4e4eDf130F95dc2f6D14D4af9'
 
 with open(compiled_contract_path) as file:
     contract_json = json.load(file)
@@ -26,7 +26,6 @@ userArray = []
 
 
 def load_items(user_id):
-    print("fetching")
     g.cursor.execute("SELECT * FROM NFT_Item WHERE UserID = %s", (user_id,))
     itemArray = g.cursor.fetchall()
     return itemArray
@@ -87,7 +86,6 @@ def index(user_id):
         is_own_profile = True
 
     itemArray = load_items(user_id) 
-    print(itemArray)
     user = load_users(user_id)   
     dealArray = load_deal(user_id)
 
@@ -122,15 +120,15 @@ def lol(item_id):
 def deal_accept():
     deal = request.form.get('getDeal')
     print(deal)
-    global contract
-    contract.functions.Deposit(web3.eth.accounts[2], 2).call()
-    contract.functions.ExchangeETH(
-            web3.eth.accounts[2],
-            web3.eth.accounts[4],
-            2
-            ).call()
+    # global contract
+    # contract.functions.Deposit(web3.eth.accounts[2], 2).call()
+    # contract.functions.ExchangeETH(
+    #         web3.eth.accounts[2],
+    #         web3.eth.accounts[4],
+    #         2
+    #         ).call()
 
-    print(web3.eth.get_balance(web3.eth.accounts[2]))
+    # print(web3.eth.get_balance(web3.eth.accounts[2]))
 
 
 @bp.route("/deal-decline", methods=["POST"])
