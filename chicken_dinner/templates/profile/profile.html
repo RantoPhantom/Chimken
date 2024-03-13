@@ -125,13 +125,13 @@ profile.css
                             </div>
                         </div>
                     </div>
-                    <input type="hidden" name="getDeal" value = "{{deal}}">
+                    <input type="hidden" name="getDeal" value = "{{deal.DealID}}">
                     <div class = "deals-info">
                         <div>
-                            <button hx-post="./deal-decline" >
+                            <button hx-post="./deal-decline" hx-swap="outerHTML" hx-target=".deals">
                                 Decline
                             </button>
-                            <button hx-post="./deal-accept" >
+                            <button hx-post="./deal-accept" hx-swap="outerHTML" hx-target=".deals">
                                 Accept
                             </button>
                         </div>                   
