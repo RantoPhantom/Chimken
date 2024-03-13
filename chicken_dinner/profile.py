@@ -5,7 +5,6 @@ from web3 import Web3, HTTPProvider
 
 bp = Blueprint('profile', __name__, url_prefix='/profile')
 
-<<<<<<< HEAD
 
 # connect to local ethereum node
 web3 = Web3(HTTPProvider('http://127.0.0.1:9545'))
@@ -25,8 +24,6 @@ itemArray = []
 
 userArray = []
 
-=======
->>>>>>> dea844d16ac7dedcd72f36b35b2d7a4bad0cbab9
 
 def load_items(user_id):
     print("fetching")
@@ -89,14 +86,9 @@ def index(user_id):
     if user_id == g.user["UserID"]:
         is_own_profile = True
 
-<<<<<<< HEAD
-    itemArray = load_items(user_id)
-    user = load_users(user_id)
-=======
     itemArray = load_items(user_id) 
     print(itemArray)
     user = load_users(user_id)   
->>>>>>> dea844d16ac7dedcd72f36b35b2d7a4bad0cbab9
     dealArray = load_deal(user_id)
 
     dealArray = deals_handle(dealArray)

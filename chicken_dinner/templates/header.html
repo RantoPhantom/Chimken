@@ -16,8 +16,8 @@
         <a href = "/profile/{{g.user['UserID']}}" class = "nav-items">
             <i class="ri-account-circle-line" style = "font-size: 1.5em"></i>
         </a>
-        <p class = "nav-items">
+        <a hx-boost="true" href="/logout" hx-trigger="click" hx-swap="none" class = "nav-items">
             <i class="ri-logout-box-r-line" style = "font-size: 1.5em"></i>
-        </p>
+        </a>
     </div>
 </nav>

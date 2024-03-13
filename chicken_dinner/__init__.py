@@ -2,7 +2,7 @@ import os
 from flaskext.mysql import MySQL
 from pymysql.cursors import DictCursor
 
-from flask import Flask, g
+from flask import Flask, g, session, redirect, url_for, make_response
 
 
 def create_app(test_config=None):
@@ -43,6 +43,16 @@ def create_app(test_config=None):
         # Store the database connection in the application context's 'g' object
         g.conn = conn
         g.cursor = cursor
+
+    @app.route('/logout')
+    def logout():
+        session.clear()
+        url = url_for('auth.login')
+        response = make_response(
+                redirect(url, code=200)
+                )
+        response.headers['HX-Redirect'] = url
+        return response
 
     from . import auth
     app.register_blueprint(auth.bp)
