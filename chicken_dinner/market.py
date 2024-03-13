@@ -8,12 +8,21 @@ from flask import (
         g,
         make_response
         )
+import random
 
 bp = Blueprint('market', __name__, url_prefix='/market')
 
 itemArray = []
 
-sortMethod = ''
+modifiedArray = []
+
+search_term = ''
+
+sortMethod = 'Default'
+
+minPrice = ''
+
+maxPrice = ''
 
 
 def load_items():
@@ -29,16 +38,32 @@ def load_items():
 
 @bp.route('/search', methods=["POST"])
 def search():
+    global modifiedArray, search_term, minPrice, maxPrice, sortMethod
+
     search_term = request.form['search']
-    item_to_print = []
+    
+    modifiedArray = search_func(itemArray, search_term)
+
+    if (minPrice != '' and maxPrice != ''):
+        modifiedArray = filter_func(modifiedArray, minPrice, maxPrice)
+
+    if (sortMethod != 'Default'):
+        modifiedArray = sort_func(modifiedArray, sortMethod)
+    
+    html = print_item(modifiedArray)
+    return html
+
+
+def search_func(itemArray, search_term):
+    resultArray = []
     if search_term == '':
-        item_to_print = itemArray
+        resultArray = itemArray
     else:
         for item in itemArray:
             if item["Name"].lower().startswith(search_term.lower()):
-                item_to_print.append(item)
-    html = print_item(item_to_print)
-    return html
+                resultArray.append(item)
+    
+    return resultArray
 
 count = 0
 
@@ -84,7 +109,10 @@ def print_item(itemList):
 def index():
     global itemArray
     itemArray = load_items()
-    return render_template('market/market.html', itemArray=itemArray)
+    
+    randomSample = random.sample(itemArray, 5)
+
+    return render_template('market/market.html', itemArray=itemArray, featuredArray=randomSample)
 
 
 @bp.route('/redirect/<int:item_id>')
@@ -115,6 +143,62 @@ def profile(user_id):
             )
     response.headers['HX-Redirect'] = url
     return response
+
+
+@bp.route('/sort')
+def sort():
+    global modifiedArray, sortMethod
+    sortMethod = request.args.get('sort')
+    
+    modifiedArray = sort_func(modifiedArray, sortMethod)
+
+    html = print_item(modifiedArray)
+    return html
+
+
+def sort_func(itemArray, sortMethod):
+    resultArray = []
+
+    if (sortMethod == "Price:HtL"):
+        resultArray = sorted(itemArray, key = lambda d : d["Price"], reverse = True)
+    elif (sortMethod == "Price:LtH"):
+        resultArray = sorted(itemArray, key = lambda d : d["Price"], reverse = False)
+    else:
+        resultArray = sorted(itemArray, key = lambda d : d["ItemID"], reverse = False)
+
+    return resultArray
+
+
+@bp.route('/filter', methods = ["POST"])
+def filter():
+    global modifiedArray, search_term, minPrice, maxPrice, sortMethod
+
+    minPrice = request.form['min']
+    maxPrice = request.form['max']
+
+    modifiedArray = filter_func(itemArray, minPrice, maxPrice)
+
+    if (search_term != ''):
+        modifiedArray = search_func(modifiedArray, search_term)
+
+    if (sortMethod != 'Default'):
+        modifiedArray = sort_func(modifiedArray, sortMethod)
+       
+    html = print_item(modifiedArray)
+    return html
+
+
+def filter_func(itemArray, minPrice, maxPrice):
+    resultArray = []
+    if (maxPrice == '' or minPrice ==  ''):
+        resultArray = itemArray
+    else:
+        for item in itemArray:
+            if ((item["Price"] >= float(minPrice)) and (item["Price"] <= float(maxPrice))):
+                resultArray.append(item)
+    
+    return resultArray
+
 
 
 

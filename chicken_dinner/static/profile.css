@@ -11,14 +11,16 @@
 }
 
 .banner-cover {
+    position: relative;
     background: no-repeat center;
-    background-image: linear-gradient(rgba(24, 24, 35,0.7),rgba(24, 24, 35,0.7)), url(../static/img/cover1.jpg);
     background-size: cover;
-    height: 300px;
-    padding-top: var(--header-height);
+    height: 25vw;
 }
 
 .banner-cover-in{
+    position: absolute;
+    bottom: 1vw;
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -33,7 +35,6 @@
 .avatar{
     width: 6vw;
     height: 6vw;
-    background-color: green;
     border-radius: 50%;
     margin: auto 1.4vw;
     overflow: hidden;
@@ -130,7 +131,6 @@ hr{
 }
 
 /*Collected tab*/
-
 #collected_num{
     font-family: 'Rubik', sans-serif;
     color: #b3b3b3;
@@ -140,14 +140,18 @@ hr{
 
 .collected_container{
     display: grid;
-    grid-template-rows: repeat(2, 281.28px);
-    grid-template-columns: repeat(7, 169.28px);
-    grid-gap: 1em;
+    justify-content: space-evenly;
+    justify-items: center;
+    grid-template-columns: repeat(7, 1fr);
+    row-gap: 2vw;
     justify-content: space-evenly;
 }
 
 .collected_items{
-    background: #282828;
+    cursor: pointer;
+    width: 12vw;
+    height: 18.5vw;
+    background: var(--mix-2);
     border-radius: 25px;
     display: flex;
     flex-direction: column;
@@ -165,13 +169,14 @@ hr{
     height: 100%;
 }
 
-.collected_info{
-    font-family: 'Rubik', sans-serif;
-    font-size: 0.7vw;
-    font-weight: 500;
-    padding-top: 1.0vw;
-    padding-left: 1vw;
+.collected_info {
+    padding: 1vw;
     flex: 1;
+}
+
+.collected_info h2 {
+    font-size: 1.2vw;
+    font-weight: 500;
 }
 
 
@@ -182,6 +187,7 @@ hr{
 }
 
 .deals {
+    margin: 2vw 0;
     width: 100%;
     height: 30vw;
     background-color: var(--mix-2);
@@ -257,7 +263,6 @@ hr{
     display: flex;
     justify-content: space-evenly;
     padding-top: 3%;
-
 }
 
 .dcontent-items {
@@ -321,13 +326,17 @@ hr{
     display: flex;
     flex-wrap: nowrap;
     width: 15vw;
-    margin: 2vw;
+    margin: 0 1vw;
 }
 
 .deals-info div button {
+    cursor: pointer;
+    width: 15vw;
+    height: 3vw;
+    font-size: 1.2vw;
     font-family: 'Rubik', sans-serif;
     padding: 0.7vw 1vw;
-    margin: 0 1vw;
+    box-sizing: border-box;
     background-color: #2E8DEE;
     color: var(--main-font-color);
     font-weight: 500;
@@ -339,6 +348,11 @@ hr{
     background-color: #106ac5;
     transition: .3s ease;
 }
+
+.deals-info div button:first-child {
+    margin-right: 2vw;
+}
+
 
 /* Wallet tab*/
 #wallet-main{
@@ -384,6 +398,18 @@ hr{
 }
 #wallet-interact>*{
     margin-bottom: 2%;
+}
+
+.wallet-change {
+    margin: 2vw 2vw 0 0;
+    padding: 0.5vw;
+    box-sizing: border-box;
+    font-size: 1.2vw;
+    width: 10vw;
+    background-color: #2E8DEE;
+    color: 	white;
+    cursor: pointer;
+    border-radius: 1vw;
 }
 
 /* Trading tab */

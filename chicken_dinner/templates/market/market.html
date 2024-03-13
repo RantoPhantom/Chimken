@@ -5,26 +5,23 @@ market.css
 {% block title %}Marketplace{% endblock %}
 {% block content %}
 
-<div id="trade-modal">
-
-</div>
 <section class="market">
 	<h1 id="market-title-1">Featured NFTs</h1>
 	<div class="mfeatured-border-line">
 		<div class="market-featured">
-			{% for item in itemArray %}
+			{% for item in featuredArray %}
 				{% if loop.index <= 5 %}
-			<div hx-get="./redirect/{{item.ItemID}}" class="mfeatured-items">
-				<img src="../static/img/nft/img{{item.ItemID}}.jpg" style="object-position: center;">
-				<div class="mfeatured-info">
-					<h1>
-						{{item.Name}}
-					</h1>
-					<p>
-					Price: {{item.Price}} ETH
-					</p>
-				</div>
-			</div>
+					<div hx-get="./redirect/{{item.ItemID}}" class="mfeatured-items">
+						<img src="../static/img/nft/img{{item.ItemID}}.jpg" style="object-position: center;">
+						<div class="mfeatured-info">
+							<h1>
+								{{item.Name}}
+							</h1>
+							<p>
+							Price: {{item.Price}} ETH
+							</p>
+						</div>
+					</div>
 				{% endif %}
 			{% endfor %}   
 		</div>
@@ -43,14 +40,15 @@ market.css
 			<div id="special-item-1" class="filter-items">
 				Filter
 			</div>
-			<div class="filter-items input-price">
+			<form class="filter-items input-price" hx-post = "./filter" hx-trigger = "change" hx-target = ".market-list" hx-swap = "innerHTML">
 				<p style="font-size: 1.4vw;">Price</p>
 				<div style="margin-top: 0.8vw;">
-					<i class="ri-eth-line"></i><input type="text" placeholder="Minimum">         
+					<i class="ri-eth-line"></i><input type="number" name = "min" placeholder="Minimum">         
 				</div>
 				<div>
-					<i class="ri-eth-line"></i><input type="text" placeholder="Maximum">
+					<i class="ri-eth-line"></i><input type="number" name = "max" placeholder="Maximum">
 				</div>
+<<<<<<< HEAD
 			</div>
 			
 			<div class="filter-items" style="margin-top: 1.5vw;">
@@ -62,6 +60,18 @@ market.css
 					<option id="select-button" class="selected-value" value="latest">Price: Lowest to Highest</option>
 					<option id="select-button" class="selected-value" value="latest">Latest</option>
 				</select>
+=======
+			</form>
+			<div class="filter-items" style="margin-top: 1.5vw;">
+				<p style="font-size: 1.4vw;">Sort By:</p>
+
+				<select name="sort" id="market-select-box" hx-trigger="change" hx-get="./sort" hx-target=".market-list" hx-swap = "innerHTML">
+					<option id="select-button" class="selected-value" value="Default">Default</option>
+					<option id="select-button" class="selected-value" value="Price:HtL">Price: Highest to Lowest</option>
+					<option id="select-button" class="selected-value" value="Price:LtH">Price: Lowest to Highest</option>
+				</select>
+
+>>>>>>> Ngoc-Anh
 			</div>
 		</div>
 		<div class="market-list">
@@ -81,7 +91,7 @@ market.css
 					</div>
 					<div class="featured-button">
 						<button hx-get="./redirect/{{item.ItemID}}" style="margin-right: 1.5%;">
-							Buy
+							View
 						</button>
 						<button hx-get="./trades/{{item.ItemID}}" style="margin-left: 1.5%;">
 							Trade
