@@ -18,7 +18,7 @@ index.css
                     creativity and ownership.
                 </p>
             </div>
-            <button hx-get="./markett/" type = "button">
+            <button hx-get="./market-redirect/" type = "button">
                 Explore >
             </button>
         </div>
@@ -98,11 +98,11 @@ index.css
         
         <h1 id = "featured-title-3" style = "margin-top: 10vw;">New here ?</h1>
         <div class = "index-select">
-            <div class = "select-item itemxx-1">
+            <div hx-get="/profile/{{g.user['UserID']}}/" class = "select-item itemxx-1">
                 <img class = "xxx" src = "./static/img/img18.jpg"/>
                 <p href = "" style = "left: 22%">View Your Profile</p>
             </div>
-            <div class = "select-item item-2">
+            <div hx-get="./market-redirect/" class = "select-item item-2">
                 <img class = "xxx" src = "./static/img/img19.jpg"/>
                 <p href = "" style = "left: 17%">Start your Collection</p>
             </div>

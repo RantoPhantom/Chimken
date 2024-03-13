@@ -27,9 +27,14 @@ def index():
 
     return render_template('index/index.html', g=g, itemArray = itemArray, userArray = userArray)
 
-@bp.route('/markett/', methods=["GET"])
+@bp.route('/market-redirect/', methods=["GET"])
 def markett():
-    return redirect(url_for('market.index'))
+    url = url_for('market.index')
+    response = make_response(
+            redirect(url, code=200)
+            )
+    response.headers['HX-Redirect'] = url
+    return response
 
 
 @bp.route('/profile/<int:user_id>/', methods=["GET"])
