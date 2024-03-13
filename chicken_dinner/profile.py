@@ -65,28 +65,6 @@ def search_deal_item(idArray):
     return fromArray
 
 
-eth1 = {
-        "plus": "+ 2.3ETH"
-}
-
-eth2 = {
-        "plus": "+ 6.9ETH"
-}
-
-eth3 = {
-        "plus": "+ 8.12ETH"
-}
-
-ethArray = [eth1, eth2, eth3]
-
-trade_info = {
-    "hash": "0xdC0b8cA898DB8D46A37517d70E63985ABA1FaF0B",
-    "block": "hong biet cai nay =))",
-}
-
-trade_infoArray = [trade_info]
-
-
 @bp.route('/<int:user_id>', methods=["GET"])
 @login_required
 def index(user_id):
@@ -104,8 +82,6 @@ def index(user_id):
 
     tradeArray = load_history(user_id)
     tradeArray = deals_handle(tradeArray)
-
-    print(tradeArray)
 
     return render_template('profile/profile.html', itemArray=itemArray, user=user, dealArray = dealArray, 
                             tradeArray=tradeArray, is_own_profile=is_own_profile)
@@ -164,14 +140,17 @@ def deal_accept():
     g.cursor.execute(sql, (deal["DealID"], datetime.datetime.now()))
     g.conn.commit()
 
-    global contract
-    contract.functions.Deposit(web3.eth.accounts[2], 2).call()
-    contract.functions.ExchangeETH(
-            web3.eth.accounts[2],
-            web3.eth.accounts[4],
-            2
-            ).call()
     return ''
+
+    global contract
+    contract.functions.Deposit(web3.eth.accounts[7], 3).call()
+    contract.functions.ExchangeETH(
+            web3.eth.accounts[3],
+            web3.eth.accounts[7],
+            1
+            ).call()
+    
+    
 
 
 @bp.route("/deal-decline", methods=["POST"])

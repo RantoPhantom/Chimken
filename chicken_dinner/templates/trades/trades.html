@@ -18,7 +18,7 @@ trades.css
 			<div class = "owned-list">
 				{% for item in itemArray %}
 				<div class="featured-items owned-NFT">
-					<input type = "checkbox" name = "trades-item" value = "{{item}}" class = "trades-selectbox">
+					<input type = "checkbox" name = "trades-item" value = "{{item.ItemID}}" class = "trades-selectbox">
 					<div class="featured-img owned-NFT">
 						<img src="../static/img/nft/img{{item.ItemID}}.jpg"/>
 					</div>
@@ -45,6 +45,7 @@ trades.css
 			<p>
 				Price: {{item.Price}}ETH
 			</p>
+			<input type = "hidden" name = "getUser" value = "{{item.UserID}}">
 			<input type = "number" class = "trades-input add-eth" name = "add-eth" placeholder="Add ETH">
 			<input type = "number" class = "trades-input req-eth" name = "req-eth" placeholder="Request ETH">
 			<input type = "submit" value= "Confirm Trade" class = "trades-submit">
