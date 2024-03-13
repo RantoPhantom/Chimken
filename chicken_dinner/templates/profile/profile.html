@@ -39,6 +39,7 @@ profile.css
 
             <p id="collected_num"> {{itemArray|length}} items </p>
             <div class="collected_container">
+                {% if itemArray|length > 0 %}
                 {% for item in itemArray %}
                 <div class="collected_items" hx-get="./redirect/{{item.ItemID}}">
                     <div class="collected_img">
@@ -51,6 +52,7 @@ profile.css
                     </div>
                 </div>
                 {% endfor %}
+                {% endif %}
             </div>
         </div>
 
@@ -196,11 +198,7 @@ profile.css
                 </div>
                 <div class = "trading-content">
                     <div class = "trading-content-left">
-                        {% set max_items = 2 %}
-                        {% set num_items = range(1, max_items + 1)|random %}
-                        {% for i in range(num_items) %}
-                            {% set random_index = range(0, itemArray|length)|random %}
-                            {% set item = itemArray[random_index] %}
+                        {% for item in itemArray %}
                         <div class = "trcontent-items">
                             <div class = "trcontent-items-img">
                                 <img src = "../static/img/nft/img{{item["ItemID"]}}.jpg">
@@ -230,11 +228,7 @@ profile.css
                     </div>
                         
                     <div class = "trading-content-right">
-                        {% set max_items = 2 %}
-                        {% set num_items = range(1, max_items + 1)|random %}
-                        {% for i in range(num_items) %}
-                            {% set random_index = range(0, itemArray|length)|random %}
-                            {% set item = itemArray[random_index] %}
+                        {% for item in itemArray %}
                         <div class = "trcontent-items">
                             <div class = "trcontent-items-img">
                                 <img src = "../static/img/nft/img{{item["ItemID"]}}.jpg">

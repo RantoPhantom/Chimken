@@ -10,7 +10,9 @@ manager {
     --header-height: 15vh;
     padding: var(--header-height) 3% 3%;
 }
+
 #buy-main, #buy-bottom{
+    margin-bottom: 6vw;
     display: flex;
     flex-flow: column nowrap;
     gap: 2vw;

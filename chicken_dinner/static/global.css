@@ -29,9 +29,14 @@
 }
 
 html {
+    height: 100%;
     background-color: var(--dark-1);
 }
 
+body {
+    min-height: 100%;
+    position: relative;
+}
 nav {
     display: flex;
     justify-content: space-between;
@@ -102,6 +107,7 @@ nav {
     position: relative;
     box-shadow: 1px 0 15px 0 #121212;
     text-align: center;
+    padding-bottom: 6vw;
 }
 
 .index-featured-NFTs h1 {
@@ -323,7 +329,10 @@ footer {
     flex-wrap: nowrap;
     justify-content: space-between;
     background-color: var(--dark-2);
-    position: relative;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
 footer > * {
