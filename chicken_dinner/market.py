@@ -125,16 +125,6 @@ def trade(item_id):
     return response
 
 
-@bp.route('/profile/<int:user_id>', methods=["GET"])
-def profile(user_id):
-    url = url_for('profile.index', user_id = user_id)
-    response = make_response(
-            redirect(url, code=200)
-            )
-    response.headers['HX-Redirect'] = url
-    return response
-
-
 @bp.route('/sort')
 def sort():
     global modifiedArray, sortMethod

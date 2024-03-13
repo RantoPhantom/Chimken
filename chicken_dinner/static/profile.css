@@ -103,6 +103,7 @@
 }
 
 .tabs-content{
+    margin-bottom: 6vw;
     order: 1;
     width: 100%;
     line-height: 1.5;

@@ -5,20 +5,14 @@ from .auth import login_required
 
 bp = Blueprint('profile', __name__, url_prefix='/profile')
 
-itemArray = []
-
-userArray = []
-
 
 def load_items(user_id):
-    global itemArray
     print("fetching")
     g.cursor.execute("SELECT * FROM NFT_Item WHERE UserID = %s", (user_id,))
     itemArray = g.cursor.fetchall()     
     return itemArray
 
 def load_users(user_id):
-    global userArray
     g.cursor.execute("SELECT * FROM Users WHERE UserID = %s", (user_id,))
     userArray = g.cursor.fetchone()     
     return userArray
@@ -71,6 +65,7 @@ def index(user_id):
         is_own_profile = True
 
     itemArray = load_items(user_id) 
+    print(itemArray)
     user = load_users(user_id)   
     dealArray = load_deal(user_id)
 

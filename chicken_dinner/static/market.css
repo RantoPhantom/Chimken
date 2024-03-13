@@ -195,6 +195,7 @@
 
 /* Market List */
 .market-list {
+    margin-bottom: 6vw;
     padding: 0 2vw 3vw;
     flex: 3;
     display: grid;

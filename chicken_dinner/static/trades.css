@@ -15,6 +15,7 @@
 }
 
 .trades-right {
+    border-radius: 0 0 0 2vw;
     position: sticky;
     top: var(--header-height);
     right: 0;
@@ -23,6 +24,7 @@
     padding: 1.5vw 1.8vw;
     box-sizing: border-box;
     background-color: var(--mix-2);
+    margin-bottom: 6vw;
 }
 
 .trades-left h1 {
@@ -37,6 +39,7 @@
 }
 
 .owned-list {
+    margin-bottom: 6vw;
     padding: 1vw;
     flex: 3;
     display: grid;
