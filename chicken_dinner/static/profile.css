@@ -420,6 +420,7 @@ hr{
 }
 
 .trading {
+    margin: 2vw 0;
     width: 100%;
     height: 30vw;
     background-color: var(--mix-2);

@@ -12,34 +12,19 @@ def index(item_id):
     return render_template('buy/buy.html', item=item)
 
 
-# @bp.route('/get-listing-data', methods=['POST'])
-# def get_listing_data():
-#     html_response = ""
-
-#     listing_data = []
-
-#     lol = {
-#         'unit_price': '69.420 ETH',
-#         'quantity': 1,
-#         'expiration': '29 years',
-#         'from': 'Username'
-#     }
-
-#     listing_data.append(lol)
-#     listing_data.append(lol)
-#     listing_data.append(lol)
-
-#     html_response = ""
-#     for listing in listing_data:
-#         html_response += "<tr>"
-#         for key, value in listing.items():
-#             html_response += f"<td>{value}</td>"
-#         html_response += "</tr>"
-#     return html_response
-
 @bp.route('/profile/<int:user_id>', methods=["GET"])
 def profile(user_id):
     url = url_for('profile.index', user_id = user_id)
+    response = make_response(
+            redirect(url, code=200)
+            )
+    response.headers['HX-Redirect'] = url
+    return response
+
+
+@bp.route('/trades/<int:item_id>', methods=["GET"])
+def trade(item_id):
+    url = url_for('trades.index', item_id=item_id)
     response = make_response(
             redirect(url, code=200)
             )

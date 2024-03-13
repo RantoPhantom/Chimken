@@ -13,7 +13,7 @@ web3.eth.default_account = web3.eth.accounts[0]
 
 # getting compiled contract
 compiled_contract_path = 'build/contracts/EthExchange.json'
-contract_address = '0x7eF5B70AFB8dB7138fb6082727C89fAD5C19eA7B'
+contract_address = '0x929fb1240CBB2FF4e4eDf130F95dc2f6D14D4af9'
 
 with open(compiled_contract_path) as file:
     contract_json = json.load(file)
@@ -43,6 +43,14 @@ def load_deal(user_id):
     g.cursor.execute("SELECT Deals.*, User_From.Name AS FromName, User_To.Name AS ToName FROM Deals INNER JOIN Users AS User_From ON Deals.FromUserID = User_From.UserID INNER JOIN Users AS User_To ON Deals.ToUserID = User_To.UserID WHERE ToUserID = %s AND Status = 'PENDING'", user_id)
     dealsArray = g.cursor.fetchall()
     return dealsArray
+
+
+def load_history(user_id):
+    g.cursor.execute("SELECT TradeID, Date, Deals.*, User_From.Name AS FromName, User_To.Name AS ToName FROM `TradeHistory` INNER JOIN Deals ON TradeHistory.DealID = Deals.DealID INNER JOIN Users AS User_From ON Deals.FromUserID = User_From.UserID INNER JOIN Users AS User_To ON Deals.ToUserID = User_To.UserID WHERE FromUserID = %s OR ToUserID = %s", (user_id, user_id))
+    tradeArray = g.cursor.fetchall()
+
+    print(tradeArray)
+    return tradeArray
 
 
 def search_deal_item(idArray):
@@ -88,14 +96,19 @@ def index(user_id):
         is_own_profile = True
 
     itemArray = load_items(user_id) 
-    print(itemArray)
-    user = load_users(user_id)   
-    dealArray = load_deal(user_id)
 
+    user = load_users(user_id)  
+
+    dealArray = load_deal(user_id)
     dealArray = deals_handle(dealArray)
 
+    tradeArray = load_history(user_id)
+    tradeArray = deals_handle(tradeArray)
+
+    print(tradeArray)
+
     return render_template('profile/profile.html', itemArray=itemArray, user=user, dealArray = dealArray, 
-                           ethArray=ethArray, trade_infoArray=trade_infoArray, is_own_profile=is_own_profile)
+                            tradeArray=tradeArray, is_own_profile=is_own_profile)
 
 
 def deals_handle(dealArray):

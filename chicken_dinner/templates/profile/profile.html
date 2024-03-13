@@ -182,23 +182,25 @@ profile.css
         <input type="radio" class="tabs-radio" name="profile-tabs" id="trading" >
         <label for="trading" class="tabs-label">Trade History</label>
         <div class="tabs-content tradingtab">
+            {% for trade in tradeArray %}
+            {% if trade.FromUserID == g.user["UserID"] %}
             <div class = "trading">
                 <div class = "trading-cover">
                     <div class = "trading-cover-left">
                         <p> Traded with: </p>
                         <div class = "trcover-name">
-                            {{user["Name"]}}
+                            {{trade.ToName}}
                         </div>
                     </div>
                     <div class = "trading-cover-right">
                         <div class = "trcover-date">
-                            Date
+                            {{trade.Date}}
                         </div>
                     </div>
                 </div>
                 <div class = "trading-content">
                     <div class = "trading-content-left">
-                        {% for item in itemArray %}
+                        {% for item in trade.FromNFTs %}
                         <div class = "trcontent-items">
                             <div class = "trcontent-items-img">
                                 <img src = "../static/img/nft/img{{item["ItemID"]}}.jpg">
@@ -214,21 +216,20 @@ profile.css
                         </div>
                         {% endfor %}
                         <div class = "trcontent-items">
-                            {% set selected_eth = ethArray | random %}
                             <div class = "trcontent-items-img">
-                                <p>{{selected_eth.plus}} <i class="ri-eth-line" style = "color: black;"></i></p>
+                                <p>+ {{trade.AddETH}}ETH <i class="ri-eth-line" style = "color: black;"></i></p>
                             </div>
                         </div>
                     </div>
+
                     <div style = "padding-top: 3%">
                         <div class = "trcontent-icon">
                             <i class="ri-arrow-left-right-line dcontent-items" style = "font-size: 200%; margin: auto 1vw;"></i>
-                        </div>
-                        
+                        </div>      
                     </div>
                         
                     <div class = "trading-content-right">
-                        {% for item in itemArray %}
+                        {% for item in trade.ToNFTs %}
                         <div class = "trcontent-items">
                             <div class = "trcontent-items-img">
                                 <img src = "../static/img/nft/img{{item["ItemID"]}}.jpg">
@@ -244,22 +245,89 @@ profile.css
                         </div>
                         {% endfor %}
                         <div class = "trcontent-items">
-                            {% set selected_eth = ethArray | random %}
                             <div class = "trcontent-items-img">
-                                <p>{{selected_eth.plus}} <i class="ri-eth-line" style = "color: black;"></i></p>
+                                <p>+ {{trade.ReqETH}}ETH <i class="ri-eth-line" style = "color: black;"></i></p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class = "trading-info">
-                    {% for info in trade_infoArray%}
-                    <div>
-                        <p>Transaction Hash: {{info.hash}} </p>
-                        <p>Block: {{info.block}} </p>
-                    </div>      
-                    {% endfor %}             
+                <div class = "trading-info">            
                 </div>
             </div>
+            {% else %}
+            <div class = "trading">
+                <div class = "trading-cover">
+                    <div class = "trading-cover-left">
+                        <p> Traded with: </p>
+                        <div class = "trcover-name">
+                            {{trade.FromName}}
+                        </div>
+                    </div>
+                    <div class = "trading-cover-right">
+                        <div class = "trcover-date">
+                            {{trade.Date}}
+                        </div>
+                    </div>
+                </div>
+                <div class = "trading-content">
+                    <div class = "trading-content-left">
+                        {% for item in trade.ToNFTs %}
+                        <div class = "trcontent-items">
+                            <div class = "trcontent-items-img">
+                                <img src = "../static/img/nft/img{{item["ItemID"]}}.jpg">
+                            </div>
+                            <div class = "trcontent-items-info">
+                                <h1>
+                                    {{item["Name"]}}
+                                </h1>
+                                <p>
+                                    {{item["Description"]}}
+                                </p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        <div class = "trcontent-items">
+                            <div class = "trcontent-items-img">
+                                <p>+ {{trade.ReqETH}}ETH <i class="ri-eth-line" style = "color: black;"></i></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style = "padding-top: 3%">
+                        <div class = "trcontent-icon">
+                            <i class="ri-arrow-left-right-line dcontent-items" style = "font-size: 200%; margin: auto 1vw;"></i>
+                        </div>      
+                    </div>
+                        
+                    <div class = "trading-content-right">
+                        {% for item in trade.FromNFTs %}
+                        <div class = "trcontent-items">
+                            <div class = "trcontent-items-img">
+                                <img src = "../static/img/nft/img{{item["ItemID"]}}.jpg">
+                            </div>
+                            <div class = "trcontent-items-info">
+                                <h1>
+                                    {{item["Name"]}}
+                                </h1>
+                                <p>
+                                    {{item["Description"]}}
+                                </p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        <div class = "trcontent-items">
+                            <div class = "trcontent-items-img">
+                                <p>+ {{trade.AddETH}}ETH <i class="ri-eth-line" style = "color: black;"></i></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class = "trading-info">            
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+            
         </div>
         {% endif %}
     </div>
