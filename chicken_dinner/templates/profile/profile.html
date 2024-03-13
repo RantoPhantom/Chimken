@@ -6,27 +6,26 @@ profile.css
 {% block content %}
 <section class = "Profile">
     <div class = "banner">
-        <div class = "banner-cover">
-            <!-- <img src="../static/img/cover.jpeg"> -->
-            <span class="overlay">
+        <div class = "banner-cover" style = "background-image: linear-gradient(rgba(24, 24, 35,0.7),rgba(24, 24, 35,0.7)), url(../static/img/user/cover{{user.UserID}}.jpg);">
+            <div class="banner-cover-in">
                 <div class = "banner-infor">
                     <div class="banner-infor avatar">
-                        <img src="../static/img/avatar.jpg" width="64" height="64">
+                        <img src="../static/img/user/ava{{user.UserID}}.jpg" width="64" height="64">
                     </div>
-
                 </div>
-            </span>
-            <div class = " usersocial">
-                <div class = "banner-infor username">
-                    <p id = "username"> Username 
-                        <img width="19.8" height="20.65" src="https://img.icons8.com/color/48/verified-badge.png" alt="verified-badge" id = "twitter"/>
-                    </p>
-                    <p id = "user_id"> 0xdC0b8cA898DB8D46A37517d70E63985ABA1FaF0B</p>
-                </div>
-                <div class = "banner-infor social">
-                    <p><img width="30" height="30" src="../static/img/twitter.png" alt="twitter--v1"/>
-                        <img width="30" height="30" src="../static/img/share.png" alt="share--v1"/>
-                        <img width="30" height="30" src="../static/img/threedots.png" alt="threedots" id = "threedots"/></p>
+                <div class = " usersocial">
+                    <div class = "banner-infor username">
+                        <p id = "username"> 
+                            <a href=""> {{user["Name"]}} </a> 
+                            <img width="19.8" height="20.65" src="https://img.icons8.com/color/48/verified-badge.png" alt="verified-badge" id = "twitter"/>
+                        </p>
+                        <p id = "user_id"> 0xdC0b8cA898DB8D46A37517d70E63985ABA1FaF0B</p>
+                    </div>
+                    <div class = "banner-infor social">
+                        <p><img width="30" height="30" src="../static/img/twitter.png" alt="twitter--v1"/>
+                            <img width="30" height="30" src="../static/img/share.png" alt="share--v1"/>
+                            <img width="30" height="30" src="../static/img/threedots.png" alt="threedots" id = "threedots"/></p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -38,360 +37,112 @@ profile.css
         <label for="collected" class="tabs-label">Collected</label>
         <div class="tabs-content">
 
-            <p id="collected_num"> 10 items </p>
+            <p id="collected_num"> {{itemArray|length}} items </p>
             <div class="collected_container">
-                <div class="collected_items">
+                {% if itemArray|length > 0 %}
+                {% for item in itemArray %}
+                <div class="collected_items" hx-get="./redirect/{{item.ItemID}}">
                     <div class="collected_img">
-                        <img src="../static/img/cute_alien.jpeg">
-                    </div>
-                    <div class="collected_info">
-                        <h2>Cute Alien CA07</h2>
-                    </div>
-                </div>
-
-                <div class="collected_items">
-                    <div class="collected_img">
-                        <img src="../static/img/img1.jpg">
+                        <img src="../static/img/nft/img{{item['ItemID']}}.jpg">
                     </div>
                     <div class="collected_info">
                         <h2>
-                            GraffiGi
-                            <img src="https://img.icons8.com/color/48/verified-badge.png" alt="verified-badge"/>
+                            {{item["Name"]}}
                         </h2>
                     </div>
                 </div>
-
-                <div class="collected_items">
-                    <div class="collected_img">
-                        <img src="../static/img/img3.jpg">
-                    </div>
-                    <div class="collected_info">
-                        <h2>Room No#1</h2>
-                    </div>
-                </div>
-
-                <div class="collected_items">
-                    <div class="collected_img">
-                        <img src="../static/img/img4.jpg">
-                    </div>  
-                    <div class="collected_info">
-                        <h2>Social Vending Machine</h2>
-                    </div>
-                </div>
-
-                <div class="collected_items">
-                    <div class="collected_img">
-                        <img src="../static/img/img5.jpg">
-                    </div>
-                    <div class="collected_info">
-                        <h2>
-                            Playdoh Cake
-                            <img src="https://img.icons8.com/color/48/verified-badge.png" alt="verified-badge"/>
-                        </h2>
-                    </div>
-                </div>
-
-                <div class="collected_items">
-                    <div class="collected_img">
-                        <img src="../static/img/img6.jpg">
-                    </div>
-                    <div class="collected_info">
-                        <h2>
-                            Pop PC
-                        </h2>
-                    </div>
-                </div>
-
-                <div class="collected_items">
-                    <div class="collected_img">
-                        <img src="../static/img/img7.jpg">
-                    </div>
-                    <div class="collected_info">
-                        <h2>
-                            Space And Time
-                        </h2>
-                    </div>
-                </div>
-
-                <div class="collected_items">
-                    <div class="collected_img">
-                    <img src="../static/img/3d_house.jpeg">
-                    <div class="collected_info">
-                        <h1>
-                            3D House
-                            <img src="https://img.icons8.com/color/48/verified-badge.png" alt="verified-badge"/>
-                        </h1>
-                    </div>
-                </div>
-
-                <div class="collected_items">
-                    <img src="../static/img/img8.jpg">
-                    <div class="collected_info">
-                        <h1>
-                            Floral
-                        </h1>
-                    </div>
-                </div>
-
-                <div class="collected_items">
-                    <img src="../static/img/monkeyy.jpeg">
-                    <div class="collected_info">
-                        <h1>
-                            Hugs From Monkey
-                            <img src="https://img.icons8.com/color/48/verified-badge.png" alt="verified-badge"/>
-                        </h1>
-                    </div>
-                </div>
+                {% endfor %}
+                {% endif %}
             </div>
         </div>
 
-        <input type="radio" class="tabs-radio" name="profile-tabs" id="offers" >
-        <label for="offers" class="tabs-label">Offers Made</label>
-        <div class="tabs-content offerstab">
-            <div class="content_bar">
-                <div class="cate offers_num">
-                    <p>16 offers</p>
-                </div>
-
-                <div class="cate price">
-                    <p>Price</p>
-                </div>
-
-                <div class="cate quantity">
-                    <p>Quantity</p>
-                </div>
-
-                <div class="cate total">
-                    <p>Total</p>
-                </div>
-
-                <div class="cate expiration">
-                    <p>Expiration</p>
-                </div>
-
-                <div class="cate created">
-                    <p>Date Created</p>
-                </div>
-            </div>
-
-            <div class="offers_container">
-                <div class="offer name">
-                    <hr> 
-                    <div class="offer1">
-                        <img width="34.4px" height="34.4px" src="../static/img/pixel_dragon.jpeg" alt="offer1 img">
-                        <p>Pixel Dragons Rangers Edition</p>
-                    </div>
-                    <div class="offer2">
-                        <img width="34.4px" height="34.4px" src="../static/img/unicorn.jpeg" alt="offer2 img">
-                        <p>Unicorn: Pixel</p>
-                        <img width="16.5" height="17.21" src="https://img.icons8.com/color/48/verified-badge.png" alt="verified-badge" id="offer_badge"/>
-                    </div>
-                    <div class="offer3">
-                        <img width="34.4px" height="34.4px" src="../static/img/deer.jpeg" alt="offer1 img">
-                        <p>Deer's Diner</p>
-                    </div>
-                    <div class="offer4">
-                        <img width="34.4px" height="34.4px" src="../static/img/whale.jpeg" alt="offer2 img">
-                        <p>Whale The Game</p>
-                        <img width="16.5" height="17.21" src="https://img.icons8.com/color/48/verified-badge.png" alt="verified-badge" id="offer_badge"/>
-                    </div>
-                    <div class="offer5">
-                        <img width="34.4px" height="34.4px" src="../static/img/raccoon.jpeg" alt="offer2 img">
-                        <p>Skateboarding Raccoon</p>
-                        <img width="16.5" height="17.21" src="https://img.icons8.com/color/48/verified-badge.png" alt="verified-badge" id="offer_badge"/>
-                    </div>
-                </div>
-
-                <div class="offer price">
-                    <hr>
-                    <div class="offer1">
-                        <p>0.0608 ETH</p>
-                    </div>
-                    <div class="offer2">
-                        <p>0.0501 ETH</p>
-                    </div>
-                    <div class="offer3">
-                        <p>0.0152 ETH</p>
-                    </div>
-                    <div class="offer4">
-                        <p>0.008 ETH</p>
-                    </div>
-                    <div class="offer5">
-                        <p>0.0502 ETH</p>
-                    </div>
-                </div>
-
-                <div class="offer quantity">
-                    <hr>
-                    <div class="offer1">
-                        <p>1</p>
-                    </div>
-                    <div class="offer2">
-                        <p>3</p>
-                    </div>
-                    <div class="offer3">
-                        <p>6</p>
-                    </div>
-                    <div class="offer4">
-                        <p>5</p>
-                    </div>
-                    <div class="offer5">
-                        <p>1</p>
-                    </div>
-                </div>
-
-                <div class="offer total">
-                    <hr>
-                    <div class="offer1">
-                        <p>0.0608 ETH</p>
-                    </div>
-                    <div class="offer2">
-                        <p>0.1503 ETH</p>
-                    </div>
-                    <div class="offer3">
-                        <p>0.0912 ETH</p>
-                    </div>
-                    <div class="offer4">
-                        <p>0.004 ETH</p>
-                    </div>
-                    <div class="offer5">
-                        <p>0.0502 ETH</p>
-                    </div>
-                </div>
-
-                <div class="offer expiration">
-                    <hr>
-                    <div class="offer1">
-                        <p>in 11 minutes</p>
-                    </div>
-                    <div class="offer2">
-                        <p>in 10 minutes</p>
-                    </div>
-                    <div class="offer3">
-                        <p>in 10 minutes</p>
-                    </div>
-                    <div class="offer4">
-                        <p>in 7 minutes</p>
-                    </div>
-                    <div class="offer5">
-                        <p>in 4 minutes</p>
-                    </div>
-                </div>
-
-                <div class="offer created">
-                    <hr>
-                    <div class="offer1">
-                        <p>9 minutes ago</p>
-                    </div>
-                    <div class="offer2">
-                        <p>33 minutes ago</p>
-                    </div>
-                    <div class="offer3">
-                        <p>34 minutes ago</p>
-                    </div>
-                    <div class="offer4">
-                        <p>38 minutes ago</p>
-                    </div>
-                    <div class="offer5">
-                        <p>39 minutes ago</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+        {% if is_own_profile %}
         <input type="radio" class="tabs-radio" name="profile-tabs" id="deals" >
         <label for="deals" class="tabs-label">Deals</label>
         <div class="tabs-content dealstab">
-            <div class = "deals">
-                <div class = "deals-cover">
-                    <div class = "deals-cover-left">
-                        <div class = "dcover-image">
-                            <img src="../static/img/garan.jpeg" alt="2nduser_img">
-                        </div>
-                        <div class = "dcover-name">
-                            UserXyZ
-                        </div>
-                    </div>
-                    <div class = "deals-cover-right">
-                        <div class = "dcover-status">
-                            Status: Active 
-                            <i class="ri-circle-fill" style = "color: #6EC531; font-size: 1vw;"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class = "deals-content">
-                    <div class = "deals-content-left">
-                        <div class = "dcontent-items">
-                            <div class = "dcontent-items-img">
-                                <img src = "../static/img/img23.jpg">
+            {% for deal in dealArray %}
+                <form class = "deals" method="post">
+                    <div class = "deals-cover">
+                        <div class = "deals-cover-left">
+                            <div class = "dcover-image">
+                                <img src="../static/img/user/ava{{deal.FromUserID}}.jpg" alt="2nduser_img">
                             </div>
-                            <div class = "dcontent-items-info">
-                                <h1>
-                                    Boomm Cat
-                                </h1>
-                                <p>
-                                    @NyanNyan
-                                </p>
-                            </div>
-                        </div>
-                        <div class = "dcontent-items">
-                            <div class = "dcontent-items-img">
-                                <img src = "../static/img/img35.jpg">
-                            </div>
-                            <div class = "dcontent-items-info">
-                                <h1>
-                                    Ferris Cloud
-                                </h1>
-                                <p>
-                                    @Dreamland
-                                </p>
-                            </div>
-                        </div>
-                        <div class = "dcontent-items">
-                            <div class = "dcontent-items-img">
-                                <p>+ 2.3ETH <i class="ri-eth-line" style = "color: black;"></i></p>
+                            <div class = "dcover-name">
+                                {{deal.FromName}}
                             </div>
                         </div>
                     </div>
-                    <div style = "padding-top: 3%">
-                        <div class = "dcontent-icon">
-                            <i class="ri-arrow-left-right-line dcontent-items" style = "font-size: 200%; margin: auto 1vw;"></i>
-                        </div>
-                        
-                    </div>
-                        
-                    <div class = "deals-content-right">
-                        <div class = "dcontent-items">
-                            <div class = "dcontent-items-img">
-                                <img src = "../static/img/img1.jpg">
+                    <div class = "deals-content">
+                        <div class = "deals-content-left">
+                            {% for item in deal.FromNFTs %}
+                                <div class = "dcontent-items">
+                                    <div class = "dcontent-items-img">
+                                            <img src = "../static/img/nft/img{{item['ItemID']}}.jpg">
+                                    </div>
+                                    <div class = "dcontent-items-info">
+                                        <h1>
+                                            {{item["Name"]}}
+                                        </h1>
+                                        <p>
+                                            {{item["Description"]}}
+                                        </p>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                            <div class = "dcontent-items">
+                                <div class = "dcontent-items-img">
+                                    <p>+ {{deal.AddETH}}ETH <i class="ri-eth-line" style = "color: black;"></i></p>
+                                </div>
                             </div>
-                            <div class = "dcontent-items-info">
-                                <h1>
-                                    GraffiGi
-                                </h1>
-                                <p>
-                                    @Puppeter
-                                </p>
+                        </div>
+                        <div style = "padding-top: 3%">
+                            <div class = "dcontent-icon">
+                                <i class="ri-arrow-left-right-line dcontent-items" style = "font-size: 200%; margin: auto 1vw;"></i>
+                            </div>
+                            
+                        </div>
+                            
+                        <div class = "deals-content-right">
+                            {% for item in deal.ToNFTs %}
+                                <div class = "dcontent-items">
+                                    <div class = "dcontent-items-img">
+                                            <img src = "../static/img/nft/img{{item['ItemID']}}.jpg">
+                                    </div>
+                                    <div class = "dcontent-items-info">
+                                        <h1>
+                                            {{item["Name"]}}
+                                        </h1>
+                                        <p>
+                                            {{item["Description"]}}
+                                        </p>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                            <div class = "dcontent-items">
+                                <div class = "dcontent-items-img">
+                                    <p>+ {{deal.ReqETH}}ETH <i class="ri-eth-line" style = "color: black;"></i></p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class = "deals-info">
-                    <div>
-                        <button>
-                            Decline
-                        </button>
-                        <button>
-                            Accept
-                        </button>
-                    </div>                   
-                </div>
-            </div>
+                    <input type="hidden" name="getDeal" value = "{{deal.DealID}}">
+                    <div class = "deals-info">
+                        <div>
+                            <button hx-post="./deal-decline" hx-swap="outerHTML" hx-target=".deals">
+                                Decline
+                            </button>
+                            <button hx-post="./deal-accept" hx-swap="outerHTML" hx-target=".deals">
+                                Accept
+                            </button>
+                        </div>                   
+                    </div>
+                </form>
+            {% endfor %}        
         </div>
 
         <input type="radio" class="tabs-radio" name="profile-tabs" id="wallet" >
         <label for="wallet" class="tabs-label">Wallet</label>
-        <div class="tabs-content">
+        <div class="tabs-content tradingtab">
             <div id="wallet-main">
                 <div id="wallet-balance">
                     <p>Estimated Balance:</p>
@@ -418,9 +169,99 @@ profile.css
                             <i class="ri-arrow-up-circle-line"></i>
                         </div>
                     </div>
+                    <button class="wallet-change">
+                        Add Wallet
+                    </button>
+                    <button class="wallet-change">
+                        Remove Wallet
+                    </button>
                 </div>
             </div>
         </div>
+
+        <input type="radio" class="tabs-radio" name="profile-tabs" id="trading" >
+        <label for="trading" class="tabs-label">Trade History</label>
+        <div class="tabs-content tradingtab">
+            <div class = "trading">
+                <div class = "trading-cover">
+                    <div class = "trading-cover-left">
+                        <p> Traded with: </p>
+                        <div class = "trcover-name">
+                            {{user["Name"]}}
+                        </div>
+                    </div>
+                    <div class = "trading-cover-right">
+                        <div class = "trcover-date">
+                            Date
+                        </div>
+                    </div>
+                </div>
+                <div class = "trading-content">
+                    <div class = "trading-content-left">
+                        {% for item in itemArray %}
+                        <div class = "trcontent-items">
+                            <div class = "trcontent-items-img">
+                                <img src = "../static/img/nft/img{{item["ItemID"]}}.jpg">
+                            </div>
+                            <div class = "trcontent-items-info">
+                                <h1>
+                                    {{item["Name"]}}
+                                </h1>
+                                <p>
+                                    {{item["Description"]}}
+                                </p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        <div class = "trcontent-items">
+                            {% set selected_eth = ethArray | random %}
+                            <div class = "trcontent-items-img">
+                                <p>{{selected_eth.plus}} <i class="ri-eth-line" style = "color: black;"></i></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div style = "padding-top: 3%">
+                        <div class = "trcontent-icon">
+                            <i class="ri-arrow-left-right-line dcontent-items" style = "font-size: 200%; margin: auto 1vw;"></i>
+                        </div>
+                        
+                    </div>
+                        
+                    <div class = "trading-content-right">
+                        {% for item in itemArray %}
+                        <div class = "trcontent-items">
+                            <div class = "trcontent-items-img">
+                                <img src = "../static/img/nft/img{{item["ItemID"]}}.jpg">
+                            </div>
+                            <div class = "trcontent-items-info">
+                                <h1>
+                                    {{item["Name"]}}
+                                </h1>
+                                <p>
+                                    {{item["Description"]}}
+                                </p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        <div class = "trcontent-items">
+                            {% set selected_eth = ethArray | random %}
+                            <div class = "trcontent-items-img">
+                                <p>{{selected_eth.plus}} <i class="ri-eth-line" style = "color: black;"></i></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class = "trading-info">
+                    {% for info in trade_infoArray%}
+                    <div>
+                        <p>Transaction Hash: {{info.hash}} </p>
+                        <p>Block: {{info.block}} </p>
+                    </div>      
+                    {% endfor %}             
+                </div>
+            </div>
+        </div>
+        {% endif %}
     </div>
 </section>
     {% endblock %}

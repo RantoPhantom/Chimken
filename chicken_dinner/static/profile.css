@@ -11,31 +11,54 @@
 }
 
 .banner-cover {
+    position: relative;
     background: no-repeat center;
-    background-image: linear-gradient(rgba(24, 24, 35,0.7),rgba(24, 24, 35,0.7)), url(../static/img/cover.jpeg);
     background-size: cover;
-    height: 300px;
-    padding-top: var(--header-height);
+    height: 25vw;
+}
+
+.banner-cover-in{
+    position: absolute;
+    bottom: 1vw;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .banner-infor{
+    display: flex;
     flex-direction: column;
     align-items: left;
 }
 
+.avatar{
+    width: 6vw;
+    height: 6vw;
+    border-radius: 50%;
+    margin: auto 1.4vw;
+    overflow: hidden;
+}
+
 .avatar img{
-    border-radius: 25px;
-    flex-direction: column;
-    margin-left: 50px;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.username{
+    width: max-content;
+    height: max-content;
+    margin: auto 1.4vw;
 }
 
 #username {
-    font-family: 'Rubik', sans-serif;
     font-weight: 500;
-    font-size: 2vw;  
-    flex: 0.5;
-    padding: 3px;
-    padding-left: 50px;
+    font-size: 200%;  
+}
+
+.username a{
+    text-decoration: none;
 }
 
 #twitter{
@@ -46,35 +69,20 @@
 #user_id{
     font-size: 1vw;
     font-family: 'Rubik', sans-serif;
-    padding: 3px;
-    padding-left: 50px;
-
-}
-
-.banner-cover {
-    display: flex;
-    flex-direction: column;
-}
-
-.overlay{
-    flex:1;
 }
 
 .usersocial{
+    height: max-content;
     display: flex;
     justify-content: space-between;
-    flex: 1;
+    flex-direction: row;
 }
 
 .social{
-    margin-right: 50px;
-    margin-top: 10px;
+    margin: auto 1.4vw;
     align-items: center;
 }
 
-.ay{
-    flex: 2;
-}
 
 /* creating tabs */
 
@@ -95,6 +103,7 @@
 }
 
 .tabs-content{
+    margin-bottom: 6vw;
     order: 1;
     width: 100%;
     line-height: 1.5;
@@ -123,7 +132,6 @@ hr{
 }
 
 /*Collected tab*/
-
 #collected_num{
     font-family: 'Rubik', sans-serif;
     color: #b3b3b3;
@@ -132,196 +140,46 @@ hr{
 }
 
 .collected_container{
-    width: 93vw;
-    padding: 0px 32px;
     display: grid;
-    grid-template-rows: repeat(2, 281.28px);
-    grid-template-columns: repeat(auto-fit, 169.28px);
-    grid-gap: 1em;
+    justify-content: space-evenly;
+    justify-items: center;
+    grid-template-columns: repeat(7, 1fr);
+    row-gap: 2vw;
+    justify-content: space-evenly;
 }
 
-.item{
-    background: #282828;
+.collected_items{
+    cursor: pointer;
+    width: 12vw;
+    height: 18.5vw;
+    background: var(--mix-2);
     border-radius: 25px;
+    display: flex;
+    flex-direction: column;
 }
 
-.item-1 img{
+.collected_img{
+    flex: 1.5;
+    overflow: hidden;
     border-radius: 25px 25px 0px 0px;
-    width: 169.28px;
-    height: 149.28px;
 }
 
-#item2_img{
-    width: 102.36px;
-    height: 142.55px;
-    padding: 0px 33.46px;
-    margin-bottom: 6.73px;
+.collected_img img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
 }
 
-#item2_offer{
-    color: #b3b3b3;
-    font-size: 12px;
+.collected_info {
+    padding: 1vw;
+    flex: 1;
 }
 
-.item-3 img{
-    width: 130px;
-    height: 130px;
-    padding: 0px 21.14px;
-    margin-bottom: 19.28px;
-}
-
-.item-4 img{
-    width: 169.28px;
-    height: 126.96px;
-    margin-top: 22.32px;
-}
-
-#item5_img{
-    width: 119.42px;
-    height: 149.28px;
-    padding: 0px 24.93px;
-}
-
-#item5_offer{
-    color: #b3b3b3;
-    font-size: 12px;
-}
-
-.item-6 img{
-    width: 133.4px;
-    height: 149.28px;
-    padding: 0px 17.94px;
-}
-
-#item6_offer{
-    color: #b3b3b3;
-    font-size: 12px;
-}
-
-.item-7 img{
-    width: 130px;
-    height: 130px;
-    padding: 0px 21.14px;
-    margin-bottom: 19.28px;
-}
-
-#item8_img{
-    padding: 0px 21.14px;
-    margin-bottom: 19.28px;
-}
-
-#item8_offer{
-    color: #b3b3b3;
-    font-size: 12px;
-}
-
-.item-9 img{
-    width: 169.28px;
-    height: 93.28px;
-    padding: 28px 0px;
-}
-
-#item10_img{
-    padding: 0px 21.14px;
-    margin-bottom: 19.28px;
-}
-
-.item p{
-    font-family: 'Rubik', sans-serif;
+.collected_info h2 {
+    font-size: 1.2vw;
     font-weight: 500;
-    font-size: 1.25vw;
-    padding: 16px;
 }
 
-/* Offers Made tab */
-
-.offerstab {
-    height: 40vw;
-}
-.content_bar{
-    display: grid;
-    padding: 0px 16px;
-    grid-template-columns: 260px repeat(4, 196.46px) 130px;
-    grid-template-rows: 52px;
-    align-items: center;
-}
-
-.content_bar p{
-    font-family: 'Rubik', sans-serif;
-    color: #b3b3b3;
-    font-size: 1.25vw;
-}
-
-.offers_container{
-    display: grid;
-    padding: 0px 16px;
-    grid-template-columns: 260px repeat(4, 196.46px) 130px;
-    grid-template-rows: 52px;
-}
-
-.offer1{
-    position: relative;
-    display: flex;
-    align-items: center;
-    padding: 10px 0px;
-}
-
-.offer2{
-    position: relative;
-    display: flex;
-    align-items: center;
-    padding: 10px 0px;
-}
-
-.offer3{
-    position: relative;
-    display: flex;
-    align-items: center;
-    padding: 10px 0px;
-}
-
-.offer4{
-    position: relative;
-    display: flex;
-    align-items: center;
-    padding: 10px 0px;
-}
-
-.offer5{
-    position: relative;
-    display: flex;
-    align-items: center;
-    padding: 10px 0px;
-}
-
-.name img{
-    border-radius: 10px;
-    margin-right: 10px;
-}
-
-.price p{
-    margin-top: 10px;
-}
-
-.quantity p{
-    margin-top: 10px;
-}
-
-.total p{
-    margin-top: 10px;
-}
-
-.expiration p{
-    margin-top: 10px;
-}
-
-.created p{
-    margin-top: 10px;
-}
-
-#offer_badge{
-    padding: 0px 10px;
-}
 
 /* Deals tab */
 
@@ -330,6 +188,7 @@ hr{
 }
 
 .deals {
+    margin: 2vw 0;
     width: 100%;
     height: 30vw;
     background-color: var(--mix-2);
@@ -352,18 +211,20 @@ hr{
 }
 
 .dcover-image {
-    width: 65%;
-    height: 65%;
+    width: 3.2vw;
+    height: 3.2vw;
     background-color: green;
-    border-radius: 100px;
+    border-radius: 50%;
     margin: auto 1.4vw;
     overflow: hidden;
+    
 }
 
 .dcover-image img {
     object-fit: cover;
     width: 100%;
     height: 100%;
+    
 }
 
 .dcover-name {
@@ -393,6 +254,7 @@ hr{
 .deals-content-left {
     flex: 1;
     display: flex;
+    flex-direction: row;
     justify-content: space-evenly;
     padding-top: 3%;
 }
@@ -402,7 +264,6 @@ hr{
     display: flex;
     justify-content: space-evenly;
     padding-top: 3%;
-
 }
 
 .dcontent-items {
@@ -466,13 +327,17 @@ hr{
     display: flex;
     flex-wrap: nowrap;
     width: 15vw;
-    margin: 2vw;
+    margin: 0 1vw;
 }
 
 .deals-info div button {
+    cursor: pointer;
+    width: 15vw;
+    height: 3vw;
+    font-size: 1.2vw;
     font-family: 'Rubik', sans-serif;
     padding: 0.7vw 1vw;
-    margin: 0 1vw;
+    box-sizing: border-box;
     background-color: #2E8DEE;
     color: var(--main-font-color);
     font-weight: 500;
@@ -484,6 +349,11 @@ hr{
     background-color: #106ac5;
     transition: .3s ease;
 }
+
+.deals-info div button:first-child {
+    margin-right: 2vw;
+}
+
 
 /* Wallet tab*/
 #wallet-main{
@@ -530,13 +400,26 @@ hr{
 #wallet-interact>*{
     margin-bottom: 2%;
 }
-/* Deals tab */
 
-.tabs-content.dealstab{
+.wallet-change {
+    margin: 2vw 2vw 0 0;
+    padding: 0.5vw;
+    box-sizing: border-box;
+    font-size: 1.2vw;
+    width: 10vw;
+    background-color: #2E8DEE;
+    color: 	white;
+    cursor: pointer;
+    border-radius: 1vw;
+}
+
+/* Trading tab */
+
+.tabs-content.tradingtab{
     padding: 2vw;
 }
 
-.deals {
+.trading {
     width: 100%;
     height: 30vw;
     background-color: var(--mix-2);
@@ -546,7 +429,7 @@ hr{
     font-size: 1.2vw;
 }
 
-.deals-cover {
+.trading-cover {
     height: 15%;
     width: 100%;
     border-radius: 20px 20px 0 0;
@@ -554,41 +437,37 @@ hr{
     justify-content: space-between;
 }
 
-.deals-cover-left {
+.trading-cover-left {
     display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    text-wrap: nowrap;
 }
 
-.dcover-image {
-    width: 65%;
-    height: 65%;
-    background-color: green;
-    border-radius: 100px;
+.trading-cover-left p {
+    font-weight: 500;
+    font-size: 100%;
     margin: auto 1.4vw;
-    overflow: hidden;
-}
-
-.dcover-image img {
-    object-fit: cover;
     width: 100%;
-    height: 100%;
 }
 
-.dcover-name {
+.trcover-name {
     font-weight: 500;
     font-size: 100%;
     margin: auto;
+    width: 100%;
 }
 
-.deals-cover-right {
+.trading-cover-right {
     margin: auto 1.7vw;
 }
 
-.dcover-status {
+.trcover-status {
     font-size: 90%;
     margin: auto 0;
 }
 
-.deals-content {
+.trading-content {
     flex: 1;
     width: 100%;
     height: 50%;
@@ -597,14 +476,14 @@ hr{
     
 }
 
-.deals-content-left {
+.trading-content-left {
     flex: 1;
     display: flex;
     justify-content: space-evenly;
     padding-top: 3%;
 }
 
-.deals-content-right {
+.trading-content-right {
     flex: 1;
     display: flex;
     justify-content: space-evenly;
@@ -612,10 +491,11 @@ hr{
 
 }
 
-.dcontent-items {
+.trcontent-items {
     width: 30%;
 }
-.dcontent-items-img {
+
+.trcontent-items-img {
     height: 70%;
     width: 100%;
     border-radius: 10px;  
@@ -625,7 +505,7 @@ hr{
     background-color: white;
 }
 
-.dcontent-items-img p {
+.trcontent-items-img p {
     white-space: nowrap;
     border-radius: 10px;
     margin: auto 0;
@@ -634,60 +514,48 @@ hr{
     padding: 5%;
 }
 
-.dcontent-items-img img {
+.trcontent-items-img img {
     object-fit: cover;
     width: 100%;
     height: 100%;
 }
 
-.dcontent-items-info {
+.trcontent-items-info {
     margin-top: 2%;
 }
 
-.dcontent-items-info h1 {
+.trcontent-items-info h1 {
     font-weight: 500;
     font-size: 100%;
 }
 
-.dcontent-items-info p {
+.trcontent-items-info p {
     font-weight: 400;
     font-size: 90%;
 }
 
-.dcontent-icon {
+.trcontent-icon {
     height: 70%;
     display: flex;
     justify-content: center
 }
 
-.deals-info {
+.trading-info {
     height: 15%;
     display: flex;
-
-    flex-direction: row-reverse;
     box-sizing: border-box;
     align-items: center;
 }
 
-.deals-info div {
+.trading-info div {
     display: flex;
-    flex-wrap: nowrap;
-    width: 15vw;
+    flex-direction: column;
+    width: 100%;
     margin: 2vw;
 }
 
-.deals-info div button {
-    font-family: 'Rubik', sans-serif;
-    padding: 0.7vw 1vw;
-    margin: 0 1vw;
-    background-color: #2E8DEE;
-    color: var(--main-font-color);
-    font-weight: 500;
-    border-radius: 20px;
-    border: none;
+.trading-info div p{
+    font-weight: 400;
+    font-size: 90%;
 }
 
-.deals-info div button:hover {
-    background-color: #106ac5;
-    transition: .3s ease;
-}

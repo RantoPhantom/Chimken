@@ -1,7 +1,8 @@
 import os
-import mysql.connector
+from flaskext.mysql import MySQL
+from pymysql.cursors import DictCursor
 
-from flask import Flask
+from flask import Flask, g, session, redirect, url_for, make_response
 
 
 def create_app(test_config=None):
@@ -26,12 +27,38 @@ def create_app(test_config=None):
         pass
 
     # INIT BLUEPRINTS AND DB HERE
-    mydb = mysql.connector.connect(
-        host="sql-lol.duckdns.org",
-        user="root",
-        password="lol"
-    )
-    print(mydb)
+
+    app.config['MYSQL_DATABASE_USER'] = 'root'
+    app.config['MYSQL_DATABASE_PASSWORD'] = 'lol'
+    app.config['MYSQL_DATABASE_DB'] = 'chimken_dinner'
+    app.config['MYSQL_DATABASE_HOST'] = 'sql-lol.duckdns.org'
+    db = MySQL()
+    db.init_app(app)
+
+    # Register a function to run before each request
+    @app.before_request
+    def before_request():
+        conn = db.connect()
+        cursor = conn.cursor(DictCursor)
+        # Store the database connection in the application context's 'g' object
+        g.conn = conn
+        g.cursor = cursor
+
+    @app.route('/logout')
+    def logout():
+        session.clear()
+        url = url_for('auth.login')
+        response = make_response(
+                redirect(url, code=200)
+                )
+        response.headers['HX-Redirect'] = url
+        return response
+
+    from . import auth
+    app.register_blueprint(auth.bp)
+
+    from . import trades
+    app.register_blueprint(trades.bp)
 
     from . import buy
     app.register_blueprint(buy.bp)

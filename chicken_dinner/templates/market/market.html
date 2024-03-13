@@ -4,115 +4,90 @@ market.css
 {% endblock %}
 {% block title %}Marketplace{% endblock %}
 {% block content %}
-<section class = "market">
-    <h1 id = "market-title-1">Featured NFTs</h1>
-    <div class = "mfeatured-border-line">
-        <div class = "market-featured">
 
-            {% for item in itemArray %}
-                <div hx-get="./lol/{{item.id}}" class = "mfeatured-items">
-                    <img src = "../static/img/{{item.img}}" style = "object-position: center;">
-                    <div class = "mfeatured-info">
-                        <h1>
-                            {{item.name}}
-                        </h1>
-                        <p>
-                            Price: {{item.price}} ETH
-                        </p>
-                    </div>
-                </div>
-            {% endfor %}   
-        </div>
-    </div>
-    <h1 id = "market-title-2">Explore</h1>
-    <div class = "market-main">
-        <div class = "market-filter">
-            <div class = "filter-items" style = "font-size: 1.4vw">
-                <i class = "ri-search-line"></i>
-                <input type = "text" placeholder = "Search...">
-            </div>
-            <div id = "special-item-1" class = "filter-items">
-                Filter
-            </div>
-            <div class = "filter-items input-price">
-                <p style = "font-size: 1.4vw;">Price</p>
-                <div style = "margin-top: 0.8vw;">
-                    <i class = "ri-eth-line"></i><input type = "text" placeholder = "Minimum">         
-                </div>
-                <div>
-                    <i class = "ri-eth-line"></i><input type = "text" placeholder = "Maximum">
-                </div>
-            </div>
-            <div class = "filter-items" style = "margin-top: 1.5vw;">
-                <p style = "font-size: 1.4vw;">Sort By:</p>
+<section class="market">
+	<h1 id="market-title-1">Featured NFTs</h1>
+	<div class="mfeatured-border-line">
+		<div class="market-featured">
+			{% for item in featuredArray %}
+				{% if loop.index <= 5 %}
+					<div hx-get="./redirect/{{item.ItemID}}" class="mfeatured-items">
+						<img src="../static/img/nft/img{{item.ItemID}}.jpg" style="object-position: center;">
+						<div class="mfeatured-info">
+							<h1>
+								{{item.Name}}
+							</h1>
+							<p>
+							Price: {{item.Price}} ETH
+							</p>
+						</div>
+					</div>
+				{% endif %}
+			{% endfor %}   
+		</div>
+	</div>
+	<h1 id="market-title-2">Explore</h1>
+	<div class="market-main">
+		<div class="market-filter">
+			<div class="filter-items" style="font-size: 1.4vw">
+				<i class="ri-search-line"></i>
+				<input name="search" type="search" placeholder="Search..."
+					hx-post="./search" 
+					hx-trigger="input changed delay:100ms, search"
+					hx-target=".market-list"
+					hx-swap="innerHTML">
+			</div>
+			<div id="special-item-1" class="filter-items">
+				Filter
+			</div>
+			<form class="filter-items input-price" hx-post = "./filter" hx-trigger = "change" hx-target = ".market-list" hx-swap = "innerHTML">
+				<p style="font-size: 1.4vw;">Price</p>
+				<div style="margin-top: 0.8vw;">
+					<i class="ri-eth-line"></i><input type="number" name = "min" placeholder="Minimum">         
+				</div>
+				<div>
+					<i class="ri-eth-line"></i><input type="number" name = "max" placeholder="Maximum">
+				</div>
+			</form>
+			<div class="filter-items" style="margin-top: 1.5vw;">
+				<p style="font-size: 1.4vw;">Sort By:</p>
 
-                <div id = "market-select-box">
-                    <input type = "checkbox" id = "options-view-button">
-                    <div id = "select-button" class = "select-border">
-                        <div id = "selected-value">                
-                            <span>
-                                Default
-                            </span>
-                        </div>
-                        <div id = "arrow-down-button">
-                            <i class="ri-arrow-down-s-line"></i>
-                        </div>       
-                    </div>
+				<select name="sort" id="market-select-box" hx-trigger="change" hx-get="./sort" hx-target=".market-list" hx-swap = "innerHTML">
+					<option id="select-button" class="selected-value" value="Default">Default</option>
+					<option id="select-button" class="selected-value" value="Price:HtL">Price: Highest to Lowest</option>
+					<option id="select-button" class="selected-value" value="Price:LtH">Price: Lowest to Highest</option>
+				</select>
 
-                    <div id = "option-list">
-                        <div class = "option-items">
-                            <input class = "radio-select" type = "radio" name = "platform" value = "price:lth">
-                            <span class = "label" >Price: High to Low</span>
-                            <span class = "opt-val">Price: High to Low</span>
-                        </div>
+			</div>
+		</div>
+		<div class="market-list">
+			{% for item in itemArray %}
+			<div class="featured-items market-NFT">
+				<div class="featured-img">
+					<img src="../static/img/nft/img{{item.ItemID}}.jpg"/>
+				</div>
+				<div class="featured-info">
+					<h2>{{item.Name}}</h2>
+					<a href="/profile/{{item.UserID}}">
+						@{{item["Users.Name"]}}
+					</a>
+					<div class="featured-price">
+						<p style="font-size: 92%;">Price:</p>
+						<p style="font-size: 84.6%">{{item.Price}}ETH</p>
+					</div>
+					<div class="featured-button">
+						<button hx-get="./redirect/{{item.ItemID}}" style="margin-right: 1.5%;">
+							View
+						</button>
+						<button hx-get="./trades/{{item.ItemID}}" style="margin-left: 1.5%;">
+							Trade
+						</button>
+					</div>           
+				</div>
+			</div>
+			{% endfor %}
 
-                        <div class = "option-items">
-                            <input class = "radio-select" type = "radio" name = "platform" value = "price:lth">
-                            <span class = "label" >Price: Low to High</span>
-                            <span class = "opt-val">Price: Low to High</span>
-                        </div>
-
-                        <div class = "option-items">
-                            <input class = "radio-select" type = "radio" name = "platform" value = "price:lth">
-                            <span class = "label" >Date: Latest</span>
-                            <span class = "opt-val">Date: Latest</span>
-                        </div>
-                        <div id = "option-bg">
-                        
-                        </div>
-                    </div>  
-                </div>
-                
-            </div>
-        </div>
-        <div class = "market-list">
-            {% for item in itemArray %}
-            <div class = "featured-items market-NFT">
-                <div class = "featured-img">
-                    <img src = "../static/img/{{item.img}}"/>
-                </div>
-                <div class = "featured-info">
-                    <h2>{{item.name}}</h2>
-                    <a href = "">
-                        @Puppeter
-                    </a>
-                    <div class = "featured-price">
-                        <p style = "font-size: 92%;">Price:</p>
-                        <p style = "font-size: 84.6%">{{item.price}}ETH</p>
-                    </div>
-                    <div class = "featured-button">
-                        <button hx-get="./redirect" style = "margin-right: 1.5%;">
-                            Buy
-                        </button>
-                        <button style = "margin-left: 1.5%;">
-                            Trade
-                        </button>
-                    </div>           
-                </div>
-            </div>
-            {% endfor %}
-            
-        </div>
-    </div>
+		</div>
+	</div>
 </section>
 {% endblock %}

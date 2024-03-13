@@ -1,0 +1,143 @@
+.trades form {
+    padding-top: var(--header-height);
+    display: flex;
+    min-height: 44.3vw;
+}
+
+.trades > * {
+    font-family: var(--main-font);
+    color: var(--main-font-color)
+}
+
+.trades-left {
+    flex: 1;
+    padding-top: 1.5vw;
+}
+
+.trades-right {
+    border-radius: 0 0 0 2vw;
+    position: sticky;
+    top: var(--header-height);
+    right: 0;
+    width: 25vw;
+    align-self: flex-start;
+    padding: 1.5vw 1.8vw;
+    box-sizing: border-box;
+    background-color: var(--mix-2);
+    margin-bottom: 6vw;
+}
+
+.trades-left h1 {
+    font-size: 1.8vw;
+    font-weight: 500;
+    margin: 0 2.5vw;
+}
+
+.trades-right h1 {
+    font-size: 1.8vw;
+    font-weight: 500;
+}
+
+.owned-list {
+    margin-bottom: 6vw;
+    padding: 1vw;
+    flex: 3;
+    display: grid;
+    justify-content: space-evenly;
+    justify-items: center;
+    grid-template-columns: repeat(5, 1fr);
+    row-gap: 3vw;
+}
+
+.featured-items.owned-NFT {
+    position: relative;
+    width: 12vw;
+    height: 15vw;
+    font-size: 1.1vw;
+    border-radius: 1.5vw;
+}
+
+.featured-img.owned-NFT {
+    flex: 7;
+    border-radius: 1.5vw;
+}
+
+.featured-info.owned-NFT {
+    flex: 1.3;
+}
+
+.traded-item {
+    border-radius: 1.5vw;
+    box-shadow: 0 0 5px 0.5px #ffffff;
+    margin: 0.5vw 0;
+    height: 16vw;
+    width: 14vw;
+    overflow: hidden;
+}
+
+.traded-item img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.trades-right h2 {
+    font-size: 1.5vw;
+    font-weight: 500;
+    margin-top: 1vw;
+}
+
+.trades-right p {
+    margin-top: 0.5vw;
+    font-size: 1.2vw;
+}
+
+.trades-input {
+    padding: 0.5vw;
+    box-sizing: border-box;
+    font-size: 1.2vw;
+    width: calc(100% - 0.5vw);
+    background-color: white;
+    color: black;
+    font-size: 1.2vw;
+    border-radius: 1vw;
+}
+
+.trades-input.add-eth {
+    margin-top: 10vw;
+}
+
+.trades-input.req-eth {
+    margin: 1vw 0;
+}
+
+.trades-submit {
+    margin-top: 1vw;
+    padding: 0.5vw;
+    box-sizing: border-box;
+    font-size: 1.2vw;
+    width: calc(100% - 0.5vw);
+    background-color: #2E8DEE;
+    color: 	white;
+    cursor: pointer;
+    border-radius: 1vw;
+}
+
+.trades-selectbox {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.featured-items.owned-NFT:has(.trades-selectbox:checked) {
+    box-shadow: 0 0 5px 0.5px #ffffff;
+}
+

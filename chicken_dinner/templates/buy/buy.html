@@ -3,7 +3,7 @@
 buy.css
 {% endblock %}
 {% block title %}
-    Buying: {{item.name}}
+    Viewing: {{item.Name}}
     {% endblock %}
 
     {% block content %}
@@ -13,7 +13,7 @@ buy.css
 
             <div id="summary">
                 <div id="summary-image">
-                    <img src="../static/pippog.png" alt="">
+					<img src="../static/img/nft/img{{item.ItemID}}.jpg" alt="">
                 </div>
                 <div id="description"></div>
             </div>
@@ -21,23 +21,21 @@ buy.css
             <!-- right -->
             <div id="details">
                 <div id="name">
-                    <p> Creator: @{{item.author}} </p>
-                    <p>{{item.name}} #{{item.id}}</p>
+                    <p> Owner: <a href = "" hx-get="./profile/{{item.UserID}}" style="text-decoration: none;">@{{item["Users.Name"]}}</a> </p>
+                    <p>{{item.Name}} #{{item.ItemID}}</p>
                 </div>
                 <div id="price">
                     <p>Current Price</p>
                     <div id="price-amount">
-                        {{item.price}} 
-                        {{item.currency}}
+                        {{item.Price}} 
+						ETH
                     </div>
 
                     <div id="author">
-                        <span>Listed By:</span> {{item.author}}
+                        <span>Listed By:</span> {{item["Users.Name"]}}
                     </div>
 
                     <div id="buy-buttons">
-
-                        <button> Buy Now </button>
                         <button> Trade </button>
 
                     </div>
@@ -54,9 +52,9 @@ buy.css
                     <h2>Description</h2>
                     <hr>
                     <div>
-                        <p>By {{item.author}} </p>
-                        <p>{{item.description | default("I'm pippa!") }}</p>
-                        <p>{{item.name}} #{{item.id}}</p>
+                        <p>By {{item["Users.Name"]}} </p>
+                        <p>{{item.Description | default("I'm pippa!") }}</p>
+                        <p>{{item.Name}} #{{item.ItemID}}</p>
                     </div>
                 </div>
 
@@ -90,26 +88,6 @@ buy.css
                 </div>
 
             </div>
-            <manager hx-post="./get-listing-data" hx-trigger="load" hx-swap="outerHTML" hx-target="#listing-data"></manager>
-            <div id="listings">
-                <h2>Listings</h2>
-                <hr>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Unit Price</th>
-                            <th>Quantity</th>
-                            <th>Expiration</th>
-                            <th>From</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr id="listing-data"></tr>
-                    </tbody>
-                </table>
-            </div>
-
-
         </div>
     </div>
     {% endblock %}
