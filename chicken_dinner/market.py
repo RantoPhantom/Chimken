@@ -24,6 +24,7 @@ minPrice = ''
 
 maxPrice = ''
 
+
 def load_items():
     global itemArray
     print("fetching")
@@ -31,6 +32,8 @@ def load_items():
     g.cursor.execute(sql, (g.user["UserID"]))
     itemArray = g.cursor.fetchall()
     return itemArray
+
+
 
 
 @bp.route('/search', methods=["POST"])
@@ -62,6 +65,13 @@ def search_func(itemArray, search_term):
     
     return resultArray
 
+count = 0
+
+@bp.route('/asdf', methods=["GET"])
+def adfasfdasdf():
+    global count
+    count += 1
+    return str(count)
 
 def print_item(itemList):
     html = ''
