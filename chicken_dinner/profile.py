@@ -163,6 +163,10 @@ def deal_accept():
 
 @bp.route("/deal-decline", methods=["POST"])
 def deal_decline():
-    deal = request.form.get('getDeal')
-    print(deal)
+    deal_id = request.form.get('getDeal')
+    sql = "UPDATE Deals "
+    sql += "SET Status='ARCHIVED' "
+    sql += "WHERE DealID={};"
+    g.cursor.execute(sql.format(str(deal_id)))
+    g.conn.commit()
     return ''
