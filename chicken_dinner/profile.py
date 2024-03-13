@@ -2,6 +2,7 @@ from flask import (Blueprint, render_template, request, url_for, g, make_respons
 from .auth import login_required
 import json
 from web3 import Web3, HTTPProvider
+import datetime
 
 bp = Blueprint('profile', __name__, url_prefix='/profile')
 
@@ -39,7 +40,7 @@ def load_users(user_id):
 
 
 def load_deal(user_id):
-    g.cursor.execute("SELECT Deals.*, User_From.Name AS FromName, User_To.Name AS ToName FROM Deals INNER JOIN Users AS User_From ON Deals.FromUserID = User_From.UserID INNER JOIN Users AS User_To ON Deals.ToUserID = User_To.UserID WHERE ToUserID = %s", user_id)
+    g.cursor.execute("SELECT Deals.*, User_From.Name AS FromName, User_To.Name AS ToName FROM Deals INNER JOIN Users AS User_From ON Deals.FromUserID = User_From.UserID INNER JOIN Users AS User_To ON Deals.ToUserID = User_To.UserID WHERE ToUserID = %s AND Status = 'PENDING'", user_id)
     dealsArray = g.cursor.fetchall()
     return dealsArray
 
@@ -120,8 +121,36 @@ def lol(item_id):
 
 @bp.route("/deal-accept", methods=["POST"])
 def deal_accept():
-    deal = request.form.get('getDeal')
-    print(deal)
+    deal_id = request.form.get('getDeal')
+    sql = "select * from Deals where DealID={}"
+    g.cursor.execute(sql.format(deal_id))
+    deal = g.cursor.fetchone()
+
+    sender_id = deal['FromUserID']
+    receiver_id = deal['ToUserID']
+
+    sender_nfts = deal['FromNFTs'].split(',')
+    receiver_nfts = deal['ToNFTs'].split(',')
+
+    for nft_id in sender_nfts:
+        sql = "UPDATE NFT_Item "
+        sql += "SET UserID = {} "
+        sql += "WHERE ItemID = {};"
+        g.cursor.execute(sql.format(receiver_id, nft_id))
+
+    for nft_id in receiver_nfts:
+        sql = "UPDATE NFT_Item "
+        sql += "SET UserID = {} "
+        sql += "WHERE ItemID = {};"
+        g.cursor.execute(sql.format(sender_id, nft_id))
+
+    sql = "UPDATE Deals SET Status=(%s) WHERE DealID=(%s)"
+    g.cursor.execute(sql, ("COMPLETE", deal["DealID"]))
+
+    sql = "INSERT INTO TradeHistory (DealID, Date) VALUES (%s, %s)"
+    g.cursor.execute(sql, (deal["DealID"], datetime.datetime.now()))
+    g.conn.commit()
+
     global contract
     contract.functions.Deposit(web3.eth.accounts[2], 2).call()
     contract.functions.ExchangeETH(
@@ -129,11 +158,11 @@ def deal_accept():
             web3.eth.accounts[4],
             2
             ).call()
-
-    print(web3.eth.get_balance(web3.eth.accounts[2]))
+    return ''
 
 
 @bp.route("/deal-decline", methods=["POST"])
 def deal_decline():
     deal = request.form.get('getDeal')
     print(deal)
+    return ''
