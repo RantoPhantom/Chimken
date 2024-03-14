@@ -90,9 +90,9 @@ def print_item(itemList):
 
         html += '<div class="featured-button">'
         html += f'<button hx-get="./redirect/{item["ItemID"]}" style="margin-right: 1.5%;">'
-        html += 'Buy'
+        html += 'View'
         html += '</button>'
-        html += '<button style="margin-left: 1.5%;">'
+        html += f'<button hx-get="./trades/{item["ItemID"]}" style="margin-left: 1.5%;">'
         html += 'Trade'
         html += '</button>'
         html += '</div>'
