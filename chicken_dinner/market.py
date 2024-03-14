@@ -63,13 +63,6 @@ def search_func(itemArray, search_term):
     
     return resultArray
 
-count = 0
-
-@bp.route('/asdf', methods=["GET"])
-def adfasfdasdf():
-    global count
-    count += 1
-    return str(count)
 
 def print_item(itemList):
     html = ''
