@@ -24,9 +24,9 @@ def get_data(item_id):
         if len(tradeList) > 2:
             flash("More than two NFTs selected", "limit")
             return redirect(url_for('trades.index', item_id=item_id))
-        elif len(tradeList) == 0:
-            flash("No NFT selected", "limit")
-            return redirect(url_for('trades.index', item_id=item_id))
+        # elif len(tradeList) == 0:
+        #     flash("No NFT selected", "limit")
+        #     return redirect(url_for('trades.index', item_id=item_id))
 
         receiverId = request.form['getUser']
         senderId = g.user["UserID"]

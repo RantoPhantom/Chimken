@@ -87,10 +87,14 @@ def index(user_id):
 
 def deals_handle(dealArray):
     for deal in dealArray:
-        deal["FromNFTs"] = deal["FromNFTs"].split(",")
+        if deal["FromNFTs"] != '':
+            deal["FromNFTs"] = deal["FromNFTs"].split(",")
+            deal["FromNFTs"] = search_deal_item(deal["FromNFTs"])
+
         deal["ToNFTs"] = deal["ToNFTs"].split(",")
 
-        deal["FromNFTs"] = search_deal_item(deal["FromNFTs"])
+
+        
         deal["ToNFTs"] = search_deal_item(deal["ToNFTs"])
 
     return dealArray
@@ -116,15 +120,18 @@ def deal_accept():
     sender_id = deal['FromUserID']
     receiver_id = deal['ToUserID']
 
-    sender_nfts = deal['FromNFTs'].split(',')
+    sender_nfts = deal['FromNFTs']
+
+    if sender_nfts != '':
+        sender_nfts = sender_nfts.split(',')
+
+        for nft_id in sender_nfts:
+            sql = "UPDATE NFT_Item "
+            sql += "SET UserID = {} "
+            sql += "WHERE ItemID = {};"
+            g.cursor.execute(sql.format(receiver_id, nft_id))
+
     receiver_nfts = deal['ToNFTs'].split(',')
-
-
-    for nft_id in sender_nfts:
-        sql = "UPDATE NFT_Item "
-        sql += "SET UserID = {} "
-        sql += "WHERE ItemID = {};"
-        g.cursor.execute(sql.format(receiver_id, nft_id))
 
     for nft_id in receiver_nfts:
         sql = "UPDATE NFT_Item "
@@ -139,7 +146,12 @@ def deal_accept():
     g.cursor.execute(sql, (deal["DealID"], datetime.datetime.now()))
     g.conn.commit()
 
-    return ''
+    url = url_for('profile.index', user_id = g.user["UserID"])
+    response = make_response(
+            redirect(url, code=200)
+            )
+    response.headers['HX-Redirect'] = url
+    return response
 
     global contract
     contract.functions.Deposit(web3.eth.accounts[7], 3).call()
@@ -150,10 +162,6 @@ def deal_accept():
             ).call()
 
     
-    
-    
-
-
 @bp.route("/deal-decline", methods=["POST"])
 def deal_decline():
     deal_id = request.form.get('getDeal')
@@ -162,4 +170,10 @@ def deal_decline():
     sql += "WHERE DealID={};"
     g.cursor.execute(sql.format(str(deal_id)))
     g.conn.commit()
-    return ''
+
+    url = url_for('profile.index', user_id = g.user["UserID"])
+    response = make_response(
+            redirect(url, code=200)
+            )
+    response.headers['HX-Redirect'] = url
+    return response
