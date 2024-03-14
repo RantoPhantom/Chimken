@@ -34,8 +34,6 @@ def load_items():
     return itemArray
 
 
-
-
 @bp.route('/search', methods=["POST"])
 def search():
     global modifiedArray, search_term, minPrice, maxPrice, sortMethod

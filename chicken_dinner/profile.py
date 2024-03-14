@@ -49,7 +49,6 @@ def load_history(user_id):
     g.cursor.execute("SELECT TradeID, Date, Deals.*, User_From.Name AS FromName, User_To.Name AS ToName FROM `TradeHistory` INNER JOIN Deals ON TradeHistory.DealID = Deals.DealID INNER JOIN Users AS User_From ON Deals.FromUserID = User_From.UserID INNER JOIN Users AS User_To ON Deals.ToUserID = User_To.UserID WHERE FromUserID = %s OR ToUserID = %s", (user_id, user_id))
     tradeArray = g.cursor.fetchall()
 
-    print(tradeArray)
     return tradeArray
 
 
@@ -68,7 +67,6 @@ def search_deal_item(idArray):
 @bp.route('/<int:user_id>', methods=["GET"])
 @login_required
 def index(user_id):
-    print(user_id)
     is_own_profile = False
     if user_id == g.user["UserID"]:
         is_own_profile = True
@@ -121,6 +119,7 @@ def deal_accept():
     sender_nfts = deal['FromNFTs'].split(',')
     receiver_nfts = deal['ToNFTs'].split(',')
 
+
     for nft_id in sender_nfts:
         sql = "UPDATE NFT_Item "
         sql += "SET UserID = {} "
@@ -149,6 +148,8 @@ def deal_accept():
             web3.eth.accounts[7],
             1
             ).call()
+
+    
     
     
 
